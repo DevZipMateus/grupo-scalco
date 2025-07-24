@@ -24,8 +24,12 @@ const Index = () => {
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold text-blue-900">
-              SCALCO CONSULTORIA
+            <div className="flex items-center">
+              <img 
+                src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" 
+                alt="25 Anos - Grupo Scalco" 
+                className="h-12 w-auto"
+              />
             </div>
             <Button 
               onClick={openWhatsApp}
@@ -475,7 +479,13 @@ const Index = () => {
       <footer className="bg-slate-900 text-white py-12">
         <div className="container mx-auto px-6">
           <div className="text-center">
-            <h3 className="text-2xl font-bold mb-4">SCALCO CONSULTORIA</h3>
+            <div className="flex justify-center mb-4">
+              <img 
+                src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" 
+                alt="25 Anos - Grupo Scalco" 
+                className="h-16 w-auto opacity-80"
+              />
+            </div>
             <p className="text-slate-400 mb-6">Método GAP - Gestão para Alta Performance</p>
             <p className="text-slate-500 text-sm">
               © 2024 Scalco Consultoria. Todos os direitos reservados.
