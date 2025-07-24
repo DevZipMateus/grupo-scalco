@@ -43,7 +43,7 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      <section className="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -51,7 +51,7 @@ const Index = () => {
                 🚀 MÉTODO COMPROVADO
               </Badge>
               <h1 className="text-5xl font-bold mb-6 leading-tight">
-                Você paga <span className="text-orange-400">100%</span>, mas sua equipe entrega só <span className="text-red-400">75%</span>?
+                Você paga <span className="text-orange-400">100%</span>, mas sua equipe entrega só <span className="text-brand-red">75%</span>?
               </h1>
               <p className="text-xl mb-8 text-blue-100">
                 O <strong>Método GAP</strong> corrige esse desequilíbrio e faz sua equipe entregar o que precisa ser feito, do jeito certo e na hora certa.
@@ -98,7 +98,7 @@ const Index = () => {
       <section id="problema" className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl font-bold text-brand-primary mb-6">
               Você está cumprindo sua parte. E a sua equipe?
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
@@ -149,8 +149,8 @@ const Index = () => {
       <section id="solucao" className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-blue-600 text-white px-4 py-2">SOLUÇÃO DEFINITIVA</Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <Badge className="mb-4 bg-brand-secondary text-white px-4 py-2">SOLUÇÃO DEFINITIVA</Badge>
+            <h2 className="text-4xl font-bold text-brand-primary mb-6">
               O Método GAP corrige esse desequilíbrio
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -163,19 +163,19 @@ const Index = () => {
             <Card className="bg-white shadow-xl">
               <CardContent className="p-12">
                 <div className="text-center mb-8">
-                  <div className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-lg">
+                  <div className="inline-block bg-gradient-to-r from-brand-primary to-brand-secondary text-white px-8 py-4 rounded-lg">
                     <h3 className="text-2xl font-bold">MÉTODO GAP</h3>
                     <p className="text-blue-100">Gestão para Alta Performance</p>
                   </div>
                 </div>
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="text-center">
-                    <Users className="w-16 h-16 text-blue-600 mx-auto mb-4" />
+                    <Users className="w-16 h-16 text-brand-secondary mx-auto mb-4" />
                     <h4 className="text-xl font-semibold mb-2">Consultoria Especializada</h4>
                     <p className="text-gray-600">Especialistas que lidam com gente, desenvolvendo o potencial da sua equipe</p>
                   </div>
                   <div className="text-center">
-                    <BarChart3 className="w-16 h-16 text-indigo-600 mx-auto mb-4" />
+                    <BarChart3 className="w-16 h-16 text-brand-primary mx-auto mb-4" />
                     <h4 className="text-xl font-semibold mb-2">Tecnologia Inteligente</h4>
                     <p className="text-gray-600">Plataforma que coloca você no controle total da gestão da sua equipe</p>
                   </div>
@@ -190,7 +190,7 @@ const Index = () => {
       <section id="pilares" className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl font-bold text-brand-primary mb-6">
               Três pilares. Um método que transforma.
             </h2>
             <p className="text-xl text-gray-600">
@@ -230,9 +230,9 @@ const Index = () => {
             <Card className="hover:shadow-xl transition-shadow">
               <CardHeader>
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Zap className="w-8 h-8 text-blue-600" />
+                  <Zap className="w-8 h-8 text-brand-secondary" />
                 </div>
-                <CardTitle className="text-center text-blue-600">Gestão de Conflitos</CardTitle>
+                <CardTitle className="text-center text-brand-secondary">Gestão de Conflitos</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-center">
@@ -261,8 +261,8 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className="mb-4 bg-indigo-600 text-white px-4 py-2">TECNOLOGIA AVANÇADA</Badge>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              <Badge className="mb-4 bg-brand-primary text-white px-4 py-2">TECNOLOGIA AVANÇADA</Badge>
+              <h2 className="text-4xl font-bold text-brand-primary mb-6">
                 Tecnologia que coloca você no controle
               </h2>
               <p className="text-xl text-gray-600 mb-8">
@@ -289,7 +289,7 @@ const Index = () => {
               </div>
               <Button 
                 onClick={openWhatsApp}
-                className="bg-indigo-600 hover:bg-indigo-700 text-white"
+                className="bg-brand-primary hover:bg-brand-secondary text-white"
               >
                 Ver demonstração da plataforma
               </Button>
@@ -297,7 +297,7 @@ const Index = () => {
             <div>
               <Card className="bg-white shadow-2xl">
                 <CardHeader>
-                  <CardTitle className="text-center text-gray-800">Dashboard - Método GAP</CardTitle>
+                  <CardTitle className="text-center text-brand-primary">Dashboard - Método GAP</CardTitle>
                 </CardHeader>
                 <CardContent className="p-6">
                   <div className="space-y-6">
@@ -307,7 +307,7 @@ const Index = () => {
                     </div>
                     <div className="flex justify-between items-center p-4 bg-blue-50 rounded-lg">
                       <span className="font-medium">Performance Geral</span>
-                      <Badge className="bg-blue-600 text-white">92%</Badge>
+                      <Badge className="bg-brand-secondary text-white">92%</Badge>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-purple-50 rounded-lg">
                       <span className="font-medium">Engajamento</span>
@@ -330,7 +330,7 @@ const Index = () => {
       <section id="consultoria" className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl font-bold text-brand-primary mb-6">
               Especialistas que lidam com gente, não só com números
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -340,7 +340,7 @@ const Index = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <Card className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+            <Card className="bg-gradient-to-r from-brand-secondary to-brand-primary text-white">
               <CardContent className="p-12">
                 <div className="text-center mb-8">
                   <Users className="w-20 h-20 mx-auto mb-6 text-blue-200" />
@@ -386,7 +386,7 @@ const Index = () => {
       <section id="resultados" className="py-20 bg-gradient-to-br from-green-50 to-emerald-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl font-bold text-brand-primary mb-6">
               Você não precisa acreditar na gente. Acredite nos números.
             </h2>
             <p className="text-xl text-gray-600">
@@ -398,15 +398,15 @@ const Index = () => {
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
                 <BarChart3 className="w-12 h-12 text-green-600 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">Setores que mais entregam</h3>
+                <h3 className="text-lg font-semibold text-brand-primary mb-2">Setores que mais entregam</h3>
                 <p className="text-gray-600 text-sm">Identifique quais áreas estão performando melhor</p>
               </CardContent>
             </Card>
 
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
-                <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">Quem veste a camisa</h3>
+                <Users className="w-12 h-12 text-brand-secondary mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-brand-primary mb-2">Quem veste a camisa</h3>
                 <p className="text-gray-600 text-sm">Descubra seus verdadeiros talentos e potenciais</p>
               </CardContent>
             </Card>
@@ -414,7 +414,7 @@ const Index = () => {
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
                 <Target className="w-12 h-12 text-red-600 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">Gargalos identificados</h3>
+                <h3 className="text-lg font-semibold text-brand-primary mb-2">Gargalos identificados</h3>
                 <p className="text-gray-600 text-sm">Encontre e elimine os pontos de travamento</p>
               </CardContent>
             </Card>
@@ -422,7 +422,7 @@ const Index = () => {
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
                 <TrendingUp className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">Decisões mais justas</h3>
+                <h3 className="text-lg font-semibold text-brand-primary mb-2">Decisões mais justas</h3>
                 <p className="text-gray-600 text-sm">Base sólida de dados para escolhas acertadas</p>
               </CardContent>
             </Card>

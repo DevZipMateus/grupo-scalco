@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,16 +18,16 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 205 100% 27%; /* #00568C - Primary blue from brand */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 211 100% 50%; /* #007BFF - Secondary blue from brand */
+    --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 199 89% 48%; /* Light blue accent */
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,25 +35,24 @@ All colors MUST be HSL.
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 205 100% 27%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Brand specific colors */
+    --brand-primary: 205 100% 27%; /* #00568C */
+    --brand-secondary: 211 100% 50%; /* #007BFF */
+    --brand-light: 199 89% 48%; /* Light blue */
+    --brand-red: 0 65% 51%; /* Red highlight */
   }
 
   .dark {
@@ -65,7 +65,7 @@ All colors MUST be HSL.
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 211 100% 50%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -91,6 +91,12 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Brand specific colors for dark mode */
+    --brand-primary: 211 100% 50%;
+    --brand-secondary: 205 100% 27%;
+    --brand-light: 199 89% 48%;
+    --brand-red: 0 65% 51%;
   }
 }
 
@@ -101,5 +107,67 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Brand utility classes */
+@layer utilities {
+  .bg-brand-primary {
+    background-color: hsl(var(--brand-primary));
+  }
+  
+  .bg-brand-secondary {
+    background-color: hsl(var(--brand-secondary));
+  }
+  
+  .bg-brand-light {
+    background-color: hsl(var(--brand-light));
+  }
+  
+  .text-brand-primary {
+    color: hsl(var(--brand-primary));
+  }
+  
+  .text-brand-secondary {
+    color: hsl(var(--brand-secondary));
+  }
+  
+  .text-brand-light {
+    color: hsl(var(--brand-light));
+  }
+  
+  .text-brand-red {
+    color: hsl(var(--brand-red));
+  }
+  
+  .border-brand-primary {
+    border-color: hsl(var(--brand-primary));
+  }
+  
+  .border-brand-secondary {
+    border-color: hsl(var(--brand-secondary));
+  }
+  
+  .border-brand-light {
+    border-color: hsl(var(--brand-light));
+  }
+  
+  .from-brand-primary {
+    --tw-gradient-from: hsl(var(--brand-primary));
+    --tw-gradient-to: hsl(var(--brand-primary) / 0);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+  
+  .to-brand-secondary {
+    --tw-gradient-to: hsl(var(--brand-secondary));
+  }
+  
+  .hover\:bg-brand-primary:hover {
+    background-color: hsl(var(--brand-primary));
+  }
+  
+  .hover\:bg-brand-secondary:hover {
+    background-color: hsl(var(--brand-secondary));
   }
 }
