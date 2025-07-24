@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -162,10 +163,10 @@ const Index = () => {
                 🚀 MÉTODO COMPROVADO
               </Badge>
               <h1 className="text-5xl font-bold mb-6 leading-tight">
-                Você paga <span className="text-orange-400">100%</span>, mas sua equipe entrega só <span className="text-brand-red">75%</span>?
+                Sua equipe entrega o que foi <span className="text-orange-400">combinado</span>, com <span className="text-orange-400">qualidade</span> e no <span className="text-orange-400">prazo</span>?
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                O <strong>Método GAP</strong> corrige esse desequilíbrio e faz sua equipe entregar o que precisa ser feito, do jeito certo e na hora certa.
+                O <strong>Método GAP</strong> da Scalco combina consultoria especializada em gestão de pessoas com uma plataforma própria de acompanhamento. Fazemos sua equipe realizar o que precisa ser feito.
               </p>
               <Button 
                 onClick={openWhatsApp}
@@ -173,7 +174,7 @@ const Index = () => {
                 className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg cta-button"
               >
                 <Rocket className="w-5 h-5 mr-3" />
-                Quero transformar minha equipe
+                Quero uma gestão mais eficiente
               </Button>
             </div>
             <div className="flex justify-center">
@@ -181,11 +182,11 @@ const Index = () => {
                 <CardContent className="p-8">
                   <div className="space-y-6">
                     <div className="flex justify-between items-center">
-                      <span className="text-lg">Você paga:</span>
-                      <Badge className="bg-green-500 text-white px-4 py-2 text-lg">100%</Badge>
+                      <span className="text-lg">Tarefas planejadas:</span>
+                      <Badge className="bg-blue-500 text-white px-4 py-2 text-lg">100%</Badge>
                     </div>
                     <div className="w-full bg-white/20 rounded-full h-4">
-                      <div className="bg-green-500 h-4 rounded-full w-full progress-fill"></div>
+                      <div className="bg-blue-500 h-4 rounded-full w-full progress-fill"></div>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-lg">Equipe entrega:</span>
@@ -195,7 +196,7 @@ const Index = () => {
                       <div className="bg-red-500 h-4 rounded-full w-3/4 progress-fill"></div>
                     </div>
                     <div className="text-center pt-4 border-t border-white/20">
-                      <p className="text-orange-300 font-semibold">Isso é justo?</p>
+                      <p className="text-orange-300 font-semibold">Vamos mudar isso!</p>
                     </div>
                   </div>
                 </CardContent>
@@ -210,11 +211,10 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-brand-primary mb-6">
-              Você está cumprindo sua parte. E a sua equipe?
+              O desafio de toda liderança
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Tarefas que não são concluídas. Projetos feitos de qualquer jeito. Prazos que não são cumpridos. 
-              Enquanto isso, você continua pagando salários integrais por resultados parciais.
+              Gestão eficiente não é sobre controlar pessoas, é sobre criar condições para que sua equipe realize o que foi combinado, com qualidade e no prazo certo.
             </p>
           </div>
           
@@ -223,15 +223,15 @@ const Index = () => {
               <CardContent className="p-8">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                   <div>
-                    <h3 className="text-2xl font-bold text-red-800 mb-4">A Realidade Atual:</h3>
+                    <h3 className="text-2xl font-bold text-red-800 mb-4">Sinais que você conhece:</h3>
                     <ul className="space-y-3 text-gray-700">
                       <li className="flex items-start">
                         <span className="text-red-500 mr-2">✗</span>
-                        Tarefas incompletas ou mal executadas
+                        Tarefas que "ficaram para depois"
                       </li>
                       <li className="flex items-start">
                         <span className="text-red-500 mr-2">✗</span>
-                        Falta de clareza sobre quem fez o quê
+                        Falta de clareza sobre responsabilidades
                       </li>
                       <li className="flex items-start">
                         <span className="text-red-500 mr-2">✗</span>
@@ -239,14 +239,14 @@ const Index = () => {
                       </li>
                       <li className="flex items-start">
                         <span className="text-red-500 mr-2">✗</span>
-                        Decisões baseadas em "achismos"
+                        Gestão baseada em "achismos"
                       </li>
                     </ul>
                   </div>
                   <div className="text-center">
                     <div className="bg-white rounded-lg p-6 shadow-lg">
-                      <p className="text-3xl font-bold text-red-600 mb-2">25%</p>
-                      <p className="text-gray-600">do seu investimento está sendo desperdiçado</p>
+                      <p className="text-3xl font-bold text-red-600 mb-2">Resultado:</p>
+                      <p className="text-gray-600">Gestão imprevisível e menos eficiente</p>
                     </div>
                   </div>
                 </div>
@@ -260,13 +260,13 @@ const Index = () => {
       <section id="solucao" className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-brand-secondary text-white px-4 py-2">SOLUÇÃO DEFINITIVA</Badge>
+            <Badge className="mb-4 bg-brand-secondary text-white px-4 py-2">SOLUÇÃO SCALCO</Badge>
             <h2 className="text-4xl font-bold text-brand-primary mb-6">
-              O Método GAP corrige esse desequilíbrio
+              Método GAP: Gestão eficiente e previsível
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Uma combinação única de <strong>consultoria especializada</strong> e <strong>tecnologia avançada</strong> 
-              que faz sua equipe entregar o que precisa ser feito, do jeito certo e na hora certa.
+              Uma combinação única de <strong>consultoria em gestão de pessoas</strong> com <strong>plataforma própria</strong> 
+              que torna a gestão mais eficiente através de gamificação e indicadores em tempo real.
             </p>
           </div>
 
@@ -282,13 +282,13 @@ const Index = () => {
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="text-center">
                     <Users className="w-16 h-16 text-brand-secondary mx-auto mb-4" />
-                    <h4 className="text-xl font-semibold mb-2">Consultoria Especializada</h4>
-                    <p className="text-gray-600">Especialistas que lidam com gente, desenvolvendo o potencial da sua equipe</p>
+                    <h4 className="text-xl font-semibold mb-2">Consultoria em Pessoas</h4>
+                    <p className="text-gray-600">Especialistas que contribuem para a realização pessoal e profissional das pessoas</p>
                   </div>
                   <div className="text-center">
                     <BarChart3 className="w-16 h-16 text-brand-primary mx-auto mb-4" />
-                    <h4 className="text-xl font-semibold mb-2">Tecnologia Inteligente</h4>
-                    <p className="text-gray-600">Plataforma que coloca você no controle total da gestão da sua equipe</p>
+                    <h4 className="text-xl font-semibold mb-2">Plataforma Própria</h4>
+                    <p className="text-gray-600">Acompanhamento de tarefas com gamificação e indicadores em tempo real</p>
                   </div>
                 </div>
               </CardContent>
@@ -302,10 +302,10 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-brand-primary mb-6">
-              Três pilares. Um método que transforma.
+              Como funciona o Método GAP
             </h2>
             <p className="text-xl text-gray-600">
-              A base do Método GAP está em três pilares comportamentais:
+              Nossa abordagem se baseia em três pilares fundamentais:
             </p>
           </div>
 
@@ -315,7 +315,7 @@ const Index = () => {
                 <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Target className="w-8 h-8 text-red-600" />
                 </div>
-                <CardTitle className="text-center text-red-600">Desconforto</CardTitle>
+                <CardTitle className="text-center text-red-600">Desconforto Produtivo</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-center">
@@ -329,11 +329,11 @@ const Index = () => {
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <TrendingUp className="w-8 h-8 text-green-600" />
                 </div>
-                <CardTitle className="text-center text-green-600">Reconhecimento</CardTitle>
+                <CardTitle className="text-center text-green-600">Reconhecimento Justo</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-center">
-                  Sistema de reconhecimento baseado em mérito e resultados concretos, não em favoritismo.
+                  Sistema de reconhecimento baseado em mérito e resultados concretos, promovendo a realização profissional.
                 </p>
               </CardContent>
             </Card>
@@ -356,10 +356,10 @@ const Index = () => {
           <div className="text-center">
             <Card className="bg-gradient-to-r from-purple-50 to-pink-50 border-purple-200 max-w-2xl mx-auto">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-purple-800 mb-4">Rotina Gamificada</h3>
+                <h3 className="text-2xl font-bold text-purple-800 mb-4">Gamificação Inteligente</h3>
                 <p className="text-purple-700">
-                  Transformamos o dia a dia da sua equipe em um jogo, com acompanhamento em tempo real 
-                  e resultados mensuráveis que motivam e engajam.
+                  Transformamos o acompanhamento de tarefas em uma experiência engajante, 
+                  com indicadores de desempenho em tempo real que motivam e orientam sua equipe.
                 </p>
               </CardContent>
             </Card>
@@ -372,37 +372,37 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className="mb-4 bg-brand-primary text-white px-4 py-2">TECNOLOGIA AVANÇADA</Badge>
+              <Badge className="mb-4 bg-brand-primary text-white px-4 py-2">PLATAFORMA PRÓPRIA</Badge>
               <h2 className="text-4xl font-bold text-brand-primary mb-6">
-                Tecnologia que coloca você no controle
+                Indicadores em tempo real para gestão previsível
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                Nossa plataforma mostra em tempo real quem fez e quem não fez suas tarefas, 
-                com relatórios detalhados, gráficos intuitivos e indicadores de performance.
+                Nossa plataforma própria mostra em tempo real o andamento das tarefas, 
+                com relatórios detalhados, gamificação e indicadores de performance que tornam a gestão previsível.
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">Acesso via celular ou computador</span>
+                  <span className="text-gray-700">Acompanhamento de tarefas em tempo real</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">Interface simples e intuitiva</span>
+                  <span className="text-gray-700">Gamificação para engajamento</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">Relatórios automáticos e personalizados</span>
+                  <span className="text-gray-700">Relatórios automáticos de performance</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">Acompanhamento remoto completo</span>
+                  <span className="text-gray-700">Gestão previsível baseada em dados</span>
                 </div>
               </div>
               <Button 
                 onClick={openWhatsApp}
                 className="bg-brand-primary hover:bg-brand-secondary text-white cta-button"
               >
-                Ver demonstração da plataforma
+                Conhecer a plataforma
               </Button>
             </div>
             <div>
@@ -426,7 +426,7 @@ const Index = () => {
                     </div>
                     <div className="bg-gray-50 p-4 rounded-lg">
                       <p className="text-sm text-gray-600 text-center">
-                        Dados atualizados em tempo real
+                        Indicadores atualizados em tempo real
                       </p>
                     </div>
                   </div>
@@ -442,11 +442,11 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-brand-primary mb-6">
-              Especialistas que lidam com gente, não só com números
+              Consultoria focada na realização das pessoas
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Nossos consultores Scalco são especialistas em desenvolver o potencial das equipes, 
-              resolvendo resistências e transformando comportamentos.
+              Nossa missão é contribuir significativamente para a realização pessoal e profissional das pessoas. 
+              Nossos consultores especializados trabalham o desenvolvimento humano em cada organização.
             </p>
           </div>
 
@@ -459,31 +459,31 @@ const Index = () => {
                 </div>
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <h4 className="text-xl font-semibold mb-4 text-blue-200">O que fazemos:</h4>
+                    <h4 className="text-xl font-semibold mb-4 text-blue-200">Nossa abordagem:</h4>
                     <ul className="space-y-3">
                       <li className="flex items-start">
                         <CheckCircle className="w-5 h-5 text-green-400 mr-3 mt-0.5" />
-                        <span>Desenvolvimento de potencial individual</span>
+                        <span>Desenvolvimento do potencial individual</span>
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="w-5 h-5 text-green-400 mr-3 mt-0.5" />
-                        <span>Resolução de resistências comportamentais</span>
+                        <span>Realização pessoal e profissional</span>
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="w-5 h-5 text-green-400 mr-3 mt-0.5" />
-                        <span>Alinhamento de expectativas e metas</span>
+                        <span>Alinhamento de propósitos e metas</span>
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="w-5 h-5 text-green-400 mr-3 mt-0.5" />
-                        <span>Criação de cultura de alta performance</span>
+                        <span>Cultura de alta performance sustentável</span>
                       </li>
                     </ul>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                    <h4 className="text-xl font-semibold mb-4 text-orange-300">A verdade é:</h4>
+                    <h4 className="text-xl font-semibold mb-4 text-orange-300">Nossa visão:</h4>
                     <p className="text-lg italic">
-                      "Seus colaboradores podem muito mais do que entregam hoje. 
-                      Eles só precisam do direcionamento e da motivação certos."
+                      "Queremos atingir 50 mil usuários ativos até 2028, 
+                      transformando a gestão de equipes em organizações de todos os tamanhos."
                     </p>
                   </div>
                 </div>
@@ -498,10 +498,10 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-brand-primary mb-6">
-              Você não precisa acreditar na gente. Acredite nos números.
+              Gestão baseada em dados, não em achismos
             </h2>
             <p className="text-xl text-gray-600">
-              A partir da primeira semana, você verá resultados concretos:
+              Com o Método GAP, você tem visibilidade completa sobre sua equipe:
             </p>
           </div>
 
@@ -509,32 +509,32 @@ const Index = () => {
             <Card className="text-center hover:shadow-lg transition-shadow animate-element">
               <CardContent className="p-6">
                 <BarChart3 className="w-12 h-12 text-green-600 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-brand-primary mb-2">Setores que mais entregam</h3>
-                <p className="text-gray-600 text-sm">Identifique quais áreas estão performando melhor</p>
+                <h3 className="text-lg font-semibold text-brand-primary mb-2">Setores mais produtivos</h3>
+                <p className="text-gray-600 text-sm">Identifique quais áreas estão entregando melhor</p>
               </CardContent>
             </Card>
 
             <Card className="text-center hover:shadow-lg transition-shadow animate-element">
               <CardContent className="p-6">
                 <Users className="w-12 h-12 text-brand-secondary mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-brand-primary mb-2">Quem veste a camisa</h3>
-                <p className="text-gray-600 text-sm">Descubra seus verdadeiros talentos e potenciais</p>
+                <h3 className="text-lg font-semibold text-brand-primary mb-2">Talentos em destaque</h3>
+                <p className="text-gray-600 text-sm">Reconheça quem realmente veste a camisa</p>
               </CardContent>
             </Card>
 
             <Card className="text-center hover:shadow-lg transition-shadow animate-element">
               <CardContent className="p-6">
                 <Target className="w-12 h-12 text-red-600 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-brand-primary mb-2">Gargalos identificados</h3>
-                <p className="text-gray-600 text-sm">Encontre e elimine os pontos de travamento</p>
+                <h3 className="text-lg font-semibold text-brand-primary mb-2">Gargalos mapeados</h3>
+                <p className="text-gray-600 text-sm">Encontre e elimine pontos de travamento</p>
               </CardContent>
             </Card>
 
             <Card className="text-center hover:shadow-lg transition-shadow animate-element">
               <CardContent className="p-6">
                 <TrendingUp className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-brand-primary mb-2">Decisões mais justas</h3>
-                <p className="text-gray-600 text-sm">Base sólida de dados para escolhas acertadas</p>
+                <h3 className="text-lg font-semibold text-brand-primary mb-2">Decisões assertivas</h3>
+                <p className="text-gray-600 text-sm">Base sólida de dados para escolhas certas</p>
               </CardContent>
             </Card>
           </div>
@@ -542,10 +542,10 @@ const Index = () => {
           <div className="text-center">
             <Card className="bg-green-600 text-white max-w-2xl mx-auto">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Dados concretos para decisões melhores</h3>
+                <h3 className="text-2xl font-bold mb-4">Gestão eficiente e previsível</h3>
                 <p className="text-green-100 text-lg">
-                  Pare de tomar decisões baseadas em "achismos". 
-                  Tenha informações precisas sobre sua equipe em tempo real.
+                  Transforme sua gestão de reativa para proativa. 
+                  Tenha dados concretos para tomar as melhores decisões sobre sua equipe.
                 </p>
               </CardContent>
             </Card>
@@ -558,11 +558,11 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="text-center">
             <h2 className="text-5xl font-bold mb-6">
-              Pronto para parar de pagar por 100% e receber só 75%?
+              Pronto para uma gestão mais eficiente e previsível?
             </h2>
             <p className="text-2xl mb-12 text-orange-100">
               O Método GAP está pronto para transformar sua gestão. 
-              <br />Fale conosco agora e veja como podemos ajudar sua empresa.
+              <br />Converse conosco e descubra como podemos contribuir para a realização da sua equipe.
             </p>
             <Button 
               onClick={openWhatsApp}
@@ -570,7 +570,7 @@ const Index = () => {
               className="bg-white text-orange-600 hover:bg-gray-100 px-12 py-6 text-xl font-bold mb-8 cta-button"
             >
               <MessageCircle className="w-6 h-6 mr-3" />
-              Quero aplicar o Método GAP na minha empresa
+              Quero conhecer o Método GAP
             </Button>
             <div className="flex justify-center space-x-8 mt-8">
               <div className="flex items-center">
@@ -597,7 +597,10 @@ const Index = () => {
                 className="h-16 w-auto opacity-80"
               />
             </div>
-            <p className="text-slate-400 mb-6">Método GAP - Gestão para Alta Performance</p>
+            <p className="text-slate-400 mb-2">Método GAP - Gestão para Alta Performance</p>
+            <p className="text-slate-500 text-sm mb-4">
+              Contribuindo para a realização pessoal e profissional das pessoas
+            </p>
             <p className="text-slate-500 text-sm">
               © 2024 Scalco Consultoria. Todos os direitos reservados.
             </p>
