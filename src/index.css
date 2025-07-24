@@ -171,3 +171,182 @@ All colors MUST be HSL.
     background-color: hsl(var(--brand-secondary));
   }
 }
+
+/* Animation keyframes */
+@keyframes fillProgress {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--target-width, 100%);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animation classes */
+.animate-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.animate-element.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.progress-fill {
+  transition: width 2s ease-out;
+}
+
+.progress-fill.full {
+  --target-width: 100%;
+}
+
+.progress-fill.partial {
+  --target-width: 75%;
+}
+
+/* Button hover effects */
+.cta-button {
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+}
+
+/* Card hover effects */
+.hover\:shadow-xl:hover {
+  transform: translateY(-10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Parallax effect for hero */
+.hero {
+  will-change: transform;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .pillars,
+  .results-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pillar,
+  .result-item,
+  .consultant-card {
+    max-width: 90%;
+  }
+
+  .platform-features h3 {
+    font-size: 1.5rem;
+  }
+
+  .final-cta .cta-title {
+    font-size: 2rem;
+  }
+
+  .final-cta .cta-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .stats-card {
+    flex-direction: column;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .features-list li {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .cta-button.large {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .method-text {
+    font-size: 1.5rem;
+  }
+
+  .gap-text {
+    font-size: 4rem;
+  }
+
+  .subtitle-text {
+    font-size: 1rem;
+  }
+
+  .metric-card {
+    flex: 1 1 100%;
+  }
+}

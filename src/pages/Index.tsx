@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -14,9 +13,121 @@ const Index = () => {
   };
 
   const openWhatsApp = () => {
+    const phoneNumber = '5511999999999';
     const message = encodeURIComponent("Olá! Gostaria de saber mais sobre o Método GAP e como ele pode transformar a gestão da minha equipe.");
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+    window.open(whatsappUrl, '_blank');
   };
+
+  useEffect(() => {
+    // Animação de entrada dos elementos
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observar elementos para animação
+    const elementsToAnimate = document.querySelectorAll('.animate-element');
+    elementsToAnimate.forEach(el => {
+      observer.observe(el);
+    });
+
+    // Animação das barras de progresso
+    const progressBars = document.querySelectorAll('.progress-fill');
+    const progressObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const progressBar = entry.target as HTMLElement;
+          progressBar.style.animation = 'fillProgress 2s ease-out forwards';
+        }
+      });
+    }, { threshold: 0.5 });
+
+    progressBars.forEach(bar => {
+      progressObserver.observe(bar);
+    });
+
+    // Contador animado para métricas
+    const animateCounters = () => {
+      const counters = document.querySelectorAll('.metric-value');
+      counters.forEach(counter => {
+        const target = parseInt(counter.textContent || '0');
+        const increment = target / 100;
+        let current = 0;
+        
+        const updateCounter = () => {
+          if (current < target) {
+            current += increment;
+            counter.textContent = Math.ceil(current) + '%';
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = target + '%';
+          }
+        };
+        
+        updateCounter();
+      });
+    };
+
+    // Observar seção da plataforma para iniciar contador
+    const platformSection = document.querySelector('.platform-section');
+    if (platformSection) {
+      const platformObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounters();
+            platformObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      platformObserver.observe(platformSection);
+    }
+
+    // Efeito parallax suave no hero
+    const handleScroll = () => {
+      const scrolled = window.pageYOffset;
+      const hero = document.querySelector('.hero');
+      if (hero) {
+        const rate = scrolled * -0.5;
+        (hero as HTMLElement).style.transform = `translateY(${rate}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Adicionar efeitos hover aos botões
+    const buttons = document.querySelectorAll('.cta-button');
+    buttons.forEach(button => {
+      const handleMouseEnter = () => {
+        (button as HTMLElement).style.transform = 'translateY(-2px)';
+        (button as HTMLElement).style.boxShadow = '0 8px 25px rgba(0, 123, 255, 0.3)';
+      };
+      
+      const handleMouseLeave = () => {
+        (button as HTMLElement).style.transform = 'translateY(0)';
+        (button as HTMLElement).style.boxShadow = 'none';
+      };
+
+      button.addEventListener('mouseenter', handleMouseEnter);
+      button.addEventListener('mouseleave', handleMouseLeave);
+    });
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+      progressObserver.disconnect();
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
@@ -33,7 +144,7 @@ const Index = () => {
             </div>
             <Button 
               onClick={openWhatsApp}
-              className="bg-green-600 hover:bg-green-700 text-white"
+              className="bg-green-600 hover:bg-green-700 text-white cta-button"
             >
               <MessageCircle className="w-4 h-4 mr-2" />
               Fale Conosco
@@ -43,7 +154,7 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+      <section className="hero py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -59,7 +170,7 @@ const Index = () => {
               <Button 
                 onClick={openWhatsApp}
                 size="lg" 
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg"
+                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg cta-button"
               >
                 <Rocket className="w-5 h-5 mr-3" />
                 Quero transformar minha equipe
@@ -74,14 +185,14 @@ const Index = () => {
                       <Badge className="bg-green-500 text-white px-4 py-2 text-lg">100%</Badge>
                     </div>
                     <div className="w-full bg-white/20 rounded-full h-4">
-                      <div className="bg-green-500 h-4 rounded-full w-full"></div>
+                      <div className="bg-green-500 h-4 rounded-full w-full progress-fill"></div>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-lg">Equipe entrega:</span>
                       <Badge className="bg-red-500 text-white px-4 py-2 text-lg">75%</Badge>
                     </div>
                     <div className="w-full bg-white/20 rounded-full h-4">
-                      <div className="bg-red-500 h-4 rounded-full w-3/4"></div>
+                      <div className="bg-red-500 h-4 rounded-full w-3/4 progress-fill"></div>
                     </div>
                     <div className="text-center pt-4 border-t border-white/20">
                       <p className="text-orange-300 font-semibold">Isso é justo?</p>
@@ -199,7 +310,7 @@ const Index = () => {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8 mb-12">
-            <Card className="hover:shadow-xl transition-shadow">
+            <Card className="hover:shadow-xl transition-shadow animate-element">
               <CardHeader>
                 <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Target className="w-8 h-8 text-red-600" />
@@ -213,7 +324,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl transition-shadow">
+            <Card className="hover:shadow-xl transition-shadow animate-element">
               <CardHeader>
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <TrendingUp className="w-8 h-8 text-green-600" />
@@ -227,7 +338,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl transition-shadow">
+            <Card className="hover:shadow-xl transition-shadow animate-element">
               <CardHeader>
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Zap className="w-8 h-8 text-brand-secondary" />
@@ -257,7 +368,7 @@ const Index = () => {
       </section>
 
       {/* Platform Section */}
-      <section id="plataforma" className="py-20 bg-gradient-to-br from-slate-50 to-gray-100">
+      <section id="plataforma" className="platform-section py-20 bg-gradient-to-br from-slate-50 to-gray-100">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -289,7 +400,7 @@ const Index = () => {
               </div>
               <Button 
                 onClick={openWhatsApp}
-                className="bg-brand-primary hover:bg-brand-secondary text-white"
+                className="bg-brand-primary hover:bg-brand-secondary text-white cta-button"
               >
                 Ver demonstração da plataforma
               </Button>
@@ -301,17 +412,17 @@ const Index = () => {
                 </CardHeader>
                 <CardContent className="p-6">
                   <div className="space-y-6">
-                    <div className="flex justify-between items-center p-4 bg-green-50 rounded-lg">
+                    <div className="flex justify-between items-center p-4 bg-green-50 rounded-lg animate-element">
                       <span className="font-medium">Tarefas Concluídas</span>
-                      <Badge className="bg-green-600 text-white">87%</Badge>
+                      <Badge className="bg-green-600 text-white metric-value">87%</Badge>
                     </div>
-                    <div className="flex justify-between items-center p-4 bg-blue-50 rounded-lg">
+                    <div className="flex justify-between items-center p-4 bg-blue-50 rounded-lg animate-element">
                       <span className="font-medium">Performance Geral</span>
-                      <Badge className="bg-brand-secondary text-white">92%</Badge>
+                      <Badge className="bg-brand-secondary text-white metric-value">92%</Badge>
                     </div>
-                    <div className="flex justify-between items-center p-4 bg-purple-50 rounded-lg">
+                    <div className="flex justify-between items-center p-4 bg-purple-50 rounded-lg animate-element">
                       <span className="font-medium">Engajamento</span>
-                      <Badge className="bg-purple-600 text-white">95%</Badge>
+                      <Badge className="bg-purple-600 text-white metric-value">95%</Badge>
                     </div>
                     <div className="bg-gray-50 p-4 rounded-lg">
                       <p className="text-sm text-gray-600 text-center">
@@ -395,7 +506,7 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <Card className="text-center hover:shadow-lg transition-shadow">
+            <Card className="text-center hover:shadow-lg transition-shadow animate-element">
               <CardContent className="p-6">
                 <BarChart3 className="w-12 h-12 text-green-600 mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-brand-primary mb-2">Setores que mais entregam</h3>
@@ -403,7 +514,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="text-center hover:shadow-lg transition-shadow">
+            <Card className="text-center hover:shadow-lg transition-shadow animate-element">
               <CardContent className="p-6">
                 <Users className="w-12 h-12 text-brand-secondary mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-brand-primary mb-2">Quem veste a camisa</h3>
@@ -411,7 +522,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="text-center hover:shadow-lg transition-shadow">
+            <Card className="text-center hover:shadow-lg transition-shadow animate-element">
               <CardContent className="p-6">
                 <Target className="w-12 h-12 text-red-600 mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-brand-primary mb-2">Gargalos identificados</h3>
@@ -419,7 +530,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="text-center hover:shadow-lg transition-shadow">
+            <Card className="text-center hover:shadow-lg transition-shadow animate-element">
               <CardContent className="p-6">
                 <TrendingUp className="w-12 h-12 text-purple-600 mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-brand-primary mb-2">Decisões mais justas</h3>
@@ -456,7 +567,7 @@ const Index = () => {
             <Button 
               onClick={openWhatsApp}
               size="lg" 
-              className="bg-white text-orange-600 hover:bg-gray-100 px-12 py-6 text-xl font-bold mb-8"
+              className="bg-white text-orange-600 hover:bg-gray-100 px-12 py-6 text-xl font-bold mb-8 cta-button"
             >
               <MessageCircle className="w-6 h-6 mr-3" />
               Quero aplicar o Método GAP na minha empresa
