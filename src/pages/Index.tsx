@@ -15,7 +15,8 @@ import {
   ArrowRight,
   Phone,
   Mail,
-  MapPin
+  MapPin,
+  Quote
 } from "lucide-react";
 
 export default function Index() {
@@ -372,31 +373,92 @@ export default function Index() {
               </Card>
             </div>
 
+            <div className="text-center">
+              <Button size="lg" className="bg-brand-dark-blue hover:bg-brand-dark-blue/90 text-brand-white">
+                Quero esses resultados no meu negócio
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-bold text-center text-brand-dark-blue mb-8">
+              O que nossos clientes falam
+            </h2>
+            <p className="text-xl text-gray-700 text-center mb-12 max-w-3xl mx-auto">
+              Depoimentos reais de empresários que transformaram seus negócios com o Método GAP
+            </p>
+            
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <Card className="border-l-4 border-l-brand-yellow">
+              <Card className="border-l-4 border-l-brand-yellow hover:shadow-lg transition-shadow duration-300">
                 <CardContent className="p-6">
-                  <Star className="w-8 h-8 text-brand-yellow mb-4" />
+                  <Quote className="w-8 h-8 text-brand-yellow mb-4" />
                   <blockquote className="text-lg text-gray-700 italic mb-4">
-                    "A equipe passou a se responsabilizar sem eu ficar em cima."
+                    "Antes da Scalco, a gestão de pessoas era muito fraca — não havia uma forma precisa de medir o desempenho de cada colaborador. Eu já trabalhava com loja há 13 anos, e justamente no ano em que a Scalco entrou, fomos campeões nacionais, concorrendo com 365 lojas."
                   </blockquote>
-                  <cite className="text-brand-dark-blue font-semibold">- Carlos M., CEO</cite>
+                  <cite className="text-brand-dark-blue font-semibold">- Antero Vieira, Postos Tasca</cite>
                 </CardContent>
               </Card>
               
-              <Card className="border-l-4 border-l-brand-yellow">
+              <Card className="border-l-4 border-l-brand-yellow hover:shadow-lg transition-shadow duration-300">
                 <CardContent className="p-6">
-                  <Star className="w-8 h-8 text-brand-yellow mb-4" />
+                  <Quote className="w-8 h-8 text-brand-yellow mb-4" />
                   <blockquote className="text-lg text-gray-700 italic mb-4">
-                    "Vi quem realmente veste a camisa."
+                    "Antes da Scalco, a gente 'achava' muito... O primeiro impacto foi a união da equipe — algo que a gente nem esperava. A gente não tinha gerentes antes... depois que implantamos a Scalco, formamos gerentes."
                   </blockquote>
-                  <cite className="text-brand-dark-blue font-semibold">- Ana P., Gerente</cite>
+                  <cite className="text-brand-dark-blue font-semibold">- Maurício Januzzi, Postos Malerba</cite>
+                </CardContent>
+              </Card>
+
+              <Card className="border-l-4 border-l-brand-yellow hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <Quote className="w-8 h-8 text-brand-yellow mb-4" />
+                  <blockquote className="text-lg text-gray-700 italic mb-4">
+                    "Depois da chegada da consultoria, veio um boom geral: metas, as vendas alavancaram, o atendimento melhorou... Tinha posto vendendo R$ 10.000,00 em mix automotivo, e depois saltou pra R$ 25.000,00 – R$ 30.000,00. O resultado veio rápido."
+                  </blockquote>
+                  <cite className="text-brand-dark-blue font-semibold">- Thiago Perin, Rede Marcela</cite>
+                </CardContent>
+              </Card>
+
+              <Card className="border-l-4 border-l-brand-yellow hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <Quote className="w-8 h-8 text-brand-yellow mb-4" />
+                  <blockquote className="text-lg text-gray-700 italic mb-4">
+                    "Depois que a Scalco chegou, a gente conseguiu sair do 'achômetro' e passar a ter certezas — e crescer com esse trabalho."
+                  </blockquote>
+                  <cite className="text-brand-dark-blue font-semibold">- Camila Maluf, Postos Tasca</cite>
+                </CardContent>
+              </Card>
+
+              <Card className="border-l-4 border-l-brand-yellow hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <Quote className="w-8 h-8 text-brand-yellow mb-4" />
+                  <blockquote className="text-lg text-gray-700 italic mb-4">
+                    "Os elogios começaram a aparecer, e o pessoal não estava muito acostumado com isso... E aí a satisfação começou a trazer resultado — e isso deixou a gente mais confiante no nosso trabalho."
+                  </blockquote>
+                  <cite className="text-brand-dark-blue font-semibold">- Marcelo Oliveira, Rede Hurray</cite>
+                </CardContent>
+              </Card>
+
+              <Card className="border-l-4 border-l-brand-yellow hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <Quote className="w-8 h-8 text-brand-yellow mb-4" />
+                  <blockquote className="text-lg text-gray-700 italic mb-4">
+                    "Nós tínhamos um conjunto de processos próprios, mas não medíamos com a frequência e o método GAP nos trouxe precisão."
+                  </blockquote>
+                  <cite className="text-brand-dark-blue font-semibold">- Wellington Granja, Postos Petrocal</cite>
                 </CardContent>
               </Card>
             </div>
 
             <div className="text-center">
               <Button size="lg" className="bg-brand-dark-blue hover:bg-brand-dark-blue/90 text-brand-white">
-                Quero esses resultados no meu negócio
+                Quero resultados como esses
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </div>
