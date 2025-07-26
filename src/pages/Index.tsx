@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -102,66 +101,78 @@ const Index = () => {
       {/* Problem Section - Você cumpre sua parte */}
       <section className="py-16 sm:py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-dark-blue mb-6">
-              Você cumpre sua parte. E a sua equipe?
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-700 leading-relaxed mb-8">
-              Você garante estrutura, pagamento e condições. E ainda precisa cobrar o óbvio?
-            </p>
-          </div>
-          
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
-            <Card className="p-6 hover:shadow-xl transition-all duration-300">
-              <CardContent className="text-center">
-                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Clock className="w-8 h-8 text-red-600" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-brand-dark-blue mb-3">Fora do Prazo</h3>
-                <p className="text-gray-600">
-                  Tarefas entregues fora do prazo constantemente
-                </p>
-              </CardContent>
-            </Card>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-dark-blue mb-6">
+                Você cumpre sua parte. E a sua equipe?
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-700 leading-relaxed mb-8">
+                Você garante estrutura, pagamento e condições. E ainda precisa cobrar o óbvio?
+              </p>
+            </div>
             
-            <Card className="p-6 hover:shadow-xl transition-all duration-300">
-              <CardContent className="text-center">
-                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <UserX className="w-8 h-8 text-red-600" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-brand-dark-blue mb-3">Sem Direcionamento</h3>
-                <p className="text-gray-600">
-                  Ninguém sabe quem faz o quê
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="p-6 hover:shadow-xl transition-all duration-300 sm:col-span-2 lg:col-span-1">
-              <CardContent className="text-center">
-                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Wrench className="w-8 h-8 text-red-600" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-brand-dark-blue mb-3">Qualidade Baixa</h3>
-                <p className="text-gray-600">
-                  Trabalhos feitos de qualquer jeito
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+              <div className="space-y-6">
+                <Card className="p-6 hover:shadow-xl transition-all duration-300">
+                  <CardContent className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-6 h-6 text-red-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-brand-dark-blue mb-2">Fora do Prazo</h3>
+                      <p className="text-gray-600">Tarefas entregues fora do prazo constantemente</p>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="p-6 hover:shadow-xl transition-all duration-300">
+                  <CardContent className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <UserX className="w-6 h-6 text-red-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-brand-dark-blue mb-2">Sem Direcionamento</h3>
+                      <p className="text-gray-600">Ninguém sabe quem faz o quê</p>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="p-6 hover:shadow-xl transition-all duration-300">
+                  <CardContent className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Wrench className="w-6 h-6 text-red-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-brand-dark-blue mb-2">Qualidade Baixa</h3>
+                      <p className="text-gray-600">Trabalhos feitos de qualquer jeito</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+              
+              <div className="flex justify-center">
+                <img 
+                  src="/lovable-uploads/b95f29e5-fc7c-4242-8a89-38902343ec9f.png" 
+                  alt="Gráfico mostrando a diferença entre 100% pago vs 75% entregue" 
+                  className="max-w-full h-auto rounded-lg shadow-2xl"
+                />
+              </div>
+            </div>
 
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-lg text-gray-700 mb-8 font-semibold">
-              Essa é a realidade de muitas empresas com várias unidades e equipes descentralizadas.
-            </p>
-            
-            <Button 
-              size="lg" 
-              className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-8 py-4 text-lg font-semibold"
-              onClick={handleWhatsAppClick}
-            >
-              Quero corrigir esse desequilíbrio agora
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <div className="text-center">
+              <p className="text-lg text-gray-700 mb-8 font-semibold">
+                Essa é a realidade de muitas empresas com várias unidades e equipes descentralizadas.
+              </p>
+              
+              <Button 
+                size="lg" 
+                className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-8 py-4 text-lg font-semibold"
+                onClick={handleWhatsAppClick}
+              >
+                Quero corrigir esse desequilíbrio agora
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </div>
           </div>
         </div>
       </section>
