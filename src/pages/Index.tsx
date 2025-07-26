@@ -51,6 +51,15 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
             <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+              {/* Logo */}
+              <div className="mb-8">
+                <img 
+                  src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" 
+                  alt="Grupo Scalco Logo" 
+                  className="max-h-20 sm:max-h-24 mx-auto"
+                />
+              </div>
+
               <Badge className="bg-brand-yellow text-brand-dark-blue mb-6 px-4 py-2 text-sm sm:text-base font-semibold">
                 +80 empresas transformadas com o GAP
               </Badge>
@@ -589,6 +598,14 @@ const Index = () => {
           <div className="max-w-6xl mx-auto">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
               <div className="sm:col-span-2 lg:col-span-1">
+                {/* Logo in footer */}
+                <div className="mb-4">
+                  <img 
+                    src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" 
+                    alt="Grupo Scalco Logo" 
+                    className="max-h-16 w-auto"
+                  />
+                </div>
                 <h3 className="text-2xl font-bold text-brand-yellow mb-4">Grupo Scalco</h3>
                 <p className="text-brand-white/80 mb-4">
                   Transformamos equipes através do Método GAP: consultoria + tecnologia.
