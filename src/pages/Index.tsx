@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -66,7 +65,7 @@ const Index = () => {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="border-brand-white text-brand-white hover:bg-brand-white hover:text-brand-dark-blue px-8 py-4 text-lg w-full sm:w-auto"
+                  className="border-2 border-brand-yellow text-brand-yellow bg-transparent hover:bg-brand-yellow hover:text-brand-dark-blue hover:border-brand-yellow px-8 py-4 text-lg font-semibold w-full sm:w-auto transition-all duration-300"
                   onClick={() => scrollToSection('resultados')}
                 >
                   Ver Resultados
