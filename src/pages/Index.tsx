@@ -22,51 +22,59 @@ const Index = () => {
     window.open(`https://wa.me/5551999712999?text=${message}`, '_blank');
   };
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
-      {/* Hero Section - Quebra de padrão */}
+      {/* Hero Section - Duas Colunas */}
       <section className="relative bg-gradient-to-r from-brand-dark-blue to-brand-light-blue min-h-screen flex items-center overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-5xl mx-auto text-center">
-            <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              {/* Logo */}
-              <div className="mb-8">
-                <img src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" alt="Grupo Scalco Logo" className="max-h-20 sm:max-h-24 mx-auto" />
+          <div className="max-w-7xl mx-auto">
+            <div className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+              
+              {/* Coluna Esquerda - Conteúdo Textual */}
+              <div className="order-2 lg:order-1 text-center lg:text-left">
+                <Badge className="bg-brand-yellow text-brand-dark-blue mb-6 px-4 py-2 text-sm sm:text-base font-semibold">
+                  +80 empresas transformadas com o GAP
+                </Badge>
+                
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-brand-white mb-6 leading-tight">
+                  Você paga <span className="text-brand-yellow">100%</span>.
+                  <br />
+                  Sua equipe entrega só <span className="text-red-400">75%</span>.
+                  <br />
+                  <span className="text-brand-yellow">Isso é justo?</span>
+                </h1>
+                
+                <p className="text-lg sm:text-xl md:text-2xl text-brand-white/90 mb-8 leading-relaxed">
+                  Chegou o <strong>Método GAP</strong>: consultoria em gestão de pessoas + tecnologia para transformar o desempenho da sua empresa.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center lg:justify-start items-center mb-8">
+                  <div className="flex items-center gap-2 text-brand-white">
+                    <CheckCircle className="w-5 h-5 text-brand-yellow" />
+                    <span className="font-semibold">Mais controle</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-brand-white">
+                    <CheckCircle className="w-5 h-5 text-brand-yellow" />
+                    <span className="font-semibold">Mais entrega</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-brand-white">
+                    <CheckCircle className="w-5 h-5 text-brand-yellow" />
+                    <span className="font-semibold">Menos desculpas</span>
+                  </div>
+                </div>
+                
+                <Button size="lg" className="bg-brand-yellow text-brand-dark-blue hover:bg-brand-yellow/90 px-8 py-4 text-lg font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300" onClick={handleWhatsAppClick}>
+                  Quero aplicar o Método GAP na minha empresa
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
               </div>
 
-              <Badge className="bg-brand-yellow text-brand-dark-blue mb-6 px-4 py-2 text-sm sm:text-base font-semibold">
-                +80 empresas transformadas com o GAP
-              </Badge>
-              
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-brand-white mb-6 leading-tight">
-                Você paga <span className="text-brand-yellow">100%</span>.
-                <br />
-                Sua equipe entrega só <span className="text-red-400">75%</span>.
-                <br />
-                <span className="text-brand-yellow">Isso é justo?</span>
-              </h1>
-              
-              <p className="text-lg sm:text-xl md:text-2xl text-brand-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
-                Chegou o <strong>Método GAP</strong>: consultoria em gestão de pessoas + tecnologia para transformar o desempenho da sua empresa.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center items-center mb-8">
-                <div className="flex items-center gap-2 text-brand-white">
-                  <CheckCircle className="w-5 h-5 text-brand-yellow" />
-                  <span className="font-semibold">Mais controle</span>
-                </div>
-                <div className="flex items-center gap-2 text-brand-white">
-                  <CheckCircle className="w-5 h-5 text-brand-yellow" />
-                  <span className="font-semibold">Mais entrega</span>
-                </div>
-                <div className="flex items-center gap-2 text-brand-white">
-                  <CheckCircle className="w-5 h-5 text-brand-yellow" />
-                  <span className="font-semibold">Menos desculpas</span>
-                </div>
+              {/* Coluna Direita - Logo Grande */}
+              <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+                <img 
+                  src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" 
+                  alt="Grupo Scalco Logo" 
+                  className="max-h-64 sm:max-h-80 lg:max-h-96 xl:max-h-[28rem] w-auto object-contain" 
+                />
               </div>
-              
-              <Button size="lg" className="bg-brand-yellow text-brand-dark-blue hover:bg-brand-yellow/90 px-8 py-4 text-lg font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300" onClick={handleWhatsAppClick}>
-                Quero aplicar o Método GAP na minha empresa
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
             </div>
           </div>
         </div>
