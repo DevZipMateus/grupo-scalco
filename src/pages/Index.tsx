@@ -227,7 +227,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 className="bg-brand-light-blue text-brand-white hover:bg-brand-light-blue/90 px-8 py-4 text-lg font-semibold"
-                onClick={() => scrollToSection('pilares')}
+                onClick={handleWhatsAppClick}
               >
                 Conheça o Método GAP
                 <ArrowRight className="ml-2 w-5 h-5" />
