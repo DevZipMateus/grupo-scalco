@@ -404,6 +404,72 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Clients Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-bold text-center text-brand-dark-blue mb-8">
+              Clientes que confiam no GAP
+            </h2>
+            <p className="text-xl text-gray-700 text-center mb-12 max-w-3xl mx-auto">
+              Empresas de diversos segmentos já transformaram suas equipes com o Método GAP
+            </p>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
+              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 w-full h-24 flex items-center justify-center">
+                <img 
+                  src="/lovable-uploads/clientes/1753383806026_1_tasca.png" 
+                  alt="Tasca"
+                  className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 w-full h-24 flex items-center justify-center">
+                <img 
+                  src="/lovable-uploads/clientes/1753383806793_3_hurray.jpg" 
+                  alt="Hurray"
+                  className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 w-full h-24 flex items-center justify-center">
+                <img 
+                  src="/lovable-uploads/clientes/1753383807178_4_malerba.png" 
+                  alt="Malerba"
+                  className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 w-full h-24 flex items-center justify-center">
+                <img 
+                  src="/lovable-uploads/clientes/marcela.png" 
+                  alt="Marcela"
+                  className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 w-full h-24 flex items-center justify-center">
+                <img 
+                  src="/lovable-uploads/clientes/petrocal.png" 
+                  alt="Petrocal"
+                  className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <p className="text-lg text-gray-700 mb-8">
+                Junte-se a essas empresas e transforme a performance da sua equipe
+              </p>
+              <Button size="lg" className="bg-brand-dark-blue hover:bg-brand-dark-blue/90 text-brand-white">
+                Quero ser o próximo cliente
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Who Uses GAP */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
