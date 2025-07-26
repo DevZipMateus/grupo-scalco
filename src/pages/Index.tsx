@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Rocket, Users, TrendingUp, MessageCircle, Mail, CheckCircle, BarChart3, Target, Zap } from 'lucide-react';
+import { Rocket, Users, TrendingUp, MessageCircle, Mail, CheckCircle, BarChart3, Target, Zap, Shield, Clock, AlertTriangle, Eye, Phone, MapPin } from 'lucide-react';
 
 const Index = () => {
   const scrollToSection = (sectionId: string) => {
@@ -15,7 +15,14 @@ const Index = () => {
 
   const openWhatsApp = () => {
     const phoneNumber = '5511999999999';
-    const message = encodeURIComponent("Olá! Gostaria de saber mais sobre o Método GAP e como ele pode transformar a gestão da minha equipe.");
+    const message = encodeURIComponent("Olá! Quero aplicar o Método GAP na minha empresa e agendar meu diagnóstico gratuito.");
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const openWhatsAppDiagnosis = () => {
+    const phoneNumber = '5511999999999';
+    const message = encodeURIComponent("Olá! Quero agendar meu diagnóstico gratuito do Método GAP.");
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -35,13 +42,11 @@ const Index = () => {
       });
     }, observerOptions);
 
-    // Observar elementos para animação
     const elementsToAnimate = document.querySelectorAll('.animate-element');
     elementsToAnimate.forEach(el => {
       observer.observe(el);
     });
 
-    // Animação das barras de progresso
     const progressBars = document.querySelectorAll('.progress-fill');
     const progressObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -56,7 +61,6 @@ const Index = () => {
       progressObserver.observe(bar);
     });
 
-    // Contador animado para métricas
     const animateCounters = () => {
       const counters = document.querySelectorAll('.metric-value');
       counters.forEach(counter => {
@@ -78,7 +82,6 @@ const Index = () => {
       });
     };
 
-    // Observar seção da plataforma para iniciar contador
     const platformSection = document.querySelector('.platform-section');
     if (platformSection) {
       const platformObserver = new IntersectionObserver((entries) => {
@@ -93,7 +96,6 @@ const Index = () => {
       platformObserver.observe(platformSection);
     }
 
-    // Efeito parallax suave no hero
     const handleScroll = () => {
       const scrolled = window.pageYOffset;
       const hero = document.querySelector('.hero');
@@ -105,7 +107,6 @@ const Index = () => {
 
     window.addEventListener('scroll', handleScroll);
 
-    // Adicionar efeitos hover aos botões
     const buttons = document.querySelectorAll('.cta-button');
     buttons.forEach(button => {
       const handleMouseEnter = () => {
@@ -122,7 +123,6 @@ const Index = () => {
       button.addEventListener('mouseleave', handleMouseLeave);
     });
 
-    // Cleanup
     return () => {
       window.removeEventListener('scroll', handleScroll);
       observer.disconnect();
@@ -154,49 +154,68 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="hero py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+      {/* Hero Section - Quebra de padrão + benefício direto */}
+      <section className="hero py-20 bg-gradient-to-r from-red-600 to-orange-600 text-white">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className="mb-6 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2">
-                🚀 MÉTODO COMPROVADO
+              <Badge className="mb-6 bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 font-bold">
+                +80 EMPRESAS TRANSFORMADAS COM O GAP
               </Badge>
               <h1 className="text-5xl font-bold mb-6 leading-tight">
-                Sua equipe entrega o que foi <span className="text-orange-400">combinado</span>, com <span className="text-orange-400">qualidade</span> e no <span className="text-orange-400">prazo</span>?
+                Você paga <span className="text-yellow-300">100%</span>. Sua equipe entrega só <span className="text-yellow-300">75%</span>. Isso é justo?
               </h1>
-              <p className="text-xl mb-8 text-blue-100">
-                O <strong>Método GAP</strong> da Scalco combina consultoria especializada em gestão de pessoas com uma plataforma própria de acompanhamento. Fazemos sua equipe realizar o que precisa ser feito.
+              <p className="text-xl mb-8 text-red-100">
+                Chegou o <strong>Método GAP</strong>: consultoria em gestão de pessoas + tecnologia para transformar o desempenho da sua empresa.
               </p>
+              
+              <div className="space-y-3 mb-8">
+                <div className="flex items-center text-lg">
+                  <CheckCircle className="w-6 h-6 text-green-300 mr-3" />
+                  <span>✅ Mais controle</span>
+                </div>
+                <div className="flex items-center text-lg">
+                  <CheckCircle className="w-6 h-6 text-green-300 mr-3" />
+                  <span>✅ Mais entrega</span>
+                </div>
+                <div className="flex items-center text-lg">
+                  <CheckCircle className="w-6 h-6 text-green-300 mr-3" />
+                  <span>✅ Menos desculpas</span>
+                </div>
+              </div>
+
               <Button 
                 onClick={openWhatsApp}
                 size="lg" 
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg cta-button"
+                className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-4 text-lg font-bold cta-button"
               >
                 <Rocket className="w-5 h-5 mr-3" />
-                Quero uma gestão mais eficiente
+                Quero aplicar o Método GAP na minha empresa
               </Button>
             </div>
             <div className="flex justify-center">
               <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-white">
                 <CardContent className="p-8">
                   <div className="space-y-6">
+                    <div className="text-center mb-6">
+                      <h3 className="text-2xl font-bold mb-2">A Realidade:</h3>
+                    </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-lg">Tarefas planejadas:</span>
-                      <Badge className="bg-blue-500 text-white px-4 py-2 text-lg">100%</Badge>
+                      <span className="text-lg">Você paga:</span>
+                      <Badge className="bg-red-600 text-white px-4 py-2 text-lg">100%</Badge>
                     </div>
                     <div className="w-full bg-white/20 rounded-full h-4">
-                      <div className="bg-blue-500 h-4 rounded-full w-full progress-fill"></div>
+                      <div className="bg-red-500 h-4 rounded-full w-full progress-fill"></div>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-lg">Equipe entrega:</span>
-                      <Badge className="bg-red-500 text-white px-4 py-2 text-lg">75%</Badge>
+                      <Badge className="bg-orange-500 text-white px-4 py-2 text-lg">75%</Badge>
                     </div>
                     <div className="w-full bg-white/20 rounded-full h-4">
-                      <div className="bg-red-500 h-4 rounded-full w-3/4 progress-fill"></div>
+                      <div className="bg-orange-500 h-4 rounded-full w-3/4 progress-fill"></div>
                     </div>
                     <div className="text-center pt-4 border-t border-white/20">
-                      <p className="text-orange-300 font-semibold">Vamos mudar isso!</p>
+                      <p className="text-yellow-300 font-semibold text-lg">É hora de mudar isso!</p>
                     </div>
                   </div>
                 </CardContent>
@@ -206,67 +225,68 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Problem Section */}
-      <section id="problema" className="py-20 bg-white">
+      {/* Você cumpre sua parte. E a sua equipe? */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-brand-primary mb-6">
-              O desafio de toda liderança
+              Você cumpre sua parte. E a sua equipe?
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Gestão eficiente não é sobre controlar pessoas, é sobre criar condições para que sua equipe realize o que foi combinado, com qualidade e no prazo certo.
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
+              Você garante estrutura, pagamento e condições. E ainda precisa cobrar o óbvio?
             </p>
           </div>
           
-          <div className="max-w-4xl mx-auto">
-            <Card className="bg-gradient-to-r from-red-50 to-orange-50 border-red-200">
-              <CardContent className="p-8">
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <h3 className="text-2xl font-bold text-red-800 mb-4">Sinais que você conhece:</h3>
-                    <ul className="space-y-3 text-gray-700">
-                      <li className="flex items-start">
-                        <span className="text-red-500 mr-2">✗</span>
-                        Tarefas que "ficaram para depois"
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-red-500 mr-2">✗</span>
-                        Falta de clareza sobre responsabilidades
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-red-500 mr-2">✗</span>
-                        Equipe desmotivada e sem direcionamento
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-red-500 mr-2">✗</span>
-                        Gestão baseada em "achismos"
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="text-center">
-                    <div className="bg-white rounded-lg p-6 shadow-lg">
-                      <p className="text-3xl font-bold text-red-600 mb-2">Resultado:</p>
-                      <p className="text-gray-600">Gestão imprevisível e menos eficiente</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="max-w-4xl mx-auto mb-12">
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <Card className="bg-red-50 border-red-200 animate-element">
+                <CardContent className="p-6 text-center">
+                  <Clock className="w-12 h-12 text-red-600 mx-auto mb-4" />
+                  <h3 className="font-semibold text-red-800 mb-2">Tarefas entregues fora do prazo</h3>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-red-50 border-red-200 animate-element">
+                <CardContent className="p-6 text-center">
+                  <AlertTriangle className="w-12 h-12 text-red-600 mx-auto mb-4" />
+                  <h3 className="font-semibold text-red-800 mb-2">Ninguém sabe quem faz o quê</h3>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-red-50 border-red-200 animate-element">
+                <CardContent className="p-6 text-center">
+                  <Target className="w-12 h-12 text-red-600 mx-auto mb-4" />
+                  <h3 className="font-semibold text-red-800 mb-2">Trabalhos feitos de qualquer jeito</h3>
+                </CardContent>
+              </Card>
+            </div>
+            
+            <div className="text-center">
+              <p className="text-lg text-gray-700 mb-8 italic">
+                Essa é a realidade de muitas empresas com várias unidades e equipes descentralizadas.
+              </p>
+              
+              <Button 
+                onClick={openWhatsApp}
+                size="lg" 
+                className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg cta-button"
+              >
+                Quero corrigir esse desequilíbrio agora
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Solution Section */}
-      <section id="solucao" className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
+      {/* O que é o Método GAP? */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-brand-secondary text-white px-4 py-2">SOLUÇÃO SCALCO</Badge>
             <h2 className="text-4xl font-bold text-brand-primary mb-6">
-              Método GAP: Gestão eficiente e previsível
+              O que é o Método GAP?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Uma combinação única de <strong>consultoria em gestão de pessoas</strong> com <strong>plataforma própria</strong> 
-              que torna a gestão mais eficiente através de gamificação e indicadores em tempo real.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              Uma solução prática para você, gestor, voltar a ter o controle e a confiança da sua equipe.
             </p>
           </div>
 
@@ -275,21 +295,36 @@ const Index = () => {
               <CardContent className="p-12">
                 <div className="text-center mb-8">
                   <div className="inline-block bg-gradient-to-r from-brand-primary to-brand-secondary text-white px-8 py-4 rounded-lg">
-                    <h3 className="text-2xl font-bold">MÉTODO GAP</h3>
-                    <p className="text-blue-100">Gestão para Alta Performance</p>
+                    <h3 className="text-2xl font-bold">COMBINAÇÃO ÚNICA</h3>
                   </div>
                 </div>
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="grid md:grid-cols-2 gap-8 mb-8">
                   <div className="text-center">
                     <Users className="w-16 h-16 text-brand-secondary mx-auto mb-4" />
-                    <h4 className="text-xl font-semibold mb-2">Consultoria em Pessoas</h4>
-                    <p className="text-gray-600">Especialistas que contribuem para a realização pessoal e profissional das pessoas</p>
+                    <h4 className="text-xl font-semibold mb-2">🧠 Consultoria em gestão de pessoas</h4>
+                    <p className="text-gray-600">Especialistas que sabem como fazer sua equipe entregar</p>
                   </div>
                   <div className="text-center">
                     <BarChart3 className="w-16 h-16 text-brand-primary mx-auto mb-4" />
-                    <h4 className="text-xl font-semibold mb-2">Plataforma Própria</h4>
-                    <p className="text-gray-600">Acompanhamento de tarefas com gamificação e indicadores em tempo real</p>
+                    <h4 className="text-xl font-semibold mb-2">📊 Plataforma com indicadores de desempenho</h4>
+                    <p className="text-gray-600">Acompanhamento em tempo real de cada colaborador</p>
                   </div>
+                </div>
+                
+                <div className="text-center bg-blue-50 p-6 rounded-lg">
+                  <p className="text-lg text-brand-primary font-medium">
+                    Com o GAP, você acompanha a entrega de cada colaborador, setor ou unidade – tudo em tempo real.
+                  </p>
+                </div>
+                
+                <div className="text-center mt-8">
+                  <Button 
+                    onClick={openWhatsApp}
+                    size="lg" 
+                    className="bg-brand-primary hover:bg-brand-secondary text-white px-8 py-4 text-lg cta-button"
+                  >
+                    Conheça o Método GAP
+                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -297,136 +332,146 @@ const Index = () => {
         </div>
       </section>
 
-      {/* How It Works - Pillars */}
-      <section id="pilares" className="py-20 bg-white">
+      {/* Os 3 Pilares do GAP */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-brand-primary mb-6">
-              Como funciona o Método GAP
+              Os 3 Pilares do GAP
             </h2>
             <p className="text-xl text-gray-600">
-              Nossa abordagem se baseia em três pilares fundamentais:
+              O método que funciona porque combina psicologia, tecnologia e resultados práticos.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8 mb-12">
-            <Card className="hover:shadow-xl transition-shadow animate-element">
+            <Card className="hover:shadow-xl transition-shadow animate-element border-t-4 border-t-red-500">
               <CardHeader>
                 <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Target className="w-8 h-8 text-red-600" />
                 </div>
-                <CardTitle className="text-center text-red-600">Desconforto Produtivo</CardTitle>
+                <CardTitle className="text-center text-red-600">1. Desconforto Positivo</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 text-center">
-                  Criar o desconforto necessário para que sua equipe saia da zona de conforto e busque a excelência.
+                <p className="text-gray-600 text-center font-medium">
+                  Quem não entrega, perde pontos.
+                </p>
+                <p className="text-gray-500 text-center text-sm mt-2">
+                  Sistema transparente que mostra quem está cumprindo e quem está devendo.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl transition-shadow animate-element">
+            <Card className="hover:shadow-xl transition-shadow animate-element border-t-4 border-t-green-500">
               <CardHeader>
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <TrendingUp className="w-8 h-8 text-green-600" />
                 </div>
-                <CardTitle className="text-center text-green-600">Reconhecimento Justo</CardTitle>
+                <CardTitle className="text-center text-green-600">2. Reconhecimento</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 text-center">
-                  Sistema de reconhecimento baseado em mérito e resultados concretos, promovendo a realização profissional.
+                <p className="text-gray-600 text-center font-medium">
+                  Quem entrega bem, ganha visibilidade.
+                </p>
+                <p className="text-gray-500 text-center text-sm mt-2">
+                  Reconhecimento justo baseado em dados reais, não em impressões.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl transition-shadow animate-element">
+            <Card className="hover:shadow-xl transition-shadow animate-element border-t-4 border-t-blue-500">
               <CardHeader>
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Zap className="w-8 h-8 text-brand-secondary" />
                 </div>
-                <CardTitle className="text-center text-brand-secondary">Gestão de Conflitos</CardTitle>
+                <CardTitle className="text-center text-brand-secondary">3. Gestão de Conflitos</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 text-center">
-                  Transformar conflitos em oportunidades de crescimento e melhoria contínua.
+                <p className="text-gray-600 text-center font-medium">
+                  Consultores com empatia e firmeza para destravar resistências.
+                </p>
+                <p className="text-gray-500 text-center text-sm mt-2">
+                  Apoio humano nos momentos mais difíceis da mudança.
                 </p>
               </CardContent>
             </Card>
           </div>
 
           <div className="text-center">
-            <Card className="bg-gradient-to-r from-purple-50 to-pink-50 border-purple-200 max-w-2xl mx-auto">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-purple-800 mb-4">Gamificação Inteligente</h3>
-                <p className="text-purple-700">
-                  Transformamos o acompanhamento de tarefas em uma experiência engajante, 
-                  com indicadores de desempenho em tempo real que motivam e orientam sua equipe.
-                </p>
-              </CardContent>
-            </Card>
+            <Button 
+              onClick={openWhatsApp}
+              size="lg" 
+              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg cta-button"
+            >
+              Quero aplicar isso no meu time
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Platform Section */}
-      <section id="plataforma" className="platform-section py-20 bg-gradient-to-br from-slate-50 to-gray-100">
+      {/* Tecnologia que te dá o controle */}
+      <section className="platform-section py-20 bg-gradient-to-br from-slate-50 to-gray-100">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className="mb-4 bg-brand-primary text-white px-4 py-2">PLATAFORMA PRÓPRIA</Badge>
+              <Badge className="mb-4 bg-brand-primary text-white px-4 py-2">TECNOLOGIA EXCLUSIVA</Badge>
               <h2 className="text-4xl font-bold text-brand-primary mb-6">
-                Indicadores em tempo real para gestão previsível
+                Tecnologia que te dá o controle
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
-                Nossa plataforma própria mostra em tempo real o andamento das tarefas, 
-                com relatórios detalhados, gamificação e indicadores de performance que tornam a gestão previsível.
-              </p>
+              
               <div className="space-y-4 mb-8">
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">Acompanhamento de tarefas em tempo real</span>
+                  <span className="text-gray-700">✅ Acompanhamento por pessoa, tarefa e setor</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">Gamificação para engajamento</span>
+                  <span className="text-gray-700">✅ Relatórios automáticos e gráficos em tempo real</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">Relatórios automáticos de performance</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">Gestão previsível baseada em dados</span>
+                  <span className="text-gray-700">✅ Funciona no celular e no computador</span>
                 </div>
               </div>
+              
+              <div className="bg-blue-50 p-6 rounded-lg mb-8">
+                <h3 className="text-xl font-bold text-brand-primary mb-2">Você vai enxergar, de forma clara:</h3>
+                <p className="text-lg text-gray-700">
+                  <strong>Quem entrega</strong>, <strong>quem enrola</strong> e <strong>onde agir</strong>.
+                </p>
+              </div>
+              
               <Button 
                 onClick={openWhatsApp}
+                size="lg"
                 className="bg-brand-primary hover:bg-brand-secondary text-white cta-button"
               >
-                Conhecer a plataforma
+                <Eye className="w-5 h-5 mr-3" />
+                Quero essa visão na minha empresa
               </Button>
             </div>
             <div>
               <Card className="bg-white shadow-2xl">
                 <CardHeader>
-                  <CardTitle className="text-center text-brand-primary">Dashboard - Método GAP</CardTitle>
+                  <CardTitle className="text-center text-brand-primary">Dashboard - Controle Total</CardTitle>
                 </CardHeader>
                 <CardContent className="p-6">
                   <div className="space-y-6">
                     <div className="flex justify-between items-center p-4 bg-green-50 rounded-lg animate-element">
-                      <span className="font-medium">Tarefas Concluídas</span>
-                      <Badge className="bg-green-600 text-white metric-value">87%</Badge>
+                      <span className="font-medium">João - Vendas</span>
+                      <Badge className="bg-green-600 text-white metric-value">95%</Badge>
                     </div>
-                    <div className="flex justify-between items-center p-4 bg-blue-50 rounded-lg animate-element">
-                      <span className="font-medium">Performance Geral</span>
-                      <Badge className="bg-brand-secondary text-white metric-value">92%</Badge>
+                    <div className="flex justify-between items-center p-4 bg-yellow-50 rounded-lg animate-element">
+                      <span className="font-medium">Maria - Atendimento</span>
+                      <Badge className="bg-yellow-600 text-white metric-value">78%</Badge>
                     </div>
-                    <div className="flex justify-between items-center p-4 bg-purple-50 rounded-lg animate-element">
-                      <span className="font-medium">Engajamento</span>
-                      <Badge className="bg-purple-600 text-white metric-value">95%</Badge>
+                    <div className="flex justify-between items-center p-4 bg-red-50 rounded-lg animate-element">
+                      <span className="font-medium">Pedro - Estoque</span>
+                      <Badge className="bg-red-600 text-white metric-value">45%</Badge>
                     </div>
                     <div className="bg-gray-50 p-4 rounded-lg">
                       <p className="text-sm text-gray-600 text-center">
-                        Indicadores atualizados em tempo real
+                        <strong>Você sabe exatamente onde agir</strong>
                       </p>
                     </div>
                   </div>
@@ -437,16 +482,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Consultancy Section */}
-      <section id="consultoria" className="py-20 bg-white">
+      {/* Consultoria com gente de verdade */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-brand-primary mb-6">
-              Consultoria focada na realização das pessoas
+              Consultoria com gente de verdade
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Nossa missão é contribuir significativamente para a realização pessoal e profissional das pessoas. 
-              Nossos consultores especializados trabalham o desenvolvimento humano em cada organização.
+              A plataforma aponta. Nossos consultores fazem acontecer.
             </p>
           </div>
 
@@ -455,37 +499,37 @@ const Index = () => {
               <CardContent className="p-12">
                 <div className="text-center mb-8">
                   <Users className="w-20 h-20 mx-auto mb-6 text-blue-200" />
-                  <h3 className="text-3xl font-bold mb-4">Consultoria Especializada</h3>
+                  <h3 className="text-3xl font-bold mb-4">Apoio Humano Real</h3>
                 </div>
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-xl font-semibold mb-4 text-blue-200">Nossa abordagem:</h4>
-                    <ul className="space-y-3">
-                      <li className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-green-400 mr-3 mt-0.5" />
-                        <span>Desenvolvimento do potencial individual</span>
-                      </li>
-                      <li className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-green-400 mr-3 mt-0.5" />
-                        <span>Realização pessoal e profissional</span>
-                      </li>
-                      <li className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-green-400 mr-3 mt-0.5" />
-                        <span>Alinhamento de propósitos e metas</span>
-                      </li>
-                      <li className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-green-400 mr-3 mt-0.5" />
-                        <span>Cultura de alta performance sustentável</span>
-                      </li>
-                    </ul>
+                <div className="grid md:grid-cols-3 gap-8 mb-8">
+                  <div className="text-center">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                      <h4 className="text-lg font-semibold mb-2 text-blue-200">✔️ Desenvolvimento humano</h4>
+                      <p className="text-sm">Foco no crescimento de cada pessoa</p>
+                    </div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                    <h4 className="text-xl font-semibold mb-4 text-orange-300">Nossa visão:</h4>
-                    <p className="text-lg italic">
-                      "Queremos atingir 50 mil usuários ativos até 2028, 
-                      transformando a gestão de equipes em organizações de todos os tamanhos."
-                    </p>
+                  <div className="text-center">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                      <h4 className="text-lg font-semibold mb-2 text-blue-200">✔️ Conversas olho no olho</h4>
+                      <p className="text-sm">Relacionamento próximo e direto</p>
+                    </div>
                   </div>
+                  <div className="text-center">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                      <h4 className="text-lg font-semibold mb-2 text-blue-200">✔️ Apoio nos momentos difíceis</h4>
+                      <p className="text-sm">Suporte quando mais precisa</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <Button 
+                    onClick={openWhatsApp}
+                    size="lg" 
+                    className="bg-white text-brand-primary hover:bg-gray-100 px-8 py-4 text-lg font-bold cta-button"
+                  >
+                    <MessageCircle className="w-5 h-5 mr-3" />
+                    Quero conversar com um especialista
+                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -493,84 +537,202 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Results Section */}
-      <section id="resultados" className="py-20 bg-gradient-to-br from-green-50 to-emerald-100">
+      {/* Você não precisa acreditar na gente. Acredite nos números. */}
+      <section className="py-20 bg-gradient-to-br from-green-50 to-emerald-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-brand-primary mb-6">
-              Gestão baseada em dados, não em achismos
+              Você não precisa acreditar na gente. Acredite nos números.
             </h2>
-            <p className="text-xl text-gray-600">
-              Com o Método GAP, você tem visibilidade completa sobre sua equipe:
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <Card className="text-center hover:shadow-lg transition-shadow animate-element">
-              <CardContent className="p-6">
-                <BarChart3 className="w-12 h-12 text-green-600 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-brand-primary mb-2">Setores mais produtivos</h3>
-                <p className="text-gray-600 text-sm">Identifique quais áreas estão entregando melhor</p>
-              </CardContent>
-            </Card>
+          <div className="max-w-4xl mx-auto mb-12">
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <Card className="bg-white shadow-xl animate-element">
+                <CardContent className="p-8 text-center">
+                  <div className="text-6xl font-bold text-green-600 mb-2">+87%</div>
+                  <p className="text-xl font-semibold text-gray-800">📈 de tarefas entregues corretamente</p>
+                </CardContent>
+              </Card>
 
-            <Card className="text-center hover:shadow-lg transition-shadow animate-element">
-              <CardContent className="p-6">
-                <Users className="w-12 h-12 text-brand-secondary mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-brand-primary mb-2">Talentos em destaque</h3>
-                <p className="text-gray-600 text-sm">Reconheça quem realmente veste a camisa</p>
-              </CardContent>
-            </Card>
+              <Card className="bg-white shadow-xl animate-element">
+                <CardContent className="p-8 text-center">
+                  <div className="text-6xl font-bold text-blue-600 mb-2">+92%</div>
+                  <p className="text-xl font-semibold text-gray-800">🚀 de aumento na performance geral em apenas 60 dias</p>
+                </CardContent>
+              </Card>
+            </div>
 
-            <Card className="text-center hover:shadow-lg transition-shadow animate-element">
-              <CardContent className="p-6">
-                <Target className="w-12 h-12 text-red-600 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-brand-primary mb-2">Gargalos mapeados</h3>
-                <p className="text-gray-600 text-sm">Encontre e elimine pontos de travamento</p>
-              </CardContent>
-            </Card>
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card className="bg-blue-50 border-l-4 border-l-blue-500">
+                <CardContent className="p-6">
+                  <p className="text-lg text-gray-700 italic mb-4">
+                    "A equipe passou a se responsabilizar sem eu ficar em cima."
+                  </p>
+                  <p className="text-sm text-gray-600 font-semibold">— Gestor de rede de supermercados</p>
+                </CardContent>
+              </Card>
 
-            <Card className="text-center hover:shadow-lg transition-shadow animate-element">
-              <CardContent className="p-6">
-                <TrendingUp className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-brand-primary mb-2">Decisões assertivas</h3>
-                <p className="text-gray-600 text-sm">Base sólida de dados para escolhas certas</p>
-              </CardContent>
-            </Card>
+              <Card className="bg-green-50 border-l-4 border-l-green-500">
+                <CardContent className="p-6">
+                  <p className="text-lg text-gray-700 italic mb-4">
+                    "Vi quem realmente veste a camisa."
+                  </p>
+                  <p className="text-sm text-gray-600 font-semibold">— Proprietário de rede de postos</p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
 
           <div className="text-center">
-            <Card className="bg-green-600 text-white max-w-2xl mx-auto">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Gestão eficiente e previsível</h3>
-                <p className="text-green-100 text-lg">
-                  Transforme sua gestão de reativa para proativa. 
-                  Tenha dados concretos para tomar as melhores decisões sobre sua equipe.
+            <Button 
+              onClick={openWhatsApp}
+              size="lg" 
+              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg cta-button"
+            >
+              <TrendingUp className="w-5 h-5 mr-3" />
+              Quero esses resultados no meu negócio
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Quem usa o GAP */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-brand-primary mb-6">
+              Quem usa o GAP
+            </h2>
+            <p className="text-xl text-gray-600">
+              Empresas com várias unidades já usam o GAP para escalar desempenho.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <Card className="text-center hover:shadow-lg transition-shadow animate-element">
+                <CardContent className="p-6">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <BarChart3 className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-brand-primary mb-2">Supermercados</h3>
+                  <p className="text-gray-600 text-sm">Redes com múltiplas lojas</p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center hover:shadow-lg transition-shadow animate-element">
+                <CardContent className="p-6">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Target className="w-8 h-8 text-green-600" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-brand-primary mb-2">Postos de Combustível</h3>
+                  <p className="text-gray-600 text-sm">Controle de equipes descentralizadas</p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center hover:shadow-lg transition-shadow animate-element">
+                <CardContent className="p-6">
+                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-8 h-8 text-purple-600" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-brand-primary mb-2">Redes de Lojas</h3>
+                  <p className="text-gray-600 text-sm">Gestão de performance por unidade</p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Card className="bg-gradient-to-r from-purple-50 to-pink-50 border-purple-200">
+              <CardContent className="p-8 text-center">
+                <h3 className="text-2xl font-bold text-purple-800 mb-4">Caso de Sucesso</h3>
+                <p className="text-lg text-purple-700 mb-4">
+                  Rede de supermercados com 15 unidades aumentou a entrega de tarefas de 60% para 87% em 3 meses.
                 </p>
+                <Badge className="bg-purple-600 text-white px-4 py-2">Resultado Comprovado</Badge>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Final CTA Section */}
+      {/* Mas será que funciona aqui? */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-brand-primary mb-6">
+              "Mas será que funciona aqui?"
+            </h2>
+            <p className="text-xl text-gray-600">
+              As dúvidas mais comuns e nossas respostas diretas:
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6">
+              <Card className="hover:shadow-lg transition-shadow animate-element">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <AlertTriangle className="w-4 h-4 text-red-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-800 mb-2">"Aqui o pessoal é resistente..."</h3>
+                      <p className="text-gray-600">→ O GAP foi criado para ambientes tradicionais e difíceis. Nossa experiência está justamente em transformar resistência em engajamento.</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow animate-element">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-4 h-4 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-800 mb-2">"Não tenho tempo..."</h3>
+                      <p className="text-gray-600">→ A equipe Scalco cuida de toda a implementação. Você só precisa ver os resultados aparecerem.</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow animate-element">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Shield className="w-4 h-4 text-purple-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-800 mb-2">"Já tentei e não deu certo..."</h3>
+                      <p className="text-gray-600">→ Consultoria + tecnologia no dia a dia é o que faz funcionar. Não é só sistema, não é só conversa. É a combinação que gera resultado.</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Final - Diagnóstico Gratuito */}
       <section className="py-20 bg-gradient-to-r from-orange-600 to-red-600 text-white">
         <div className="container mx-auto px-6">
           <div className="text-center">
             <h2 className="text-5xl font-bold mb-6">
-              Pronto para uma gestão mais eficiente e previsível?
+              Pronto para parar de pagar 100% e receber só 75%?
             </h2>
             <p className="text-2xl mb-12 text-orange-100">
-              O Método GAP está pronto para transformar sua gestão. 
-              <br />Converse conosco e descubra como podemos contribuir para a realização da sua equipe.
+              Agende agora um <strong>diagnóstico gratuito</strong> com um de nossos especialistas.
+              <br />Descubra como aplicar o GAP no seu negócio.
             </p>
             <Button 
-              onClick={openWhatsApp}
+              onClick={openWhatsAppDiagnosis}
               size="lg" 
               className="bg-white text-orange-600 hover:bg-gray-100 px-12 py-6 text-xl font-bold mb-8 cta-button"
             >
               <MessageCircle className="w-6 h-6 mr-3" />
-              Quero conhecer o Método GAP
+              Quero meu diagnóstico gratuito
             </Button>
             <div className="flex justify-center space-x-8 mt-8">
               <div className="flex items-center">
@@ -586,21 +748,62 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer Profissional */}
       <footer className="bg-slate-900 text-white py-12">
         <div className="container mx-auto px-6">
-          <div className="text-center">
-            <div className="flex justify-center mb-4">
-              <img 
-                src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" 
-                alt="25 Anos - Grupo Scalco" 
-                className="h-16 w-auto opacity-80"
-              />
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex justify-center md:justify-start mb-4">
+                <img 
+                  src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" 
+                  alt="25 Anos - Grupo Scalco" 
+                  className="h-16 w-auto opacity-80"
+                />
+              </div>
+              <p className="text-slate-400 text-sm">
+                Método GAP - Gestão para Alta Performance
+              </p>
             </div>
-            <p className="text-slate-400 mb-2">Método GAP - Gestão para Alta Performance</p>
-            <p className="text-slate-500 text-sm mb-4">
-              Contribuindo para a realização pessoal e profissional das pessoas
-            </p>
+            
+            <div>
+              <h4 className="font-semibold mb-4">Sobre a Scalco</h4>
+              <p className="text-slate-400 text-sm mb-2">
+                25 anos contribuindo para a realização pessoal e profissional das pessoas
+              </p>
+              <p className="text-slate-500 text-xs">
+                CNPJ: 00.000.000/0001-00
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-4">Contato</h4>
+              <div className="space-y-2 text-sm">
+                <div className="flex items-center text-slate-400">
+                  <Phone className="w-4 h-4 mr-2" />
+                  <span>(11) 99999-9999</span>
+                </div>
+                <div className="flex items-center text-slate-400">
+                  <Mail className="w-4 h-4 mr-2" />
+                  <span>contato@scalcoconsultoria.com.br</span>
+                </div>
+                <div className="flex items-center text-slate-400">
+                  <MapPin className="w-4 h-4 mr-2" />
+                  <span>São Paulo, SP</span>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-4">Menu</h4>
+              <div className="space-y-2 text-sm">
+                <a href="#" className="text-slate-400 hover:text-white block">Termos de Uso</a>
+                <a href="#" className="text-slate-400 hover:text-white block">Privacidade</a>
+                <a href="#" className="text-slate-400 hover:text-white block">Contato</a>
+              </div>
+            </div>
+          </div>
+          
+          <div className="border-t border-slate-700 mt-8 pt-8 text-center">
             <p className="text-slate-500 text-sm">
               © 2024 Scalco Consultoria. Todos os direitos reservados.
             </p>
