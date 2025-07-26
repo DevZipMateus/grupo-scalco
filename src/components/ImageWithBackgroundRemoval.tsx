@@ -75,6 +75,7 @@ export const ImageWithBackgroundRemoval = ({ src, alt, className }: ImageWithBac
       src={processedImageUrl || src}
       alt={alt}
       className={className}
+      style={{ backgroundColor: 'transparent' }}
     />
   );
 };

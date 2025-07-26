@@ -62,7 +62,7 @@ export const removeBackground = async (imageElement: HTMLImageElement): Promise<
       throw new Error('Invalid segmentation result');
     }
     
-    // Create a new canvas for the masked image
+    // Create a new canvas for the masked image with transparent background
     const outputCanvas = document.createElement('canvas');
     outputCanvas.width = canvas.width;
     outputCanvas.height = canvas.height;
@@ -70,33 +70,37 @@ export const removeBackground = async (imageElement: HTMLImageElement): Promise<
     
     if (!outputCtx) throw new Error('Could not get output canvas context');
     
+    // Clear the canvas to ensure transparency
+    outputCtx.clearRect(0, 0, outputCanvas.width, outputCanvas.height);
+    
     // Draw original image
     outputCtx.drawImage(canvas, 0, 0);
     
-    // Apply the mask
-    const outputImageData = outputCtx.getImageData(
-      0, 0,
-      outputCanvas.width,
-      outputCanvas.height
-    );
+    // Apply the mask to create transparency
+    const outputImageData = outputCtx.getImageData(0, 0, outputCanvas.width, outputCanvas.height);
     const data = outputImageData.data;
     
-    // Apply inverted mask to alpha channel
+    // Apply mask to alpha channel - make background completely transparent
     for (let i = 0; i < result[0].mask.data.length; i++) {
-      // Invert the mask value (1 - value) to keep the subject instead of the background
-      const alpha = Math.round((1 - result[0].mask.data[i]) * 255);
-      data[i * 4 + 3] = alpha;
+      const pixelIndex = i * 4;
+      // If mask value is close to 0, it's background - make it transparent
+      if (result[0].mask.data[i] < 0.5) {
+        data[pixelIndex + 3] = 0; // Set alpha to 0 (transparent)
+      } else {
+        // Keep the original alpha for foreground
+        data[pixelIndex + 3] = 255; // Set alpha to 255 (opaque)
+      }
     }
     
     outputCtx.putImageData(outputImageData, 0, 0);
-    console.log('Mask applied successfully');
+    console.log('Background removed and transparency applied');
     
-    // Convert canvas to blob
+    // Convert canvas to blob with PNG format to preserve transparency
     return new Promise((resolve, reject) => {
       outputCanvas.toBlob(
         (blob) => {
           if (blob) {
-            console.log('Successfully created final blob');
+            console.log('Successfully created transparent image blob');
             resolve(blob);
           } else {
             reject(new Error('Failed to create blob'));
