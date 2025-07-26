@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -161,7 +160,11 @@ export default function Index() {
               Com o GAP, você acompanha a entrega de cada colaborador, setor ou unidade – tudo em tempo real.
             </p>
 
-            <Button size="lg" className="bg-brand-light-blue hover:bg-brand-light-blue/90 text-brand-white">
+            <Button 
+              size="lg" 
+              className="bg-brand-light-blue hover:bg-brand-light-blue/90 text-brand-white"
+              onClick={() => window.open('https://metodogap.com', '_blank')}
+            >
               Conheça o Método GAP
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
