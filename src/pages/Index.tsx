@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, TrendingUp, Target, Award, CheckCircle, ArrowRight, Phone, Mail, MapPin, Star, BarChart3, Zap, Shield, Brain, Eye, MessageCircle, AlertTriangle, Clock, UserX, Wrench } from "lucide-react";
+
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
@@ -518,35 +519,35 @@ const Index = () => {
                   <img src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" alt="Grupo Scalco Logo" className="max-h-16 w-auto" />
                 </div>
                 
-                <p className="text-brand-white/80 mb-4">
+                <p className="text-white mb-4">
                   Transformamos equipes através do Método GAP: consultoria + tecnologia.
                 </p>
-                <p className="text-sm text-brand-white/60">
+                <p className="text-sm text-white">
                   Responsável: Grupo Scalco
                 </p>
               </div>
               
               <div>
-                <h4 className="text-lg font-semibold text-brand-white mb-4">Contato</h4>
+                <h4 className="text-lg font-semibold text-white mb-4">Contato</h4>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
                     <Phone className="w-4 h-4 text-brand-yellow" />
-                    <span className="text-brand-white/80">(51) 99971-2999</span>
+                    <span className="text-white">(51) 99971-2999</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail className="w-4 h-4 text-brand-yellow" />
-                    <span className="text-brand-white/80 break-all">scalco.pedro@gmail.com</span>
+                    <span className="text-white break-all">scalco.pedro@gmail.com</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <MapPin className="w-4 h-4 text-brand-yellow" />
-                    <span className="text-brand-white/80">Rua Bento Martins, 1294 - São Borja - RS</span>
+                    <span className="text-white">Rua Bento Martins, 1294 - São Borja - RS</span>
                   </div>
                 </div>
               </div>
               
               <div>
-                <h4 className="text-lg font-semibold text-brand-white mb-4">Método GAP</h4>
-                <ul className="space-y-2 text-brand-white/80">
+                <h4 className="text-lg font-semibold text-white mb-4">Método GAP</h4>
+                <ul className="space-y-2 text-white">
                   <li>Consultoria Especializada</li>
                   <li>Plataforma Tecnológica</li>
                   <li>Gestão de Performance</li>
@@ -555,8 +556,8 @@ const Index = () => {
               </div>
               
               <div>
-                <h4 className="text-lg font-semibold text-brand-white mb-4">Soluções</h4>
-                <ul className="space-y-2 text-brand-white/80">
+                <h4 className="text-lg font-semibold text-white mb-4">Soluções</h4>
+                <ul className="space-y-2 text-white">
                   <li>Postos de Combustíveis</li>
                   <li>Gestão de Equipes</li>
                   <li>Treinamentos</li>
@@ -566,7 +567,7 @@ const Index = () => {
             </div>
             
             <div className="border-t border-brand-white/20 pt-8 text-center">
-              <p className="text-brand-white/60">
+              <p className="text-white">
                 © 2024 Grupo Scalco. Todos os direitos reservados.
               </p>
             </div>
