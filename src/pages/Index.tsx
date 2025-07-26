@@ -2,50 +2,25 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Users, 
-  TrendingUp, 
-  Target, 
-  Award,
-  CheckCircle,
-  ArrowRight,
-  Phone,
-  Mail,
-  MapPin,
-  Star,
-  BarChart3,
-  Zap,
-  Shield,
-  Brain,
-  Eye,
-  MessageCircle,
-  AlertTriangle,
-  Clock,
-  UserX,
-  Wrench
-} from "lucide-react";
-
+import { Users, TrendingUp, Target, Award, CheckCircle, ArrowRight, Phone, Mail, MapPin, Star, BarChart3, Zap, Shield, Brain, Eye, MessageCircle, AlertTriangle, Clock, UserX, Wrench } from "lucide-react";
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Olá! Quero conhecer o Método GAP e fazer meu diagnóstico gratuito.");
     window.open(`https://wa.me/5551999712999?text=${message}`, '_blank');
   };
-
-  return (
-    <div className="min-h-screen bg-brand-white overflow-x-hidden">
+  return <div className="min-h-screen bg-brand-white overflow-x-hidden">
       {/* Hero Section - Quebra de padrão */}
       <section className="relative bg-gradient-to-r from-brand-dark-blue to-brand-light-blue min-h-screen flex items-center overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -53,11 +28,7 @@ const Index = () => {
             <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               {/* Logo */}
               <div className="mb-8">
-                <img 
-                  src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" 
-                  alt="Grupo Scalco Logo" 
-                  className="max-h-20 sm:max-h-24 mx-auto"
-                />
+                <img src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" alt="Grupo Scalco Logo" className="max-h-20 sm:max-h-24 mx-auto" />
               </div>
 
               <Badge className="bg-brand-yellow text-brand-dark-blue mb-6 px-4 py-2 text-sm sm:text-base font-semibold">
@@ -91,11 +62,7 @@ const Index = () => {
                 </div>
               </div>
               
-              <Button 
-                size="lg" 
-                className="bg-brand-yellow text-brand-dark-blue hover:bg-brand-yellow/90 px-8 py-4 text-lg font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-                onClick={handleWhatsAppClick}
-              >
+              <Button size="lg" className="bg-brand-yellow text-brand-dark-blue hover:bg-brand-yellow/90 px-8 py-4 text-lg font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300" onClick={handleWhatsAppClick}>
                 Quero aplicar o Método GAP na minha empresa
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
@@ -163,11 +130,7 @@ const Index = () => {
                 Essa é a realidade de muitas empresas com várias unidades e equipes descentralizadas.
               </p>
               
-              <Button 
-                size="lg" 
-                className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-8 py-4 text-lg font-semibold"
-                onClick={handleWhatsAppClick}
-              >
+              <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-8 py-4 text-lg font-semibold" onClick={handleWhatsAppClick}>
                 Quero corrigir esse desequilíbrio agora
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
@@ -220,11 +183,7 @@ const Index = () => {
               </div>
               
               <div className="flex justify-center">
-                <img 
-                  src="/lovable-uploads/b95f29e5-fc7c-4242-8a89-38902343ec9f.png" 
-                  alt="Gráfico mostrando a diferença entre 100% pago vs 75% entregue" 
-                  className="max-w-full h-auto rounded-lg shadow-2xl"
-                />
+                <img src="/lovable-uploads/b95f29e5-fc7c-4242-8a89-38902343ec9f.png" alt="Gráfico mostrando a diferença entre 100% pago vs 75% entregue" className="max-w-full h-auto rounded-lg shadow-2xl" />
               </div>
             </div>
 
@@ -233,11 +192,7 @@ const Index = () => {
                 Com o GAP, você acompanha a entrega de cada colaborador, setor ou unidade – tudo em tempo real.
               </p>
               
-              <Button 
-                size="lg" 
-                className="bg-brand-light-blue text-brand-white hover:bg-brand-light-blue/90 px-8 py-4 text-lg font-semibold"
-                onClick={handleWhatsAppClick}
-              >
+              <Button size="lg" className="bg-brand-light-blue text-brand-white hover:bg-brand-light-blue/90 px-8 py-4 text-lg font-semibold" onClick={handleWhatsAppClick}>
                 Conheça o Método GAP
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
@@ -297,11 +252,7 @@ const Index = () => {
           </div>
 
           <div className="text-center">
-            <Button 
-              size="lg" 
-              className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-8 py-4 text-lg font-semibold"
-              onClick={handleWhatsAppClick}
-            >
+            <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-8 py-4 text-lg font-semibold" onClick={handleWhatsAppClick}>
               Quero aplicar isso no meu time
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
@@ -348,11 +299,7 @@ const Index = () => {
           </div>
 
           <div className="text-center">
-            <Button 
-              size="lg" 
-              className="bg-brand-light-blue text-brand-white hover:bg-brand-light-blue/90 px-8 py-4 text-lg font-semibold"
-              onClick={handleWhatsAppClick}
-            >
+            <Button size="lg" className="bg-brand-light-blue text-brand-white hover:bg-brand-light-blue/90 px-8 py-4 text-lg font-semibold" onClick={handleWhatsAppClick}>
               Quero essa visão na minha empresa
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
@@ -394,11 +341,7 @@ const Index = () => {
               </Card>
             </div>
             
-            <Button 
-              size="lg" 
-              className="bg-brand-yellow text-brand-dark-blue hover:bg-brand-yellow/90 px-8 py-4 text-lg font-semibold"
-              onClick={handleWhatsAppClick}
-            >
+            <Button size="lg" className="bg-brand-yellow text-brand-dark-blue hover:bg-brand-yellow/90 px-8 py-4 text-lg font-semibold" onClick={handleWhatsAppClick}>
               Quero conversar com um especialista
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
@@ -460,11 +403,7 @@ const Index = () => {
           </div>
 
           <div className="text-center">
-            <Button 
-              size="lg" 
-              className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-8 py-4 text-lg font-semibold"
-              onClick={handleWhatsAppClick}
-            >
+            <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-8 py-4 text-lg font-semibold" onClick={handleWhatsAppClick}>
               Quero esses resultados no meu negócio
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
@@ -486,39 +425,19 @@ const Index = () => {
           
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 sm:gap-8 items-center">
             <div className="flex justify-center items-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
-              <img 
-                src="/lovable-uploads/clientes/1753383806026_1_tasca.png" 
-                alt="Postos Tasca" 
-                className="max-h-16 sm:max-h-20 w-auto object-contain"
-              />
+              <img src="/lovable-uploads/clientes/1753383806026_1_tasca.png" alt="Postos Tasca" className="max-h-16 sm:max-h-20 w-auto object-contain" />
             </div>
             <div className="flex justify-center items-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
-              <img 
-                src="/lovable-uploads/clientes/1753383806793_3_hurray.jpg" 
-                alt="Rede Hurray" 
-                className="max-h-16 sm:max-h-20 w-auto object-contain"
-              />
+              <img src="/lovable-uploads/clientes/1753383806793_3_hurray.jpg" alt="Rede Hurray" className="max-h-16 sm:max-h-20 w-auto object-contain" />
             </div>
             <div className="flex justify-center items-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
-              <img 
-                src="/lovable-uploads/clientes/1753383807178_4_malerba.png" 
-                alt="Postos Malerba" 
-                className="max-h-16 sm:max-h-20 w-auto object-contain"
-              />
+              <img src="/lovable-uploads/clientes/1753383807178_4_malerba.png" alt="Postos Malerba" className="max-h-16 sm:max-h-20 w-auto object-contain" />
             </div>
             <div className="flex justify-center items-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
-              <img 
-                src="/lovable-uploads/clientes/marcela.png" 
-                alt="Rede Marcela" 
-                className="max-h-16 sm:max-h-20 w-auto object-contain"
-              />
+              <img src="/lovable-uploads/clientes/marcela.png" alt="Rede Marcela" className="max-h-16 sm:max-h-20 w-auto object-contain" />
             </div>
             <div className="flex justify-center items-center p-4 grayscale hover:grayscale-0 transition-all duration-300 col-span-2 sm:col-span-3 md:col-span-1">
-              <img 
-                src="/lovable-uploads/clientes/petrocal.png" 
-                alt="Postos Petrocal" 
-                className="max-h-16 sm:max-h-20 w-auto object-contain"
-              />
+              <img src="/lovable-uploads/clientes/petrocal.png" alt="Postos Petrocal" className="max-h-16 sm:max-h-20 w-auto object-contain" />
             </div>
           </div>
         </div>
@@ -576,11 +495,7 @@ const Index = () => {
               Descubra como aplicar o GAP no seu negócio.
             </p>
             
-            <Button 
-              size="lg" 
-              className="bg-brand-yellow text-brand-dark-blue hover:bg-brand-yellow/90 px-12 py-6 text-xl font-bold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300"
-              onClick={handleWhatsAppClick}
-            >
+            <Button size="lg" className="bg-brand-yellow text-brand-dark-blue hover:bg-brand-yellow/90 px-12 py-6 text-xl font-bold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300" onClick={handleWhatsAppClick}>
               Quero meu diagnóstico gratuito
               <ArrowRight className="ml-3 w-6 h-6" />
             </Button>
@@ -600,13 +515,9 @@ const Index = () => {
               <div className="sm:col-span-2 lg:col-span-1">
                 {/* Logo in footer */}
                 <div className="mb-4">
-                  <img 
-                    src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" 
-                    alt="Grupo Scalco Logo" 
-                    className="max-h-16 w-auto"
-                  />
+                  <img src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" alt="Grupo Scalco Logo" className="max-h-16 w-auto" />
                 </div>
-                <h3 className="text-2xl font-bold text-brand-yellow mb-4">Grupo Scalco</h3>
+                
                 <p className="text-brand-white/80 mb-4">
                   Transformamos equipes através do Método GAP: consultoria + tecnologia.
                 </p>
@@ -662,8 +573,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
