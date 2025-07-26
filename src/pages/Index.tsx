@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ImageWithBackgroundRemoval } from "@/components/ImageWithBackgroundRemoval";
 import { 
   Users, 
   TrendingUp, 
@@ -111,42 +112,52 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="space-y-6 mb-12">
-              <Card className="p-6 hover:shadow-xl transition-all duration-300">
-                <CardContent className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-red-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-brand-dark-blue mb-2">Fora do Prazo</h3>
-                    <p className="text-gray-600">Tarefas entregues fora do prazo constantemente</p>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+              <div className="space-y-6">
+                <Card className="p-6 hover:shadow-xl transition-all duration-300">
+                  <CardContent className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-6 h-6 text-red-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-brand-dark-blue mb-2">Fora do Prazo</h3>
+                      <p className="text-gray-600">Tarefas entregues fora do prazo constantemente</p>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="p-6 hover:shadow-xl transition-all duration-300">
+                  <CardContent className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <UserX className="w-6 h-6 text-red-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-brand-dark-blue mb-2">Sem Direcionamento</h3>
+                      <p className="text-gray-600">Ninguém sabe quem faz o quê</p>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="p-6 hover:shadow-xl transition-all duration-300">
+                  <CardContent className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Wrench className="w-6 h-6 text-red-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-brand-dark-blue mb-2">Qualidade Baixa</h3>
+                      <p className="text-gray-600">Trabalhos feitos de qualquer jeito</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
               
-              <Card className="p-6 hover:shadow-xl transition-all duration-300">
-                <CardContent className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <UserX className="w-6 h-6 text-red-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-brand-dark-blue mb-2">Sem Direcionamento</h3>
-                    <p className="text-gray-600">Ninguém sabe quem faz o quê</p>
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <Card className="p-6 hover:shadow-xl transition-all duration-300">
-                <CardContent className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Wrench className="w-6 h-6 text-red-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-brand-dark-blue mb-2">Qualidade Baixa</h3>
-                    <p className="text-gray-600">Trabalhos feitos de qualquer jeito</p>
-                  </div>
-                </CardContent>
-              </Card>
+              <div className="flex justify-center">
+                <ImageWithBackgroundRemoval
+                  src="/lovable-uploads/b95f29e5-fc7c-4242-8a89-38902343ec9f.png"
+                  alt="Gráfico mostrando a diferença entre 100% pago vs 75% entregue"
+                  className="max-w-full h-auto rounded-lg"
+                />
+              </div>
             </div>
 
             <div className="text-center">
@@ -208,14 +219,6 @@ const Index = () => {
                     </p>
                   </CardContent>
                 </Card>
-              </div>
-              
-              <div className="flex justify-center">
-                <img 
-                  src="/lovable-uploads/b95f29e5-fc7c-4242-8a89-38902343ec9f.png" 
-                  alt="Gráfico mostrando a diferença entre 100% pago vs 75% entregue" 
-                  className="max-w-full h-auto rounded-lg shadow-2xl"
-                />
               </div>
             </div>
 
