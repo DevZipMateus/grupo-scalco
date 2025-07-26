@@ -638,12 +638,12 @@ export default function Index() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-4 gap-8 mb-8">
               <div>
-                <h3 className="text-2xl font-bold text-brand-yellow mb-4">Scalco Consultoria</h3>
+                <h3 className="text-2xl font-bold text-brand-yellow mb-4">Grupo Scalco</h3>
                 <p className="text-brand-white/80 mb-4">
                   Transformamos equipes através do Método GAP: consultoria + tecnologia.
                 </p>
                 <p className="text-sm text-brand-white/60">
-                  CNPJ: 00.000.000/0001-00
+                  Responsável: Grupo Scalco
                 </p>
               </div>
               
@@ -652,15 +652,15 @@ export default function Index() {
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
                     <Phone className="w-4 h-4 text-brand-yellow" />
-                    <span className="text-brand-white/80">(11) 99999-9999</span>
+                    <span className="text-brand-white/80">(51) 99971-2999</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail className="w-4 h-4 text-brand-yellow" />
-                    <span className="text-brand-white/80">contato@scalco.com.br</span>
+                    <span className="text-brand-white/80">scalco.pedro@gmail.com</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <MapPin className="w-4 h-4 text-brand-yellow" />
-                    <span className="text-brand-white/80">São Paulo, SP</span>
+                    <span className="text-brand-white/80">Rua Bento Martins, 1294 - São Borja - RS</span>
                   </div>
                 </div>
               </div>
@@ -687,7 +687,7 @@ export default function Index() {
             
             <div className="border-t border-brand-white/20 pt-8 text-center">
               <p className="text-brand-white/60">
-                © 2024 Scalco Consultoria. Todos os direitos reservados.
+                © 2024 Grupo Scalco. Todos os direitos reservados.
               </p>
             </div>
           </div>
