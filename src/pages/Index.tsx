@@ -136,6 +136,16 @@ export default function Index() {
               Uma solução prática para você, gestor, voltar a ter o controle e a confiança da sua equipe.
             </p>
 
+            {/* GAP Logo Image */}
+            <div className="mb-12">
+              <img 
+                src="/lovable-uploads/b95f29e5-fc7c-4242-8a89-38902343ec9f.png" 
+                alt="GAP - Gestão Alta Performance" 
+                className="mx-auto max-w-md w-full h-auto cursor-pointer hover:scale-105 transition-transform duration-300"
+                onClick={() => window.open('https://metodogap.com', '_blank')}
+              />
+            </div>
+
             <div className="bg-gradient-to-r from-brand-dark-blue to-brand-light-blue rounded-2xl p-8 mb-12 text-brand-white">
               <h3 className="text-2xl font-bold mb-6">Combinação única:</h3>
               <div className="grid md:grid-cols-2 gap-8">
