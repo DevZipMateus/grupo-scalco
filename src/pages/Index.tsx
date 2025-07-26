@@ -111,52 +111,42 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
-              <div className="space-y-6">
-                <Card className="p-6 hover:shadow-xl transition-all duration-300">
-                  <CardContent className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-6 h-6 text-red-600" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-brand-dark-blue mb-2">Fora do Prazo</h3>
-                      <p className="text-gray-600">Tarefas entregues fora do prazo constantemente</p>
-                    </div>
-                  </CardContent>
-                </Card>
-                
-                <Card className="p-6 hover:shadow-xl transition-all duration-300">
-                  <CardContent className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <UserX className="w-6 h-6 text-red-600" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-brand-dark-blue mb-2">Sem Direcionamento</h3>
-                      <p className="text-gray-600">Ninguém sabe quem faz o quê</p>
-                    </div>
-                  </CardContent>
-                </Card>
-                
-                <Card className="p-6 hover:shadow-xl transition-all duration-300">
-                  <CardContent className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Wrench className="w-6 h-6 text-red-600" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-brand-dark-blue mb-2">Qualidade Baixa</h3>
-                      <p className="text-gray-600">Trabalhos feitos de qualquer jeito</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+            <div className="space-y-6 mb-12">
+              <Card className="p-6 hover:shadow-xl transition-all duration-300">
+                <CardContent className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-6 h-6 text-red-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-brand-dark-blue mb-2">Fora do Prazo</h3>
+                    <p className="text-gray-600">Tarefas entregues fora do prazo constantemente</p>
+                  </div>
+                </CardContent>
+              </Card>
               
-              <div className="flex justify-center">
-                <img 
-                  src="/lovable-uploads/b95f29e5-fc7c-4242-8a89-38902343ec9f.png" 
-                  alt="Gráfico mostrando a diferença entre 100% pago vs 75% entregue" 
-                  className="max-w-full h-auto rounded-lg shadow-2xl"
-                />
-              </div>
+              <Card className="p-6 hover:shadow-xl transition-all duration-300">
+                <CardContent className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <UserX className="w-6 h-6 text-red-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-brand-dark-blue mb-2">Sem Direcionamento</h3>
+                    <p className="text-gray-600">Ninguém sabe quem faz o quê</p>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card className="p-6 hover:shadow-xl transition-all duration-300">
+                <CardContent className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Wrench className="w-6 h-6 text-red-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-brand-dark-blue mb-2">Qualidade Baixa</h3>
+                    <p className="text-gray-600">Trabalhos feitos de qualquer jeito</p>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
 
             <div className="text-center">
@@ -180,57 +170,69 @@ const Index = () => {
       {/* O que é o GAP */}
       <section className="py-16 sm:py-20 bg-brand-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-dark-blue mb-6">
-              O que é o Método GAP?
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-700 mb-8 leading-relaxed">
-              Uma solução prática para você, gestor, voltar a ter o controle e a confiança da sua equipe.
-            </p>
-            
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <div className="text-6xl sm:text-7xl md:text-8xl font-bold text-brand-light-blue/20 mb-4">GAP</div>
-              <p className="text-lg sm:text-xl text-brand-dark-blue font-semibold">
-                Gestão de Atendimento e Performance
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-dark-blue mb-6">
+                O que é o Método GAP?
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-700 mb-8 leading-relaxed">
+                Uma solução prática para você, gestor, voltar a ter o controle e a confiança da sua equipe.
               </p>
+              
+              <div className="text-center mb-12">
+                <div className="text-6xl sm:text-7xl md:text-8xl font-bold text-brand-light-blue/20 mb-4">GAP</div>
+                <p className="text-lg sm:text-xl text-brand-dark-blue font-semibold">
+                  Gestão de Atendimento e Performance
+                </p>
+              </div>
             </div>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <Card className="p-6 sm:p-8 bg-gradient-to-br from-brand-dark-blue to-brand-light-blue text-brand-white">
-              <CardContent>
-                <Brain className="w-12 h-12 text-brand-yellow mb-6" />
-                <h3 className="text-xl sm:text-2xl font-bold mb-4">🧠 Consultoria em gestão de pessoas</h3>
-                <p className="text-brand-white/90 leading-relaxed">
-                  Especialistas que entendem o seu desafio e implementam soluções práticas na sua realidade.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="p-6 sm:p-8 bg-gradient-to-br from-brand-yellow to-yellow-400 text-brand-dark-blue">
-              <CardContent>
-                <BarChart3 className="w-12 h-12 text-brand-dark-blue mb-6" />
-                <h3 className="text-xl sm:text-2xl font-bold mb-4">📊 Plataforma com indicadores de desempenho</h3>
-                <p className="text-brand-dark-blue/90 leading-relaxed">
-                  Tecnologia que mostra, em tempo real, a entrega de cada colaborador, setor ou unidade.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
 
-          <div className="text-center">
-            <p className="text-lg text-brand-dark-blue font-semibold mb-8">
-              Com o GAP, você acompanha a entrega de cada colaborador, setor ou unidade – tudo em tempo real.
-            </p>
-            
-            <Button 
-              size="lg" 
-              className="bg-brand-light-blue text-brand-white hover:bg-brand-light-blue/90 px-8 py-4 text-lg font-semibold"
-              onClick={() => scrollToSection('pilares')}
-            >
-              Conheça o Método GAP
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+              <div className="space-y-8">
+                <Card className="p-6 sm:p-8 bg-gradient-to-br from-brand-dark-blue to-brand-light-blue text-brand-white">
+                  <CardContent>
+                    <Brain className="w-12 h-12 text-brand-yellow mb-6" />
+                    <h3 className="text-xl sm:text-2xl font-bold mb-4">🧠 Consultoria em gestão de pessoas</h3>
+                    <p className="text-brand-white/90 leading-relaxed">
+                      Especialistas que entendem o seu desafio e implementam soluções práticas na sua realidade.
+                    </p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="p-6 sm:p-8 bg-gradient-to-br from-brand-yellow to-yellow-400 text-brand-dark-blue">
+                  <CardContent>
+                    <BarChart3 className="w-12 h-12 text-brand-dark-blue mb-6" />
+                    <h3 className="text-xl sm:text-2xl font-bold mb-4">📊 Plataforma com indicadores de desempenho</h3>
+                    <p className="text-brand-dark-blue/90 leading-relaxed">
+                      Tecnologia que mostra, em tempo real, a entrega de cada colaborador, setor ou unidade.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+              
+              <div className="flex justify-center">
+                <img 
+                  src="/lovable-uploads/b95f29e5-fc7c-4242-8a89-38902343ec9f.png" 
+                  alt="Gráfico mostrando a diferença entre 100% pago vs 75% entregue" 
+                  className="max-w-full h-auto rounded-lg shadow-2xl"
+                />
+              </div>
+            </div>
+
+            <div className="text-center">
+              <p className="text-lg text-brand-dark-blue font-semibold mb-8">
+                Com o GAP, você acompanha a entrega de cada colaborador, setor ou unidade – tudo em tempo real.
+              </p>
+              
+              <Button 
+                size="lg" 
+                className="bg-brand-light-blue text-brand-white hover:bg-brand-light-blue/90 px-8 py-4 text-lg font-semibold"
+                onClick={() => scrollToSection('pilares')}
+              >
+                Conheça o Método GAP
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </div>
           </div>
         </div>
       </section>
