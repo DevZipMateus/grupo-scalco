@@ -1,8 +1,10 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, TrendingUp, Target, Award, CheckCircle, ArrowRight, Phone, Mail, MapPin, Star, BarChart3, Zap, Shield, Brain, Eye, MessageCircle, AlertTriangle, Clock, UserX, Wrench } from "lucide-react";
+import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -24,6 +26,17 @@ const Index = () => {
     const message = encodeURIComponent("Olá! Quero conhecer o Método GAP e fazer meu diagnóstico gratuito.");
     window.open(`https://wa.me/5551999712999?text=${message}`, '_blank');
   };
+
+  // Hooks de animação para cada seção
+  const problemSection = useStaggeredAnimation(3, 150);
+  const gapSection = useScrollAnimation();
+  const pilaresSection = useStaggeredAnimation(3, 200);
+  const tecnologiaSection = useStaggeredAnimation(3, 150);
+  const consultoriaSection = useStaggeredAnimation(3, 100);
+  const numerosSection = useStaggeredAnimation(2, 300);
+  const clientesSection = useStaggeredAnimation(5, 100);
+  const faqSection = useStaggeredAnimation(3, 200);
+  const ctaSection = useScrollAnimation();
 
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
       {/* Hero Section - Duas Colunas */}
@@ -102,8 +115,8 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
-              <Card className="p-4 sm:p-6 hover:shadow-xl transition-all duration-300">
+            <div ref={problemSection.ref} className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
+              <Card className={`p-4 sm:p-6 hover:shadow-xl transition-all duration-300 ${problemSection.visibleItems[0] ? 'animate-fade-in-up' : 'opacity-0'}`}>
                 <CardContent className="flex items-center gap-3 sm:gap-4">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
                     <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-red-600" />
@@ -115,7 +128,7 @@ const Index = () => {
                 </CardContent>
               </Card>
               
-              <Card className="p-4 sm:p-6 hover:shadow-xl transition-all duration-300">
+              <Card className={`p-4 sm:p-6 hover:shadow-xl transition-all duration-300 ${problemSection.visibleItems[1] ? 'animate-fade-in-up' : 'opacity-0'}`}>
                 <CardContent className="flex items-center gap-3 sm:gap-4">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
                     <UserX className="w-5 h-5 sm:w-6 sm:h-6 text-red-600" />
@@ -127,7 +140,7 @@ const Index = () => {
                 </CardContent>
               </Card>
               
-              <Card className="p-4 sm:p-6 hover:shadow-xl transition-all duration-300">
+              <Card className={`p-4 sm:p-6 hover:shadow-xl transition-all duration-300 ${problemSection.visibleItems[2] ? 'animate-fade-in-up' : 'opacity-0'}`}>
                 <CardContent className="flex items-center gap-3 sm:gap-4">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
                     <Wrench className="w-5 h-5 sm:w-6 sm:h-6 text-red-600" />
@@ -159,7 +172,7 @@ const Index = () => {
       <section className="py-12 sm:py-16 bg-brand-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-8 sm:mb-12">
+            <div ref={gapSection.ref} className={`text-center mb-8 sm:mb-12 ${gapSection.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-brand-dark-blue mb-4 sm:mb-6">
                 O que é o Método GAP?
               </h2>
@@ -177,7 +190,7 @@ const Index = () => {
 
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center mb-8 sm:mb-12">
               <div className="space-y-6 sm:space-y-8">
-                <Card className="p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-brand-dark-blue to-brand-light-blue text-brand-white">
+                <Card className={`p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-brand-dark-blue to-brand-light-blue text-brand-white ${gapSection.isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
                   <CardContent>
                     <Brain className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-brand-yellow mb-4 sm:mb-6" />
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4">🧠 Consultoria em gestão de pessoas</h3>
@@ -187,7 +200,7 @@ const Index = () => {
                   </CardContent>
                 </Card>
                 
-                <Card className="p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-brand-yellow to-yellow-400 text-brand-dark-blue">
+                <Card className={`p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-brand-yellow to-yellow-400 text-brand-dark-blue ${gapSection.isVisible ? 'animate-fade-in-left' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
                   <CardContent>
                     <BarChart3 className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-brand-dark-blue mb-4 sm:mb-6" />
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4">📊 Plataforma com indicadores de desempenho</h3>
@@ -198,7 +211,7 @@ const Index = () => {
                 </Card>
               </div>
               
-              <div className="flex justify-center">
+              <div className={`flex justify-center ${gapSection.isVisible ? 'animate-fade-in-right' : 'opacity-0'}`}>
                 <img src="/lovable-uploads/b95f29e5-fc7c-4242-8a89-38902343ec9f.png" alt="Gráfico mostrando a diferença entre 100% pago vs 75% entregue" className="max-w-full h-auto rounded-lg shadow-2xl" />
               </div>
             </div>
@@ -230,8 +243,8 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
-            <Card className="p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300">
+          <div ref={pilaresSection.ref} className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
+            <Card className={`p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 ${pilaresSection.visibleItems[0] ? 'animate-fade-in-left' : 'opacity-0'}`}>
               <CardContent className="text-center">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
                   <AlertTriangle className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-red-600" />
@@ -243,7 +256,7 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300">
+            <Card className={`p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 ${pilaresSection.visibleItems[1] ? 'animate-fade-in-up' : 'opacity-0'}`}>
               <CardContent className="text-center">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
                   <Award className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-green-600" />
@@ -255,7 +268,7 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300">
+            <Card className={`p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 ${pilaresSection.visibleItems[2] ? 'animate-fade-in-right' : 'opacity-0'}`}>
               <CardContent className="text-center">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
                   <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-blue-600" />
@@ -290,8 +303,8 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
-            <Card className="p-4 sm:p-6 bg-gradient-to-br from-brand-light-blue to-brand-dark-blue text-brand-white">
+          <div ref={tecnologiaSection.ref} className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
+            <Card className={`p-4 sm:p-6 bg-gradient-to-br from-brand-light-blue to-brand-dark-blue text-brand-white ${tecnologiaSection.visibleItems[0] ? 'animate-fade-in-scale' : 'opacity-0'}`}>
               <CardContent className="text-center">
                 <Eye className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-brand-yellow mb-3 sm:mb-4 mx-auto" />
                 <h3 className="text-sm sm:text-base lg:text-lg font-semibold mb-2 sm:mb-3 text-sky-950">Acompanhamento Total</h3>
@@ -299,7 +312,7 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="p-4 sm:p-6 bg-gradient-to-br from-brand-yellow to-yellow-400 text-brand-dark-blue">
+            <Card className={`p-4 sm:p-6 bg-gradient-to-br from-brand-yellow to-yellow-400 text-brand-dark-blue ${tecnologiaSection.visibleItems[1] ? 'animate-fade-in-scale' : 'opacity-0'}`}>
               <CardContent className="text-center">
                 <BarChart3 className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-brand-dark-blue mb-3 sm:mb-4 mx-auto" />
                 <h3 className="text-sm sm:text-base lg:text-lg font-semibold mb-2 sm:mb-3">Relatórios Automáticos</h3>
@@ -307,7 +320,7 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="p-4 sm:p-6 bg-gradient-to-br from-brand-dark-blue to-brand-light-blue text-brand-white">
+            <Card className={`p-4 sm:p-6 bg-gradient-to-br from-brand-dark-blue to-brand-light-blue text-brand-white ${tecnologiaSection.visibleItems[2] ? 'animate-fade-in-scale' : 'opacity-0'}`}>
               <CardContent className="text-center">
                 <Phone className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-brand-yellow mb-3 sm:mb-4 mx-auto" />
                 <h3 className="text-sm sm:text-base lg:text-lg font-semibold mb-2 sm:mb-3">Acesso Total</h3>
@@ -337,22 +350,22 @@ const Index = () => {
               A plataforma aponta. Nossos consultores fazem acontecer.
             </p>
             
-            <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
-              <Card className="p-4 sm:p-6 bg-brand-white/10 backdrop-blur-sm border-brand-white/20">
+            <div ref={consultoriaSection.ref} className="grid sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
+              <Card className={`p-4 sm:p-6 bg-brand-white/10 backdrop-blur-sm border-brand-white/20 ${consultoriaSection.visibleItems[0] ? 'animate-fade-in-up' : 'opacity-0'}`}>
                 <CardContent className="text-center">
                   <Users className="w-6 h-6 sm:w-8 sm:h-8 text-brand-yellow mx-auto mb-3 sm:mb-4" />
                   <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-brand-white mb-1 sm:mb-2">Desenvolvimento humano</h3>
                 </CardContent>
               </Card>
               
-              <Card className="p-4 sm:p-6 bg-brand-white/10 backdrop-blur-sm border-brand-white/20">
+              <Card className={`p-4 sm:p-6 bg-brand-white/10 backdrop-blur-sm border-brand-white/20 ${consultoriaSection.visibleItems[1] ? 'animate-fade-in-up' : 'opacity-0'}`}>
                 <CardContent className="text-center">
                   <Eye className="w-6 h-6 sm:w-8 sm:h-8 text-brand-yellow mx-auto mb-3 sm:mb-4" />
                   <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-brand-white mb-1 sm:mb-2">Conversas olho no olho</h3>
                 </CardContent>
               </Card>
               
-              <Card className="p-4 sm:p-6 bg-brand-white/10 backdrop-blur-sm border-brand-white/20">
+              <Card className={`p-4 sm:p-6 bg-brand-white/10 backdrop-blur-sm border-brand-white/20 ${consultoriaSection.visibleItems[2] ? 'animate-fade-in-up' : 'opacity-0'}`}>
                 <CardContent className="text-center">
                   <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-brand-yellow mx-auto mb-3 sm:mb-4" />
                   <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-brand-white mb-1 sm:mb-2">Apoio nos momentos difíceis</h3>
@@ -381,8 +394,8 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
-            <Card className="p-6 sm:p-8 bg-gradient-to-br from-green-500 to-green-600 text-white">
+          <div ref={numerosSection.ref} className="grid sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
+            <Card className={`p-6 sm:p-8 bg-gradient-to-br from-green-500 to-green-600 text-white ${numerosSection.visibleItems[0] ? 'animate-fade-in-scale' : 'opacity-0'}`}>
               <CardContent className="text-center">
                 <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">+87%</div>
                 <p className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">de tarefas entregues corretamente</p>
@@ -390,7 +403,7 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="p-6 sm:p-8 bg-gradient-to-br from-blue-500 to-blue-600 text-white">
+            <Card className={`p-6 sm:p-8 bg-gradient-to-br from-blue-500 to-blue-600 text-white ${numerosSection.visibleItems[1] ? 'animate-fade-in-scale' : 'opacity-0'}`}>
               <CardContent className="text-center">
                 <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">+92%</div>
                 <p className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">de aumento na performance geral</p>
@@ -444,22 +457,18 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 items-center">
-            <div className="flex justify-center items-center p-3 sm:p-4 grayscale hover:grayscale-0 transition-all duration-300">
-              <img src="/lovable-uploads/clientes/1753383806026_1_tasca.png" alt="Postos Tasca" className="max-h-12 sm:max-h-16 lg:max-h-20 w-auto object-contain" />
-            </div>
-            <div className="flex justify-center items-center p-3 sm:p-4 grayscale hover:grayscale-0 transition-all duration-300">
-              <img src="/lovable-uploads/clientes/1753383806793_3_hurray.jpg" alt="Rede Hurray" className="max-h-12 sm:max-h-16 lg:max-h-20 w-auto object-contain" />
-            </div>
-            <div className="flex justify-center items-center p-3 sm:p-4 grayscale hover:grayscale-0 transition-all duration-300">
-              <img src="/lovable-uploads/clientes/1753383807178_4_malerba.png" alt="Postos Malerba" className="max-h-12 sm:max-h-16 lg:max-h-20 w-auto object-contain" />
-            </div>
-            <div className="flex justify-center items-center p-3 sm:p-4 grayscale hover:grayscale-0 transition-all duration-300">
-              <img src="/lovable-uploads/clientes/marcela.png" alt="Rede Marcela" className="max-h-12 sm:max-h-16 lg:max-h-20 w-auto object-contain" />
-            </div>
-            <div className="flex justify-center items-center p-3 sm:p-4 grayscale hover:grayscale-0 transition-all duration-300 col-span-2 sm:col-span-3 md:col-span-1">
-              <img src="/lovable-uploads/clientes/petrocal.png" alt="Postos Petrocal" className="max-h-12 sm:max-h-16 lg:max-h-20 w-auto object-contain" />
-            </div>
+          <div ref={clientesSection.ref} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 items-center">
+            {[
+              { src: "/lovable-uploads/clientes/1753383806026_1_tasca.png", alt: "Postos Tasca" },
+              { src: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg", alt: "Rede Hurray" },
+              { src: "/lovable-uploads/clientes/1753383807178_4_malerba.png", alt: "Postos Malerba" },
+              { src: "/lovable-uploads/clientes/marcela.png", alt: "Rede Marcela" },
+              { src: "/lovable-uploads/clientes/petrocal.png", alt: "Postos Petrocal" }
+            ].map((cliente, index) => (
+              <div key={index} className={`flex justify-center items-center p-3 sm:p-4 grayscale hover:grayscale-0 transition-all duration-300 ${index === 4 ? 'col-span-2 sm:col-span-3 md:col-span-1' : ''} ${clientesSection.visibleItems[index] ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                <img src={cliente.src} alt={cliente.alt} className="max-h-12 sm:max-h-16 lg:max-h-20 w-auto object-contain" />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -472,8 +481,8 @@ const Index = () => {
               "Mas será que funciona aqui?"
             </h2>
             
-            <div className="grid gap-4 sm:gap-6 lg:gap-8">
-              <Card className="p-4 sm:p-6 lg:p-8">
+            <div ref={faqSection.ref} className="grid gap-4 sm:gap-6 lg:gap-8">
+              <Card className={`p-4 sm:p-6 lg:p-8 ${faqSection.visibleItems[0] ? 'animate-fade-in-up' : 'opacity-0'}`}>
                 <CardContent>
                   <h3 className="text-lg sm:text-xl font-bold text-red-600 mb-3 sm:mb-4">"Aqui o pessoal é resistente..."</h3>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
@@ -482,7 +491,7 @@ const Index = () => {
                 </CardContent>
               </Card>
               
-              <Card className="p-4 sm:p-6 lg:p-8">
+              <Card className={`p-4 sm:p-6 lg:p-8 ${faqSection.visibleItems[1] ? 'animate-fade-in-up' : 'opacity-0'}`}>
                 <CardContent>
                   <h3 className="text-lg sm:text-xl font-bold text-red-600 mb-3 sm:mb-4">"Não tenho tempo..."</h3>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
@@ -491,7 +500,7 @@ const Index = () => {
                 </CardContent>
               </Card>
               
-              <Card className="p-4 sm:p-6 lg:p-8">
+              <Card className={`p-4 sm:p-6 lg:p-8 ${faqSection.visibleItems[2] ? 'animate-fade-in-up' : 'opacity-0'}`}>
                 <CardContent>
                   <h3 className="text-lg sm:text-xl font-bold text-red-600 mb-3 sm:mb-4">"Já tentei e não deu certo..."</h3>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
@@ -507,7 +516,7 @@ const Index = () => {
       {/* CTA Final */}
       <section className="py-12 sm:py-16 bg-gradient-to-r from-brand-dark-blue to-brand-light-blue">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
+          <div ref={ctaSection.ref} className={`max-w-4xl mx-auto text-center ${ctaSection.isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-brand-white mb-4 sm:mb-6">
               Pronto para parar de pagar 100% e receber só 75%?
             </h2>

@@ -1,0 +1,67 @@
+
+import { useEffect, useRef, useState } from 'react';
+
+export const useScrollAnimation = (threshold = 0.1, rootMargin = '0px 0px -50px 0px') => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold, rootMargin }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [threshold, rootMargin]);
+
+  return { ref, isVisible };
+};
+
+export const useStaggeredAnimation = (itemCount: number, baseDelay = 100) => {
+  const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(itemCount).fill(false));
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Trigger staggered animation
+          Array.from({ length: itemCount }).forEach((_, index) => {
+            setTimeout(() => {
+              setVisibleItems(prev => {
+                const newState = [...prev];
+                newState[index] = true;
+                return newState;
+              });
+            }, index * baseDelay);
+          });
+        }
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [itemCount, baseDelay]);
+
+  return { ref, visibleItems };
+};
