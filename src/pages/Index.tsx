@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -24,7 +23,15 @@ const Index = () => {
   };
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
       {/* Hero Section - Duas Colunas */}
-      <section className="relative bg-gradient-to-r from-brand-dark-blue to-brand-light-blue py-6 sm:py-8 md:py-12 lg:py-16 flex items-center overflow-hidden">
+      <section 
+        className="relative py-4 sm:py-6 md:py-8 lg:py-10 flex items-center overflow-hidden"
+        style={{
+          backgroundImage: 'url(/lovable-uploads/7fdf71d9-489e-44cc-84ce-211bf9d630bc.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container mx-auto px-3 sm:px-4 lg:px-8 relative z-10">
           <div className="max-w-7xl mx-auto">
             <div className={`grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 items-center transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
@@ -62,9 +69,9 @@ const Index = () => {
                   </div>
                 </div>
                 
-                <Button size="lg" className="bg-brand-yellow text-brand-dark-blue hover:bg-brand-yellow/90 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300" onClick={handleWhatsAppClick}>
+                <Button size="lg" className="bg-brand-yellow text-brand-dark-blue hover:bg-brand-yellow/90 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300" onClick={handleWhatsAppClick}>
                   <span className="block sm:hidden">Aplicar Método GAP</span>
-                  <span className="hidden sm:block">Quero aplicar o Método GAP na minha empresa</span>
+                  <span className="hidden sm:block">Aplicar Método GAP</span>
                   <ArrowRight className="ml-1 sm:ml-2 w-3 h-3 sm:w-4 sm:h-4" />
                 </Button>
               </div>
@@ -74,14 +81,14 @@ const Index = () => {
                 <img 
                   src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" 
                   alt="Grupo Scalco Logo" 
-                  className="max-h-20 sm:max-h-32 md:max-h-48 lg:max-h-64 xl:max-h-80 2xl:max-h-96 w-auto object-contain" 
+                  className="max-h-16 sm:max-h-20 md:max-h-32 lg:max-h-40 xl:max-h-48 2xl:max-h-56 w-auto object-contain" 
                 />
               </div>
             </div>
           </div>
         </div>
         
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-dark-blue/80 to-brand-light-blue/80"></div>
         <div className="absolute bottom-0 left-0 right-0 h-10 sm:h-20 bg-gradient-to-t from-brand-white to-transparent"></div>
       </section>
 
@@ -141,9 +148,9 @@ const Index = () => {
                 Essa é a realidade de muitas empresas com várias unidades e equipes descentralizadas.
               </p>
               
-              <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-4 sm:px-8 py-2 sm:py-4 text-sm sm:text-lg font-semibold" onClick={handleWhatsAppClick}>
+              <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-semibold" onClick={handleWhatsAppClick}>
                 <span className="block sm:hidden">Corrigir desequilíbrio</span>
-                <span className="hidden sm:block">Quero corrigir esse desequilíbrio agora</span>
+                <span className="hidden sm:block">Corrigir desequilíbrio</span>
                 <ArrowRight className="ml-1 sm:ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
             </div>
@@ -204,9 +211,9 @@ const Index = () => {
                 Com o GAP, você acompanha a entrega de cada colaborador, setor ou unidade – tudo em tempo real.
               </p>
               
-              <Button size="lg" className="bg-brand-light-blue text-brand-white hover:bg-brand-light-blue/90 px-4 sm:px-8 py-2 sm:py-4 text-sm sm:text-lg font-semibold" onClick={handleWhatsAppClick}>
+              <Button size="lg" className="bg-brand-light-blue text-brand-white hover:bg-brand-light-blue/90 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-semibold" onClick={handleWhatsAppClick}>
                 <span className="block sm:hidden">Conhecer o GAP</span>
-                <span className="hidden sm:block">Conheça o Método GAP</span>
+                <span className="hidden sm:block">Conhecer o GAP</span>
                 <ArrowRight className="ml-1 sm:ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
             </div>
@@ -265,9 +272,9 @@ const Index = () => {
           </div>
 
           <div className="text-center">
-            <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-4 sm:px-8 py-2 sm:py-4 text-sm sm:text-lg font-semibold" onClick={handleWhatsAppClick}>
+            <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-semibold" onClick={handleWhatsAppClick}>
               <span className="block sm:hidden">Aplicar no meu time</span>
-              <span className="hidden sm:block">Quero aplicar isso no meu time</span>
+              <span className="hidden sm:block">Aplicar no meu time</span>
               <ArrowRight className="ml-1 sm:ml-2 w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
           </div>
@@ -313,9 +320,9 @@ const Index = () => {
           </div>
 
           <div className="text-center">
-            <Button size="lg" className="bg-brand-light-blue text-brand-white hover:bg-brand-light-blue/90 px-4 sm:px-8 py-2 sm:py-4 text-sm sm:text-lg font-semibold" onClick={handleWhatsAppClick}>
+            <Button size="lg" className="bg-brand-light-blue text-brand-white hover:bg-brand-light-blue/90 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-semibold" onClick={handleWhatsAppClick}>
               <span className="block sm:hidden">Quero essa visão</span>
-              <span className="hidden sm:block">Quero essa visão na minha empresa</span>
+              <span className="hidden sm:block">Quero essa visão</span>
               <ArrowRight className="ml-1 sm:ml-2 w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
           </div>
@@ -356,9 +363,9 @@ const Index = () => {
               </Card>
             </div>
             
-            <Button size="lg" className="bg-brand-yellow text-brand-dark-blue hover:bg-brand-yellow/90 px-4 sm:px-8 py-2 sm:py-4 text-sm sm:text-lg font-semibold" onClick={handleWhatsAppClick}>
+            <Button size="lg" className="bg-brand-yellow text-brand-dark-blue hover:bg-brand-yellow/90 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-semibold" onClick={handleWhatsAppClick}>
               <span className="block sm:hidden">Conversar com especialista</span>
-              <span className="hidden sm:block">Quero conversar com um especialista</span>
+              <span className="hidden sm:block">Conversar com especialista</span>
               <ArrowRight className="ml-1 sm:ml-2 w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
           </div>
@@ -419,9 +426,9 @@ const Index = () => {
           </div>
 
           <div className="text-center">
-            <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-4 sm:px-8 py-2 sm:py-4 text-sm sm:text-lg font-semibold" onClick={handleWhatsAppClick}>
+            <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-semibold" onClick={handleWhatsAppClick}>
               <span className="block sm:hidden">Quero esses resultados</span>
-              <span className="hidden sm:block">Quero esses resultados no meu negócio</span>
+              <span className="hidden sm:block">Quero esses resultados</span>
               <ArrowRight className="ml-1 sm:ml-2 w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
           </div>
@@ -512,9 +519,9 @@ const Index = () => {
               Descubra como aplicar o GAP no seu negócio.
             </p>
             
-            <Button size="lg" className="bg-brand-yellow text-brand-dark-blue hover:bg-brand-yellow/90 px-6 sm:px-12 py-3 sm:py-6 text-base sm:text-xl font-bold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300" onClick={handleWhatsAppClick}>
+            <Button size="lg" className="bg-brand-yellow text-brand-dark-blue hover:bg-brand-yellow/90 px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg font-bold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300" onClick={handleWhatsAppClick}>
               <span className="block sm:hidden">Diagnóstico gratuito</span>
-              <span className="hidden sm:block">Quero meu diagnóstico gratuito</span>
+              <span className="hidden sm:block">Diagnóstico gratuito</span>
               <ArrowRight className="ml-2 sm:ml-3 w-5 h-5 sm:w-6 sm:h-6" />
             </Button>
 
