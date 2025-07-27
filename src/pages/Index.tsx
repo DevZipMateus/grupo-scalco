@@ -3,13 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, TrendingUp, Target, Award, CheckCircle, ArrowRight, Phone, Mail, MapPin, Star, BarChart3, Zap, Shield, Brain, Eye, MessageCircle, AlertTriangle, Clock, UserX, Wrench } from "lucide-react";
-
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -18,12 +16,10 @@ const Index = () => {
       });
     }
   };
-
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Olá! Quero conhecer o Método GAP e fazer meu diagnóstico gratuito.");
     window.open(`https://wa.me/5551999712999?text=${message}`, '_blank');
   };
-
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
       {/* Hero Section - Duas Colunas */}
       <section className="relative py-6 sm:py-8 md:py-10 lg:py-12 flex items-center overflow-hidden" style={{
@@ -50,7 +46,7 @@ const Index = () => {
                   <span className="text-brand-yellow">Isso é justo?</span>
                 </h1>
                 
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-brand-white/90 mb-4 sm:mb-6 leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-brand-white/90 mb-4 sm:mb-6 leading-relaxed text-zinc-200">
                   Chegou o <strong>Método GAP</strong>: consultoria em gestão de pessoas + tecnologia para transformar o desempenho da sua empresa.
                 </p>
                 
@@ -596,5 +592,4 @@ const Index = () => {
       </footer>
     </div>;
 };
-
 export default Index;
