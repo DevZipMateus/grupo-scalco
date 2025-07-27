@@ -3,11 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, TrendingUp, Target, Award, CheckCircle, ArrowRight, Phone, Mail, MapPin, Star, BarChart3, Zap, Shield, Brain, Eye, MessageCircle, AlertTriangle, Clock, UserX, Wrench } from "lucide-react";
+
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
+
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -16,10 +19,12 @@ const Index = () => {
       });
     }
   };
+
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Olá! Quero conhecer o Método GAP e fazer meu diagnóstico gratuito.");
     window.open(`https://wa.me/5551999712999?text=${message}`, '_blank');
   };
+
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
       {/* Hero Section - Duas Colunas */}
       <section className="relative py-6 sm:py-8 md:py-10 lg:py-12 flex items-center overflow-hidden" style={{
@@ -538,8 +543,11 @@ const Index = () => {
                 <p className="text-sm sm:text-base text-white mb-3 sm:mb-4">
                   Transformamos equipes através do Método GAP: consultoria + tecnologia.
                 </p>
-                <p className="text-xs sm:text-sm text-white">
+                <p className="text-xs sm:text-sm text-white mb-2">
                   Responsável: Grupo Scalco
+                </p>
+                <p className="text-xs sm:text-sm text-white">
+                  CNPJ: 03.148.465/0001-82
                 </p>
               </div>
               
@@ -592,4 +600,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
