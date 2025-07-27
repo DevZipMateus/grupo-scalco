@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, TrendingUp, Target, Award, CheckCircle, ArrowRight, Phone, Mail, MapPin, Star, BarChart3, Zap, Shield, Brain, Eye, MessageCircle, AlertTriangle, Clock, UserX, Wrench } from "lucide-react";
-
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
@@ -23,15 +22,12 @@ const Index = () => {
   };
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
       {/* Hero Section - Duas Colunas */}
-      <section 
-        className="relative py-4 sm:py-6 md:py-8 lg:py-10 flex items-center overflow-hidden"
-        style={{
-          backgroundImage: 'url(/lovable-uploads/7fdf71d9-489e-44cc-84ce-211bf9d630bc.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
+      <section className="relative py-4 sm:py-6 md:py-8 lg:py-10 flex items-center overflow-hidden" style={{
+      backgroundImage: 'url(/lovable-uploads/7fdf71d9-489e-44cc-84ce-211bf9d630bc.png)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }}>
         <div className="container mx-auto px-3 sm:px-4 lg:px-8 relative z-10">
           <div className="max-w-7xl mx-auto">
             <div className={`grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 items-center transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
@@ -78,11 +74,7 @@ const Index = () => {
 
               {/* Coluna Direita - Logo Grande */}
               <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-                <img 
-                  src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" 
-                  alt="Grupo Scalco Logo" 
-                  className="max-h-16 sm:max-h-20 md:max-h-32 lg:max-h-40 xl:max-h-48 2xl:max-h-56 w-auto object-contain" 
-                />
+                <img src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" alt="Grupo Scalco Logo" className="max-h-16 sm:max-h-20 md:max-h-32 lg:max-h-40 xl:max-h-48 2xl:max-h-56 w-auto object-contain" />
               </div>
             </div>
           </div>
@@ -297,8 +289,8 @@ const Index = () => {
             <Card className="p-4 sm:p-6 bg-gradient-to-br from-brand-light-blue to-brand-dark-blue text-brand-white">
               <CardContent className="text-center">
                 <Eye className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-brand-yellow mb-3 sm:mb-4 mx-auto" />
-                <h3 className="text-sm sm:text-base lg:text-lg font-semibold mb-2 sm:mb-3">Acompanhamento Total</h3>
-                <p className="text-xs sm:text-sm text-brand-white/90">Por pessoa, tarefa e setor</p>
+                <h3 className="text-sm sm:text-base lg:text-lg font-semibold mb-2 sm:mb-3 text-sky-950">Acompanhamento Total</h3>
+                <p className="text-xs sm:text-sm text-brand-white/90 text-blue-950">Por pessoa, tarefa e setor</p>
               </CardContent>
             </Card>
             
