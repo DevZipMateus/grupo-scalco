@@ -458,43 +458,39 @@ const Index = () => {
           <div className="max-w-5xl mx-auto mb-8 sm:mb-12">
             <h3 className="text-lg sm:text-xl font-bold text-brand-dark-blue mb-6 sm:mb-8 text-center">O que nossos clientes dizem:</h3>
             
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-2 md:-ml-4">
+            <Carousel className="w-full">
+              <CarouselContent className="-ml-1">
                 {testimonials.map((testimonial) => (
-                  <CarouselItem key={testimonial.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/2">
-                    <Card className="h-full">
-                      <CardContent className="p-6 sm:p-8 flex flex-col h-full">
-                        <div className="flex-grow">
-                          <p className="text-sm sm:text-base text-gray-700 italic mb-6 sm:mb-8 leading-relaxed">
-                            "{testimonial.text}"
-                          </p>
-                        </div>
-                        <div className="flex items-center gap-4 mt-auto">
-                          <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0">
-                            <img 
-                              src={testimonial.image} 
-                              alt={testimonial.name}
-                              className="w-full h-full object-cover"
-                            />
+                  <CarouselItem key={testimonial.id} className="pl-1 md:basis-1/2 lg:basis-1/3">
+                    <div className="p-1">
+                      <Card className="h-full">
+                        <CardContent className="p-6 sm:p-8 flex flex-col h-full">
+                          <div className="flex-grow">
+                            <p className="text-sm sm:text-base text-gray-700 italic mb-6 sm:mb-8 leading-relaxed">
+                              "{testimonial.text}"
+                            </p>
                           </div>
-                          <div>
-                            <div className="text-sm sm:text-base font-bold text-brand-dark-blue">{testimonial.name}</div>
-                            <div className="text-xs sm:text-sm text-gray-600">{testimonial.company}</div>
+                          <div className="flex items-center gap-4 mt-auto">
+                            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0">
+                              <img 
+                                src={testimonial.image} 
+                                alt={testimonial.name}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            <div>
+                              <div className="text-sm sm:text-base font-bold text-brand-dark-blue">{testimonial.name}</div>
+                              <div className="text-xs sm:text-sm text-gray-600">{testimonial.company}</div>
+                            </div>
                           </div>
-                        </div>
-                      </CardContent>
-                    </Card>
+                        </CardContent>
+                      </Card>
+                    </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="hidden sm:flex" />
-              <CarouselNext className="hidden sm:flex" />
+              <CarouselPrevious />
+              <CarouselNext />
             </Carousel>
           </div>
 
