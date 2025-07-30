@@ -479,14 +479,14 @@ const Index = () => {
                 {testimonials.map((testimonial, index) => (
                   <CarouselItem key={testimonial.id} className="basis-full md:basis-1/3">
                     <div className="p-2">
-                      <Card className="h-full transition-all duration-300 hover:shadow-xl">
-                        <CardContent className="p-6 sm:p-8 flex flex-col h-full">
-                          <div className="flex-grow">
-                            <p className="text-sm sm:text-base text-gray-700 italic mb-6 sm:mb-8 leading-relaxed">
+                      <Card className="h-full min-h-[320px] md:min-h-[400px] transition-all duration-300 hover:shadow-xl">
+                        <CardContent className="p-6 sm:p-8 flex flex-col justify-between h-full">
+                          <div className="flex-grow flex flex-col">
+                            <p className="text-sm sm:text-base text-gray-700 italic mb-6 sm:mb-8 leading-relaxed line-clamp-6 md:line-clamp-8 overflow-hidden">
                               "{testimonial.text}"
                             </p>
                           </div>
-                          <div className="flex items-center gap-4 mt-auto">
+                          <div className="flex items-center gap-4 mt-auto pt-4">
                             <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0">
                               <img 
                                 src={testimonial.image} 
