@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,6 +6,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Users, TrendingUp, Target, Award, CheckCircle, ArrowRight, Phone, Mail, MapPin, Star, BarChart3, Zap, Shield, Brain, Eye, MessageCircle, AlertTriangle, Clock, UserX, Wrench } from "lucide-react";
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import Autoplay from "embla-carousel-autoplay";
+import "./components/TestimonialCarousel.css";
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -467,7 +467,7 @@ const Index = () => {
             
             <Carousel 
               plugins={[plugin.current]}
-              className="w-full max-w-5xl mx-auto"
+              className="w-full max-w-5xl mx-auto testimonial-carousel"
               onMouseEnter={plugin.current.stop}
               onMouseLeave={plugin.current.reset}
               opts={{
@@ -477,7 +477,7 @@ const Index = () => {
             >
               <CarouselContent>
                 {testimonials.map((testimonial, index) => (
-                  <CarouselItem key={testimonial.id} className="md:basis-1/3 lg:basis-2/5">
+                  <CarouselItem key={testimonial.id} className="basis-full md:basis-1/3">
                     <div className="p-2">
                       <Card className="h-full transition-all duration-300 hover:shadow-xl">
                         <CardContent className="p-6 sm:p-8 flex flex-col h-full">
