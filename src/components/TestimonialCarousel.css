@@ -1,0 +1,27 @@
+
+/* Estilos para o carousel de depoimentos com efeito central */
+.testimonial-carousel [data-state="inactive"] {
+  opacity: 0.4;
+  transform: scale(0.9);
+  transition: all 0.3s ease-in-out;
+}
+
+.testimonial-carousel [data-state="active"] {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+
+.testimonial-carousel .embla__slide {
+  transition: all 0.3s ease-in-out;
+}
+
+.testimonial-carousel .embla__slide:not(.embla__slide--selected) {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.testimonial-carousel .embla__slide.embla__slide--selected {
+  opacity: 1;
+  transform: scale(1);
+}

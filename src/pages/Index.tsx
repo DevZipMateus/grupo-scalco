@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Users, TrendingUp, Target, Award, CheckCircle, ArrowRight, Phone, Mail, MapPin, Star, BarChart3, Zap, Shield, Brain, Eye, MessageCircle, AlertTriangle, Clock, UserX, Wrench } from "lucide-react";
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
+import Autoplay from "embla-carousel-autoplay";
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -36,6 +38,11 @@ const Index = () => {
   const clientesSection = useStaggeredAnimation(5, 100);
   const faqSection = useStaggeredAnimation(3, 200);
   const ctaSection = useScrollAnimation();
+
+  // Plugin para autoplay do carousel
+  const plugin = useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true })
+  );
 
   const testimonials = [
     {
@@ -455,15 +462,24 @@ const Index = () => {
             </Card>
           </div>
 
-          <div className="max-w-5xl mx-auto mb-8 sm:mb-12">
+          <div className="max-w-4xl mx-auto mb-8 sm:mb-12">
             <h3 className="text-lg sm:text-xl font-bold text-brand-dark-blue mb-6 sm:mb-8 text-center">O que nossos clientes dizem:</h3>
             
-            <Carousel className="w-full">
-              <CarouselContent className="-ml-1">
-                {testimonials.map((testimonial) => (
-                  <CarouselItem key={testimonial.id} className="pl-1 md:basis-1/2 lg:basis-1/3">
-                    <div className="p-1">
-                      <Card className="h-full">
+            <Carousel 
+              plugins={[plugin.current]}
+              className="w-full max-w-5xl mx-auto"
+              onMouseEnter={plugin.current.stop}
+              onMouseLeave={plugin.current.reset}
+              opts={{
+                align: "center",
+                loop: true,
+              }}
+            >
+              <CarouselContent>
+                {testimonials.map((testimonial, index) => (
+                  <CarouselItem key={testimonial.id} className="md:basis-1/3 lg:basis-2/5">
+                    <div className="p-2">
+                      <Card className="h-full transition-all duration-300 hover:shadow-xl">
                         <CardContent className="p-6 sm:p-8 flex flex-col h-full">
                           <div className="flex-grow">
                             <p className="text-sm sm:text-base text-gray-700 italic mb-6 sm:mb-8 leading-relaxed">
@@ -489,8 +505,8 @@ const Index = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
+              <CarouselPrevious className="-left-12" />
+              <CarouselNext className="-right-12" />
             </Carousel>
           </div>
 
