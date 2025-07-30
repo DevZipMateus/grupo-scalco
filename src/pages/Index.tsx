@@ -1,8 +1,8 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Users, TrendingUp, Target, Award, CheckCircle, ArrowRight, Phone, Mail, MapPin, Star, BarChart3, Zap, Shield, Brain, Eye, MessageCircle, AlertTriangle, Clock, UserX, Wrench } from "lucide-react";
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
@@ -37,6 +37,52 @@ const Index = () => {
   const clientesSection = useStaggeredAnimation(5, 100);
   const faqSection = useStaggeredAnimation(3, 200);
   const ctaSection = useScrollAnimation();
+
+  // Testimonials data
+  const testimonials = [
+    {
+      id: 1,
+      text: "Antes da Scalco \"achávamos\" muito... (eu acho que é isso, eu acho que é bom, eu acho que esse funcionário é melhor que aquele...). O primeiro impacto foi de união da equipe, uma coisa que nós não esperávamos. A gente não tinha gerentes antes... depois de implantar \"a Scalco\" nós formamos gerentes.",
+      name: "Maurício Januzzi",
+      company: "Postos Malerba",
+      image: "/lovable-uploads/clientes/1753383807178_4_malerba.png"
+    },
+    {
+      id: 2,
+      text: "Depois que a Scalco chegou a gente conseguiu sair do \"achômetro\" e ter certezas, e crescer nesse trabalho.",
+      name: "Camila Maluf",
+      company: "Postos Tasca",
+      image: "/lovable-uploads/clientes/1753383806026_1_tasca.png"
+    },
+    {
+      id: 3,
+      text: "Depois da chegada da consultoria veio um boom todo: meta, as vendas alavancaram, atendimento, conservação, limpeza e organização do posto... aí com a copa foi uma melhoria absurda. A gente tinha posto vendendo (mix automotivo) R$ 10.000,00 e depois saltou pra R$ 25.000,00 – R$ 30.000,00 então o resultado veio rápido disso aí. A equipe toda se engajou para melhorar o atendimento.",
+      name: "Thiago Perin",
+      company: "Rede Marcela",
+      image: "/lovable-uploads/clientes/marcela.png"
+    },
+    {
+      id: 4,
+      text: "Nós tínhamos um conjunto de processos próprios, mas não medíamos com a frequência e a precisão que o método GAP nos trouxe.",
+      name: "Wellington Granja",
+      company: "Postos Petrocal",
+      image: "/lovable-uploads/clientes/petrocal.png"
+    },
+    {
+      id: 5,
+      text: "Antes da Scalco, a gestão de pessoas era muito fraca, não tinha uma medida exata de cada colaborador. Nós fomos campeão Brasil no ano que a Scalco entrou, já tinha 13 anos trabalhando com loja e com a introdução da Scalco a gente ganhou concorrendo com 365 lojas na época.",
+      name: "Antero Vieira",
+      company: "Postos Tasca",
+      image: "/lovable-uploads/clientes/1753383806026_1_tasca.png"
+    },
+    {
+      id: 6,
+      text: "O elogio começou a vir e a turma não estava muito acostumada com isso... a receber elogio né... e nisso a satisfação começa a trazer resultado e isso nos deixou mais confiante no nosso trabalho.",
+      name: "Marcelo Oliveira",
+      company: "Rede Hurray",
+      image: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg"
+    }
+  ];
 
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
       {/* Hero Section - Duas Colunas */}
@@ -412,27 +458,47 @@ const Index = () => {
             </Card>
           </div>
 
-          <div className="max-w-3xl mx-auto mb-8 sm:mb-12">
+          <div className="max-w-5xl mx-auto mb-8 sm:mb-12">
             <h3 className="text-lg sm:text-xl font-bold text-brand-dark-blue mb-6 sm:mb-8 text-center">O que nossos clientes dizem:</h3>
-            <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
-              <Card className="p-4 sm:p-6">
-                <CardContent>
-                  <p className="text-sm sm:text-base text-gray-700 italic mb-3 sm:mb-4 leading-relaxed">
-                    "A equipe passou a se responsabilizar sem eu ficar em cima."
-                  </p>
-                  <div className="text-sm sm:text-base font-semibold text-brand-dark-blue">- Cliente GAP</div>
-                </CardContent>
-              </Card>
-              
-              <Card className="p-4 sm:p-6">
-                <CardContent>
-                  <p className="text-sm sm:text-base text-gray-700 italic mb-3 sm:mb-4 leading-relaxed">
-                    "Vi quem realmente veste a camisa."
-                  </p>
-                  <div className="text-sm sm:text-base font-semibold text-brand-dark-blue">- Cliente GAP</div>
-                </CardContent>
-              </Card>
-            </div>
+            
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {testimonials.map((testimonial) => (
+                  <CarouselItem key={testimonial.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/2">
+                    <Card className="h-full">
+                      <CardContent className="p-6 sm:p-8 flex flex-col h-full">
+                        <div className="flex-grow">
+                          <p className="text-sm sm:text-base text-gray-700 italic mb-6 sm:mb-8 leading-relaxed">
+                            "{testimonial.text}"
+                          </p>
+                        </div>
+                        <div className="flex items-center gap-4 mt-auto">
+                          <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0">
+                            <img 
+                              src={testimonial.image} 
+                              alt={testimonial.name}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div>
+                            <div className="text-sm sm:text-base font-bold text-brand-dark-blue">{testimonial.name}</div>
+                            <div className="text-xs sm:text-sm text-gray-600">{testimonial.company}</div>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden sm:flex" />
+              <CarouselNext className="hidden sm:flex" />
+            </Carousel>
           </div>
 
           <div className="text-center">
