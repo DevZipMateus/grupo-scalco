@@ -27,7 +27,6 @@ const Index = () => {
     window.open(`https://wa.me/5551999712999?text=${message}`, '_blank');
   };
 
-  // Hooks de animação para cada seção
   const problemSection = useStaggeredAnimation(3, 150);
   const gapSection = useScrollAnimation();
   const pilaresSection = useStaggeredAnimation(3, 200);
@@ -38,7 +37,6 @@ const Index = () => {
   const faqSection = useStaggeredAnimation(3, 200);
   const ctaSection = useScrollAnimation();
 
-  // Testimonials data
   const testimonials = [
     {
       id: 1,
@@ -144,7 +142,6 @@ const Index = () => {
           </div>
         </div>
         
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-dark-blue/80 to-brand-light-blue/80"></div>
         <div className="absolute bottom-0 left-0 right-0 h-10 sm:h-20 bg-gradient-to-t from-brand-white to-transparent"></div>
       </section>
 
