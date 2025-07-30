@@ -7,14 +7,11 @@ import { Users, TrendingUp, Target, Award, CheckCircle, ArrowRight, Phone, Mail,
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import Autoplay from "embla-carousel-autoplay";
 import "../components/TestimonialCarousel.css";
-
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -23,12 +20,10 @@ const Index = () => {
       });
     }
   };
-
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Olá! Quero conhecer o Método GAP e fazer meu diagnóstico gratuito.");
     window.open(`https://wa.me/5551999712999?text=${message}`, '_blank');
   };
-
   const problemSection = useStaggeredAnimation(3, 150);
   const gapSection = useScrollAnimation();
   const pilaresSection = useStaggeredAnimation(3, 200);
@@ -40,55 +35,47 @@ const Index = () => {
   const ctaSection = useScrollAnimation();
 
   // Plugin para autoplay do carousel
-  const plugin = useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: true })
-  );
-
-  const testimonials = [
-    {
-      id: 1,
-      text: "Antes da Scalco \"achávamos\" muito... (eu acho que é isso, eu acho que é bom, eu acho que esse funcionário é melhor que aquele...). O primeiro impacto foi de união da equipe, uma coisa que nós não esperávamos. A gente não tinha gerentes antes... depois de implantar \"a Scalco\" nós formamos gerentes.",
-      name: "Maurício Januzzi",
-      company: "Postos Malerba",
-      image: "/lovable-uploads/clientes/1753383807178_4_malerba.png"
-    },
-    {
-      id: 2,
-      text: "Depois que a Scalco chegou a gente conseguiu sair do \"achômetro\" e ter certezas, e crescer nesse trabalho.",
-      name: "Camila Maluf",
-      company: "Postos Tasca",
-      image: "/lovable-uploads/clientes/1753383806026_1_tasca.png"
-    },
-    {
-      id: 3,
-      text: "Depois da chegada da consultoria veio um boom todo: meta, as vendas alavancaram, atendimento, conservação, limpeza e organização do posto... aí com a copa foi uma melhoria absurda. A gente tinha posto vendendo (mix automotivo) R$ 10.000,00 e depois saltou pra R$ 25.000,00 – R$ 30.000,00 então o resultado veio rápido disso aí. A equipe toda se engajou para melhorar o atendimento.",
-      name: "Thiago Perin",
-      company: "Rede Marcela",
-      image: "/lovable-uploads/clientes/marcela.png"
-    },
-    {
-      id: 4,
-      text: "Nós tínhamos um conjunto de processos próprios, mas não medíamos com a frequência e a precisão que o método GAP nos trouxe.",
-      name: "Wellington Granja",
-      company: "Postos Petrocal",
-      image: "/lovable-uploads/clientes/petrocal.png"
-    },
-    {
-      id: 5,
-      text: "Antes da Scalco, a gestão de pessoas era muito fraca, não tinha uma medida exata de cada colaborador. Nós fomos campeão Brasil no ano que a Scalco entrou, já tinha 13 anos trabalhando com loja e com a introdução da Scalco a gente ganhou concorrendo com 365 lojas na época.",
-      name: "Antero Vieira",
-      company: "Postos Tasca",
-      image: "/lovable-uploads/clientes/1753383806026_1_tasca.png"
-    },
-    {
-      id: 6,
-      text: "O elogio começou a vir e a turma não estava muito acostumada com isso... a receber elogio né... e nisso a satisfação começa a trazer resultado e isso nos deixou mais confiante no nosso trabalho.",
-      name: "Marcelo Oliveira",
-      company: "Rede Hurray",
-      image: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg"
-    }
-  ];
-
+  const plugin = useRef(Autoplay({
+    delay: 4000,
+    stopOnInteraction: true
+  }));
+  const testimonials = [{
+    id: 1,
+    text: "Antes da Scalco \"achávamos\" muito... (eu acho que é isso, eu acho que é bom, eu acho que esse funcionário é melhor que aquele...). O primeiro impacto foi de união da equipe, uma coisa que nós não esperávamos. A gente não tinha gerentes antes... depois de implantar \"a Scalco\" nós formamos gerentes.",
+    name: "Maurício Januzzi",
+    company: "Postos Malerba",
+    image: "/lovable-uploads/clientes/1753383807178_4_malerba.png"
+  }, {
+    id: 2,
+    text: "Depois que a Scalco chegou a gente conseguiu sair do \"achômetro\" e ter certezas, e crescer nesse trabalho.",
+    name: "Camila Maluf",
+    company: "Postos Tasca",
+    image: "/lovable-uploads/clientes/1753383806026_1_tasca.png"
+  }, {
+    id: 3,
+    text: "Depois da chegada da consultoria veio um boom todo: meta, as vendas alavancaram, atendimento, conservação, limpeza e organização do posto... aí com a copa foi uma melhoria absurda. A gente tinha posto vendendo (mix automotivo) R$ 10.000,00 e depois saltou pra R$ 25.000,00 – R$ 30.000,00 então o resultado veio rápido disso aí. A equipe toda se engajou para melhorar o atendimento.",
+    name: "Thiago Perin",
+    company: "Rede Marcela",
+    image: "/lovable-uploads/clientes/marcela.png"
+  }, {
+    id: 4,
+    text: "Nós tínhamos um conjunto de processos próprios, mas não medíamos com a frequência e a precisão que o método GAP nos trouxe.",
+    name: "Wellington Granja",
+    company: "Postos Petrocal",
+    image: "/lovable-uploads/clientes/petrocal.png"
+  }, {
+    id: 5,
+    text: "Antes da Scalco, a gestão de pessoas era muito fraca, não tinha uma medida exata de cada colaborador. Nós fomos campeão Brasil no ano que a Scalco entrou, já tinha 13 anos trabalhando com loja e com a introdução da Scalco a gente ganhou concorrendo com 365 lojas na época.",
+    name: "Antero Vieira",
+    company: "Postos Tasca",
+    image: "/lovable-uploads/clientes/1753383806026_1_tasca.png"
+  }, {
+    id: 6,
+    text: "O elogio começou a vir e a turma não estava muito acostumada com isso... a receber elogio né... e nisso a satisfação começa a trazer resultado e isso nos deixou mais confiante no nosso trabalho.",
+    name: "Marcelo Oliveira",
+    company: "Rede Hurray",
+    image: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg"
+  }];
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
       {/* Hero Section - Duas Colunas */}
       <section className="relative py-6 sm:py-8 md:py-10 lg:py-12 flex items-center overflow-hidden" style={{
@@ -103,9 +90,7 @@ const Index = () => {
               
               {/* Coluna Esquerda - Conteúdo Textual */}
               <div className="order-2 lg:order-1 text-center lg:text-left">
-                <Badge className="bg-brand-yellow text-brand-dark-blue mb-3 sm:mb-4 px-2 sm:px-3 py-1 text-xs sm:text-sm font-semibold">
-                  +80 empresas transformadas com o GAP
-                </Badge>
+                
                 
                 <h1 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-brand-white mb-3 sm:mb-4 leading-tight">
                   Você paga <span className="text-brand-yellow">100%</span>.
@@ -254,7 +239,9 @@ const Index = () => {
                   </CardContent>
                 </Card>
                 
-                <Card className={`p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-brand-yellow to-yellow-400 text-brand-dark-blue ${gapSection.isVisible ? 'animate-fade-in-left' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
+                <Card className={`p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-brand-yellow to-yellow-400 text-brand-dark-blue ${gapSection.isVisible ? 'animate-fade-in-left' : 'opacity-0'}`} style={{
+                animationDelay: '0.2s'
+              }}>
                   <CardContent>
                     <BarChart3 className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-brand-dark-blue mb-4 sm:mb-6" />
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4">📊 Plataforma com indicadores de desempenho</h3>
@@ -469,19 +456,12 @@ const Index = () => {
           <div className="max-w-4xl mx-auto mb-8 sm:mb-12">
             <h3 className="text-lg sm:text-xl font-bold text-brand-dark-blue mb-6 sm:mb-8 text-center">O que nossos clientes dizem:</h3>
             
-            <Carousel 
-              plugins={[plugin.current]}
-              className="w-full max-w-5xl mx-auto testimonial-carousel"
-              onMouseEnter={plugin.current.stop}
-              onMouseLeave={plugin.current.reset}
-              opts={{
-                align: "center",
-                loop: true,
-              }}
-            >
+            <Carousel plugins={[plugin.current]} className="w-full max-w-5xl mx-auto testimonial-carousel" onMouseEnter={plugin.current.stop} onMouseLeave={plugin.current.reset} opts={{
+            align: "center",
+            loop: true
+          }}>
               <CarouselContent>
-                {testimonials.map((testimonial, index) => (
-                  <CarouselItem key={testimonial.id} className="basis-full md:basis-1/3">
+                {testimonials.map((testimonial, index) => <CarouselItem key={testimonial.id} className="basis-full md:basis-1/3">
                     <div className="p-2">
                       <Card className="h-full min-h-[320px] md:min-h-[400px] transition-all duration-300 hover:shadow-xl">
                         <CardContent className="p-6 sm:p-8 flex flex-col justify-between h-full">
@@ -492,11 +472,7 @@ const Index = () => {
                           </div>
                           <div className="flex items-center gap-4 mt-auto pt-4">
                             <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0 bg-gray-100">
-                              <img 
-                                src={testimonial.image} 
-                                alt={testimonial.name}
-                                className="w-full h-full object-contain"
-                              />
+                              <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-contain" />
                             </div>
                             <div>
                               <div className="text-sm sm:text-base font-bold text-brand-dark-blue">{testimonial.name}</div>
@@ -506,8 +482,7 @@ const Index = () => {
                         </CardContent>
                       </Card>
                     </div>
-                  </CarouselItem>
-                ))}
+                  </CarouselItem>)}
               </CarouselContent>
               <CarouselPrevious className="-left-12" />
               <CarouselNext className="-right-12" />
@@ -552,17 +527,24 @@ const Index = () => {
           </div>
           
           <div ref={clientesSection.ref} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 items-center">
-            {[
-              { src: "/lovable-uploads/clientes/1753383806026_1_tasca.png", alt: "Postos Tasca" },
-              { src: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg", alt: "Rede Hurray" },
-              { src: "/lovable-uploads/clientes/1753383807178_4_malerba.png", alt: "Postos Malerba" },
-              { src: "/lovable-uploads/clientes/marcela.png", alt: "Rede Marcela" },
-              { src: "/lovable-uploads/clientes/petrocal.png", alt: "Postos Petrocal" }
-            ].map((cliente, index) => (
-              <div key={index} className={`flex justify-center items-center p-3 sm:p-4 grayscale hover:grayscale-0 transition-all duration-300 ${index === 4 ? 'col-span-2 sm:col-span-3 md:col-span-1' : ''} ${clientesSection.visibleItems[index] ? 'animate-fade-in-up' : 'opacity-0'}`}>
+            {[{
+            src: "/lovable-uploads/clientes/1753383806026_1_tasca.png",
+            alt: "Postos Tasca"
+          }, {
+            src: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg",
+            alt: "Rede Hurray"
+          }, {
+            src: "/lovable-uploads/clientes/1753383807178_4_malerba.png",
+            alt: "Postos Malerba"
+          }, {
+            src: "/lovable-uploads/clientes/marcela.png",
+            alt: "Rede Marcela"
+          }, {
+            src: "/lovable-uploads/clientes/petrocal.png",
+            alt: "Postos Petrocal"
+          }].map((cliente, index) => <div key={index} className={`flex justify-center items-center p-3 sm:p-4 grayscale hover:grayscale-0 transition-all duration-300 ${index === 4 ? 'col-span-2 sm:col-span-3 md:col-span-1' : ''} ${clientesSection.visibleItems[index] ? 'animate-fade-in-up' : 'opacity-0'}`}>
                 <img src={cliente.src} alt={cliente.alt} className="max-h-12 sm:max-h-16 lg:max-h-20 w-auto object-contain" />
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -703,5 +685,4 @@ const Index = () => {
       </footer>
     </div>;
 };
-
 export default Index;
