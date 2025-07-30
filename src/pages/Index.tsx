@@ -147,7 +147,7 @@ const Index = () => {
 
               {/* Coluna Direita - Logo Grande */}
               <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-                <img src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" alt="Grupo Scalco Logo" className="max-h-16 sm:max-h-20 md:max-h-32 lg:max-h-40 xl:max-h-48 2xl:max-h-56 w-auto object-contain" />
+                <img src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" alt="Grupo Scalco Logo" className="pt-8 sm:pt-0 max-h-16 sm:max-h-20 md:max-h-32 lg:max-h-40 xl:max-h-48 2xl:max-h-56 w-auto object-contain" />
               </div>
             </div>
           </div>
