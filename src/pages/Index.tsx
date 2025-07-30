@@ -531,9 +531,24 @@ const Index = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-brand-dark-blue mb-4 sm:mb-6">
               Quem usa o GAP
             </h2>
-            <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-              Empresas com várias unidades já usam o GAP para escalar desempenho
+            <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 italic">
+              Validar com outras empresas parecidas (supermercados, postos, lojas)
             </p>
+            
+            {/* Frases destacadas */}
+            <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
+              <div className="bg-green-100 border-l-4 border-green-500 p-4 sm:p-6 rounded-r-lg">
+                <p className="text-base sm:text-lg font-semibold text-green-800">
+                  Mercados e supermercados, postos de combustíveis, lojas de conveniência.
+                </p>
+              </div>
+              
+              <div className="bg-brand-light-blue/10 border-l-4 border-brand-light-blue p-4 sm:p-6 rounded-r-lg">
+                <p className="text-base sm:text-lg font-semibold text-brand-dark-blue">
+                  Empresas com várias unidades já usam o GAP para escalar desempenho
+                </p>
+              </div>
+            </div>
           </div>
           
           <div ref={clientesSection.ref} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 items-center">
