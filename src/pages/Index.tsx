@@ -487,11 +487,11 @@ const Index = () => {
                             </p>
                           </div>
                           <div className="flex items-center gap-4 mt-auto pt-4">
-                            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0">
+                            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0 bg-gray-100">
                               <img 
                                 src={testimonial.image} 
                                 alt={testimonial.name}
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-contain"
                               />
                             </div>
                             <div>
