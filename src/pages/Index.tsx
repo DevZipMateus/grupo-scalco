@@ -506,9 +506,7 @@ const Index = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-brand-dark-blue mb-4 sm:mb-6">
               Quem usa o GAP
             </h2>
-            <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 italic">
-              Validar com outras empresas parecidas (supermercados, postos, lojas)
-            </p>
+            
             
             {/* Frases destacadas */}
             <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
