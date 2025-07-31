@@ -37,6 +37,7 @@ const ScalcoLogo: React.FC<ScalcoLogoProps> = ({
     ${ultraWideHeight} 
     w-auto 
     object-contain 
+    mx-auto
     ${className}
   `.trim().replace(/\s+/g, ' ');
 
@@ -45,7 +46,6 @@ const ScalcoLogo: React.FC<ScalcoLogoProps> = ({
       src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" 
       alt="Grupo Scalco Logo" 
       className={logoClasses}
-      style={{ marginTop: '40px', marginLeft: '-25px', marginRight: '50px', marginBottom: '50px'  }}
     />
   );
 };
