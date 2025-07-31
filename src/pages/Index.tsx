@@ -97,7 +97,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <div className={`text-center transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               
-              <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-brand-white mb-4 sm:mb-6 leading-tight px-2">
+              <h1 className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-brand-white mb-4 sm:mb-6 leading-tight px-2">
                 Você paga <span className="text-brand-yellow">100%</span>.
                 <br />
                 Sua equipe entrega só <span className="text-red-400">75%</span>.
