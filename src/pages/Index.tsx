@@ -123,9 +123,9 @@ const Index = () => {
               </div>
               
               <div className="px-2 sm:px-4">
-                <Button size="lg" className="bg-brand-yellow text-brand-dark-blue px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-brand-dark-blue w-full sm:w-auto" onClick={handleWhatsAppClick}>
+                <Button size="lg" className="bg-brand-yellow text-brand-dark-blue px-3 sm:px-6 md:px-8 py-3 sm:py-4 text-xs sm:text-base md:text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-brand-dark-blue w-full sm:w-auto leading-tight" onClick={handleWhatsAppClick}>
                   Quero aplicar o Método GAP na minha empresa
-                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
+                  <ArrowRight className="ml-1 sm:ml-2 w-3 h-3 sm:w-5 sm:h-5 flex-shrink-0" />
                 </Button>
               </div>
               
