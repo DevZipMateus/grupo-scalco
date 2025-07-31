@@ -87,7 +87,7 @@ const Index = () => {
       {/* Hero Section - Duas Colunas */}
       <section className="relative py-6 sm:py-8 md:py-10 lg:py-12 flex items-center overflow-hidden" style={{
       backgroundImage: 'url(/lovable-uploads/c0f4cd28-d342-4b18-a9bc-f10ecae89286.png)',
-      backgroundSize: 'contain',
+      backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
     }}>
