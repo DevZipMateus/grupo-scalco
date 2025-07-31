@@ -122,15 +122,18 @@ const Index = () => {
                 </div>
               </div>
               
-              <div className="px-4">
-                <Button size="lg" className="bg-brand-yellow text-brand-dark-blue px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-brand-dark-blue w-full sm:w-auto" onClick={handleWhatsAppClick}>
-                  Quero aplicar o Método GAP na minha empresa
+              <div className="px-2 sm:px-4">
+                <Button size="lg" className="bg-brand-yellow text-brand-dark-blue px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-brand-dark-blue w-full sm:w-auto" onClick={handleWhatsAppClick}>
+                  <span className="block sm:hidden">Aplicar Método GAP</span>
+                  <span className="hidden sm:block">Quero aplicar o Método GAP na minha empresa</span>
                   <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                 </Button>
               </div>
               
-              <div className="bg-brand-yellow text-brand-dark-blue mb-4 sm:mb-6 px-4 py-2 text-sm sm:text-base font-semibold mt-6 inline-block rounded mx-4">
-                +80 empresas transformadas com o GAP
+              <div className="mt-6 px-2 sm:px-4">
+                <div className="bg-brand-yellow text-brand-dark-blue px-3 sm:px-4 py-2 text-xs sm:text-sm md:text-base font-semibold inline-block rounded max-w-full">
+                  +80 empresas transformadas com o GAP
+                </div>
               </div>
             </div>
           </div>
