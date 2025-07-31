@@ -264,7 +264,7 @@ const Index = () => {
               </div>
               
               <div className={`flex justify-center ${gapSection.isVisible ? 'animate-fade-in-right' : 'opacity-0'}`}>
-                <img src="/lovable-uploads/b95f29e5-fc7c-4242-8a89-38902343ec9f.png" alt="Gráfico mostrando a diferença entre 100% pago vs 75% entregue" className="max-w-full h-auto rounded-lg shadow-2xl" />
+                <img src="/lovable-uploads/243d976f-94d0-44fe-bc5a-4a09ca52405f.png" alt="Gráfico: Salário 100% vs. Entrega real 75%" className="max-w-full h-auto rounded-lg shadow-2xl" />
               </div>
             </div>
 
