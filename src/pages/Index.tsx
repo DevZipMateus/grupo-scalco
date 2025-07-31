@@ -158,7 +158,6 @@ const Index = () => {
                 topSpacing=""
                 bottomSpacing=""
                 className="mx-auto"
-                style={{ margin: '0' }}
               />
             </div>
             
