@@ -1,34 +1,25 @@
 
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
+import React from 'react';
+import {
+  XYPlot,
+  XAxis,
+  YAxis,
+  VerticalBarSeries,
+  DiscreteColorLegend,
+  Hint
+} from 'react-vis';
+import 'react-vis/dist/style.css';
 
 const data = [
-  {
-    category: 'Salário Pago',
-    value: 100,
-    color: '#DC2626' // red-600
-  },
-  {
-    category: 'Entrega Real',
-    value: 75,
-    color: '#F59E0B' // amber-500
-  }
+  { x: 'Salário Pago', y: 100, color: 0 },
+  { x: 'Entrega Real', y: 75, color: 1 }
 ];
 
-const CustomTooltip = ({ active, payload, label }: any) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="bg-white p-3 border border-gray-200 rounded-lg shadow-lg">
-        <p className="text-brand-dark-blue font-semibold">{label}</p>
-        <p className="text-brand-dark-blue">
-          <span className="font-medium">{payload[0].value}%</span>
-        </p>
-      </div>
-    );
-  }
-  return null;
-};
+const colorRange = ['#DC2626', '#F59E0B']; // red-600, amber-500
 
 const SalaryDeliveryChart = () => {
+  const [hoveredValue, setHoveredValue] = React.useState(null);
+
   return (
     <div className="bg-white p-6 rounded-lg shadow-2xl">
       <div className="mb-6 text-center">
@@ -40,57 +31,61 @@ const SalaryDeliveryChart = () => {
         </p>
       </div>
       
-      <ResponsiveContainer width="100%" height={300}>
-        <BarChart
-          data={data}
-          margin={{
-            top: 20,
-            right: 30,
-            left: 20,
-            bottom: 60,
-          }}
-          barCategoryGap="20%"
+      <div className="flex justify-center">
+        <XYPlot
+          width={400}
+          height={300}
+          xType="ordinal"
+          colorType="category"
+          colorRange={colorRange}
+          margin={{ left: 60, right: 30, top: 30, bottom: 80 }}
         >
-          <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
           <XAxis 
-            dataKey="category" 
-            axisLine={false}
-            tickLine={false}
-            tick={{ fontSize: 12, fill: '#374151' }}
-            interval={0}
-            angle={-45}
-            textAnchor="end"
-            height={80}
+            tickLabelAngle={-45}
+            style={{
+              text: { fontSize: '12px', fill: '#374151' }
+            }}
           />
           <YAxis 
-            domain={[0, 110]}
-            axisLine={false}
-            tickLine={false}
-            tick={{ fontSize: 12, fill: '#374151' }}
-            tickFormatter={(value) => `${value}%`}
+            tickFormat={v => `${v}%`}
+            style={{
+              text: { fontSize: '12px', fill: '#374151' }
+            }}
           />
-          <Tooltip content={<CustomTooltip />} />
-          <Bar 
-            dataKey="value" 
-            radius={[4, 4, 0, 0]}
-            maxBarSize={80}
-          >
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={entry.color} />
-            ))}
-          </Bar>
-        </BarChart>
-      </ResponsiveContainer>
+          <VerticalBarSeries
+            data={data}
+            colorType="category"
+            stroke="white"
+            strokeWidth={2}
+            onValueMouseOver={(value) => setHoveredValue(value)}
+            onValueMouseOut={() => setHoveredValue(null)}
+            style={{
+              rx: 4,
+              ry: 4
+            }}
+          />
+          {hoveredValue && (
+            <Hint value={hoveredValue}>
+              <div className="bg-white p-3 border border-gray-200 rounded-lg shadow-lg">
+                <p className="text-brand-dark-blue font-semibold">{hoveredValue.x}</p>
+                <p className="text-brand-dark-blue">
+                  <span className="font-medium">{hoveredValue.y}%</span>
+                </p>
+              </div>
+            </Hint>
+          )}
+        </XYPlot>
+      </div>
       
       <div className="mt-4 flex justify-center gap-6 text-sm">
-        <div className="flex items-center gap-2">
-          <div className="w-4 h-4 bg-red-600 rounded"></div>
-          <span className="text-gray-700">Você investe 100%</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <div className="w-4 h-4 bg-amber-500 rounded"></div>
-          <span className="text-gray-700">Sua equipe entrega 75%</span>
-        </div>
+        <DiscreteColorLegend
+          items={[
+            { title: 'Você investe 100%', color: colorRange[0] },
+            { title: 'Sua equipe entrega 75%', color: colorRange[1] }
+          ]}
+          orientation="horizontal"
+          className="flex gap-4"
+        />
       </div>
       
       <div className="mt-4 text-center">
