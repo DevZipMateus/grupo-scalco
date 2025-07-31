@@ -128,11 +128,16 @@ const Index = () => {
                   <ArrowRight className="ml-1 sm:ml-2 w-3 h-3 sm:w-5 sm:h-5 flex-shrink-0" />
                 </Button>
               </div>
-              
-              <div className="mt-6 px-2 sm:px-4">
-                <div className="bg-brand-yellow text-brand-dark-blue px-3 sm:px-4 py-2 text-xs sm:text-sm md:text-base font-semibold inline-block rounded max-w-full">
-                  +80 empresas transformadas com o GAP
-                </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Full-width banner at bottom of hero */}
+        <div className="absolute bottom-0 left-0 right-0 bg-brand-yellow text-brand-dark-blue py-3 sm:py-4 z-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <div className="text-sm sm:text-base md:text-lg font-bold">
+                +80 empresas transformadas com o GAP
               </div>
             </div>
           </div>
