@@ -181,42 +181,48 @@ const Index = () => {
               </p>
             </div>
             
-            <div ref={problemSection.ref} className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
-              <Card className={`p-4 sm:p-6 hover:shadow-xl transition-all duration-300 ${problemSection.visibleItems[0] ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                <CardContent className="flex items-center gap-3 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-red-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-base sm:text-lg font-semibold text-brand-dark-blue mb-1 sm:mb-2">Fora do Prazo</h3>
-                    <p className="text-sm sm:text-base text-gray-600">Tarefas entregues fora do prazo constantemente</p>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center mb-8 sm:mb-12">
+              <div ref={problemSection.ref} className="space-y-4 sm:space-y-6">
+                <Card className={`p-4 sm:p-6 hover:shadow-xl transition-all duration-300 ${problemSection.visibleItems[0] ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                  <CardContent className="flex items-center gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-red-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-base sm:text-lg font-semibold text-brand-dark-blue mb-1 sm:mb-2">Fora do Prazo</h3>
+                      <p className="text-sm sm:text-base text-gray-600">Tarefas entregues fora do prazo constantemente</p>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className={`p-4 sm:p-6 hover:shadow-xl transition-all duration-300 ${problemSection.visibleItems[1] ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                  <CardContent className="flex items-center gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <UserX className="w-5 h-5 sm:w-6 sm:h-6 text-red-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-base sm:text-lg font-semibold text-brand-dark-blue mb-1 sm:mb-2">Sem Direcionamento</h3>
+                      <p className="text-sm sm:text-base text-gray-600">Ninguém sabe quem faz o quê</p>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className={`p-4 sm:p-6 hover:shadow-xl transition-all duration-300 ${problemSection.visibleItems[2] ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                  <CardContent className="flex items-center gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Wrench className="w-5 h-5 sm:w-6 sm:h-6 text-red-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-base sm:text-lg font-semibold text-brand-dark-blue mb-1 sm:mb-2">Qualidade Baixa</h3>
+                      <p className="text-sm sm:text-base text-gray-600">Trabalhos feitos de qualquer jeito</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
               
-              <Card className={`p-4 sm:p-6 hover:shadow-xl transition-all duration-300 ${problemSection.visibleItems[1] ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                <CardContent className="flex items-center gap-3 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <UserX className="w-5 h-5 sm:w-6 sm:h-6 text-red-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-base sm:text-lg font-semibold text-brand-dark-blue mb-1 sm:mb-2">Sem Direcionamento</h3>
-                    <p className="text-sm sm:text-base text-gray-600">Ninguém sabe quem faz o quê</p>
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <Card className={`p-4 sm:p-6 hover:shadow-xl transition-all duration-300 ${problemSection.visibleItems[2] ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                <CardContent className="flex items-center gap-3 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Wrench className="w-5 h-5 sm:w-6 sm:h-6 text-red-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-base sm:text-lg font-semibold text-brand-dark-blue mb-1 sm:mb-2">Qualidade Baixa</h3>
-                    <p className="text-sm sm:text-base text-gray-600">Trabalhos feitos de qualquer jeito</p>
-                  </div>
-                </CardContent>
-              </Card>
+              <div className="flex justify-center">
+                <SalaryDeliveryChart />
+              </div>
             </div>
 
             <div className="text-center">
