@@ -85,7 +85,25 @@ const Index = () => {
   }];
 
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
-      {/* Hero Section - Uma Coluna Centralizada */}
+      {/* Logo Section - Outside Hero */}
+      <section className="py-4 sm:py-6 bg-brand-white">
+        <div className="container mx-auto px-3 sm:px-4 lg:px-8">
+          <div className="flex justify-center">
+            <ScalcoLogo 
+              mobileHeight="max-h-24"
+              tabletHeight="sm:max-h-28"
+              desktopHeight="md:max-h-32"
+              largeDesktopHeight="lg:max-h-40"
+              extraLargeHeight="xl:max-h-48"
+              ultraWideHeight="2xl:max-h-56"
+              topSpacing=""
+              bottomSpacing=""
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Hero Section - Centered Content Only */}
       <section className="relative py-6 sm:py-8 md:py-10 lg:py-12 flex items-center overflow-hidden" style={{
       backgroundImage: 'url(/lovable-uploads/c0f4cd28-d342-4b18-a9bc-f10ecae89286.png)',
       backgroundSize: 'cover',
@@ -93,52 +111,44 @@ const Index = () => {
       backgroundRepeat: 'no-repeat'
     }}>
         <div className="container mx-auto px-3 sm:px-4 lg:px-8 relative z-10">
-          <div className="max-w-7xl mx-auto">
-            <div className={`grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 items-center transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <div className="max-w-4xl mx-auto">
+            <div className={`text-center transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               
-              {/* Coluna Esquerda - Conteúdo Textual */}
-              <div className="order-2 lg:order-1 text-center">
-                <h1 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-brand-white mb-3 sm:mb-4 leading-tight">
-                  Você paga <span className="text-brand-yellow">100%</span>.
-                  <br />
-                  Sua equipe entrega só <span className="text-red-400">75%</span>.
-                  <br />
-                  <span className="text-brand-yellow">Isso é justo?</span>
-                </h1>
-                
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-brand-white/90 mb-4 sm:mb-6 leading-relaxed text-zinc-200">
-                  Chegou o <strong>Método GAP</strong>: consultoria em gestão de pessoas + tecnologia para transformar o desempenho da sua empresa.
-                </p>
-                
-                <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 lg:gap-4 justify-center items-center mb-4 sm:mb-6">
-                  <div className="flex items-center gap-1 sm:gap-2 text-brand-white">
-                    <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-brand-yellow" />
-                    <span className="text-xs sm:text-sm font-semibold">Mais controle</span>
-                  </div>
-                  <div className="flex items-center gap-1 sm:gap-2 text-brand-white">
-                    <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-brand-yellow" />
-                    <span className="text-xs sm:text-sm font-semibold">Mais entrega</span>
-                  </div>
-                  <div className="flex items-center gap-1 sm:gap-2 text-brand-white">
-                    <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-brand-yellow" />
-                    <span className="text-xs sm:text-sm font-semibold">Menos desculpas</span>
-                  </div>
+              <h1 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-brand-white mb-3 sm:mb-4 leading-tight">
+                Você paga <span className="text-brand-yellow">100%</span>.
+                <br />
+                Sua equipe entrega só <span className="text-red-400">75%</span>.
+                <br />
+                <span className="text-brand-yellow">Isso é justo?</span>
+              </h1>
+              
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-brand-white/90 mb-4 sm:mb-6 leading-relaxed text-zinc-200">
+                Chegou o <strong>Método GAP</strong>: consultoria em gestão de pessoas + tecnologia para transformar o desempenho da sua empresa.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 lg:gap-4 justify-center items-center mb-4 sm:mb-6">
+                <div className="flex items-center gap-1 sm:gap-2 text-brand-white">
+                  <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-brand-yellow" />
+                  <span className="text-xs sm:text-sm font-semibold">Mais controle</span>
                 </div>
-                
-                <Button size="lg" className="bg-brand-yellow text-brand-dark-blue px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-brand-dark-blue" onClick={handleWhatsAppClick}>
-                  <span className="block sm:hidden">Aplicar Método GAP</span>
-                  <span className="hidden sm:block">Aplicar Método GAP</span>
-                  <ArrowRight className="ml-1 sm:ml-2 w-3 h-3 sm:w-4 sm:h-4" />
-                </Button>
-                
-                <div className="bg-brand-yellow text-brand-dark-blue mb-3 sm:mb-4 px-2 sm:px-3 py-1 text-xs sm:text-sm font-semibold mt-4 block w-fit mx-auto rounded">
-                  +80 empresas transformadas com o GAP
+                <div className="flex items-center gap-1 sm:gap-2 text-brand-white">
+                  <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-brand-yellow" />
+                  <span className="text-xs sm:text-sm font-semibold">Mais entrega</span>
+                </div>
+                <div className="flex items-center gap-1 sm:gap-2 text-brand-white">
+                  <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-brand-yellow" />
+                  <span className="text-xs sm:text-sm font-semibold">Menos desculpas</span>
                 </div>
               </div>
-
-              {/* Coluna Direita - Logo Grande (apenas desktop) */}
-              <div className="order-1 lg:order-2 hidden lg:flex justify-center lg:justify-end">
-                <ScalcoLogo />
+              
+              <Button size="lg" className="bg-brand-yellow text-brand-dark-blue px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-brand-dark-blue" onClick={handleWhatsAppClick}>
+                <span className="block sm:hidden">Aplicar Método GAP</span>
+                <span className="hidden sm:block">Aplicar Método GAP</span>
+                <ArrowRight className="ml-1 sm:ml-2 w-3 h-3 sm:w-4 sm:h-4" />
+              </Button>
+              
+              <div className="bg-brand-yellow text-brand-dark-blue mb-3 sm:mb-4 px-2 sm:px-3 py-1 text-xs sm:text-sm font-semibold mt-4 block w-fit mx-auto rounded">
+                +80 empresas transformadas com o GAP
               </div>
             </div>
           </div>
