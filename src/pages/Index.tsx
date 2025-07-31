@@ -140,16 +140,16 @@ const Index = () => {
       </section>
 
       {/* Logo Section - After Hero */}
-      <section className="py-4 sm:py-6 bg-brand-white">
+      <section className="py-2 sm:py-3 bg-brand-white">
         <div className="container mx-auto px-3 sm:px-4 lg:px-8">
           <div className="flex justify-center">
             <ScalcoLogo 
-              mobileHeight="max-h-24"
-              tabletHeight="sm:max-h-28"
-              desktopHeight="md:max-h-32"
-              largeDesktopHeight="lg:max-h-40"
-              extraLargeHeight="xl:max-h-48"
-              ultraWideHeight="2xl:max-h-56"
+              mobileHeight="max-h-20"
+              tabletHeight="sm:max-h-24"
+              desktopHeight="md:max-h-28"
+              largeDesktopHeight="lg:max-h-32"
+              extraLargeHeight="xl:max-h-36"
+              ultraWideHeight="2xl:max-h-40"
               topSpacing=""
               bottomSpacing=""
             />
@@ -158,7 +158,7 @@ const Index = () => {
       </section>
 
       {/* Problem Section - Você cumpre sua parte */}
-      <section className="py-8 sm:py-16 bg-gray-50">
+      <section className="py-6 sm:py-12 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             {/* Logo para mobile e tablet - posicionada acima do H2 */}
