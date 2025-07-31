@@ -9,6 +9,7 @@ import Autoplay from "embla-carousel-autoplay";
 import ScalcoLogo from "@/components/ScalcoLogo";
 import SalaryDeliveryChart from "@/components/SalaryDeliveryChart";
 import "../components/TestimonialCarousel.css";
+
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
@@ -41,43 +42,47 @@ const Index = () => {
     delay: 4000,
     stopOnInteraction: true
   }));
-  const testimonials = [{
-    id: 1,
-    text: "Antes da Scalco \"achávamos\" muito... (eu acho que é isso, eu acho que é bom, eu acho que esse funcionário é melhor que aquele...). O primeiro impacto foi de união da equipe, uma coisa que nós não esperávamos. A gente não tinha gerentes antes... depois de implantar \"a Scalco\" nós formamos gerentes.",
-    name: "Maurício Januzzi",
-    company: "Postos Malerba",
-    image: "/lovable-uploads/clientes/1753383807178_4_malerba.png"
-  }, {
-    id: 2,
-    text: "Depois que a Scalco chegou a gente conseguiu sair do \"achômetro\" e ter certezas, e crescer nesse trabalho.",
-    name: "Camila Maluf",
-    company: "Postos Tasca",
-    image: "/lovable-uploads/clientes/1753383806026_1_tasca.png"
-  }, {
-    id: 3,
-    text: "Depois da chegada da consultoria veio um boom todo: meta, as vendas alavancaram, atendimento, conservação, limpeza e organização do posto... aí com a copa foi uma melhoria absurda. A gente tinha posto vendendo (mix automotivo) R$ 10.000,00 e depois saltou pra R$ 25.000,00 – R$ 30.000,00 então o resultado veio rápido disso aí. A equipe toda se engajou para melhorar o atendimento.",
-    name: "Thiago Perin",
-    company: "Rede Marcela",
-    image: "/lovable-uploads/clientes/marcela.png"
-  }, {
-    id: 4,
-    text: "Nós tínhamos um conjunto de processos próprios, mas não medíamos com a frequência e a precisão que o método GAP nos trouxe.",
-    name: "Wellington Granja",
-    company: "Postos Petrocal",
-    image: "/lovable-uploads/clientes/petrocal.png"
-  }, {
-    id: 5,
-    text: "Antes da Scalco, a gestão de pessoas era muito fraca, não tinha uma medida exata de cada colaborador. Nós fomos campeão Brasil no ano que a Scalco entrou, já tinha 13 anos trabalhando com loja e com a introdução da Scalco a gente ganhou concorrendo com 365 lojas na época.",
-    name: "Antero Vieira",
-    company: "Postos Tasca",
-    image: "/lovable-uploads/clientes/1753383806026_1_tasca.png"
-  }, {
-    id: 6,
-    text: "O elogio começou a vir e a turma não estava muito acostumada com isso... a receber elogio né... e nisso a satisfação começa a trazer resultado e isso nos deixou mais confiante no nosso trabalho.",
-    name: "Marcelo Oliveira",
-    company: "Rede Hurray",
-    image: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg"
-  }];
+
+  const testimonials = [
+    {
+      id: 1,
+      text: "Antes da Scalco \"achávamos\" muito... (eu acho que é isso, eu acho que é bom, eu acho que esse funcionário é melhor que aquele...). O primeiro impacto foi de união da equipe, uma coisa que nós não esperávamos. A gente não tinha gerentes antes... depois de implantar \"a Scalco\" nós formamos gerentes.",
+      name: "Maurício Januzzi",
+      company: "Postos Malerba",
+      image: "/lovable-uploads/clientes/1753383807178_4_malerba.png"
+    }, {
+      id: 2,
+      text: "Depois que a Scalco chegou a gente conseguiu sair do \"achômetro\" e ter certezas, e crescer nesse trabalho.",
+      name: "Camila Maluf",
+      company: "Postos Tasca",
+      image: "/lovable-uploads/clientes/1753383806026_1_tasca.png"
+    }, {
+      id: 3,
+      text: "Depois da chegada da consultoria veio um boom todo: meta, as vendas alavancaram, atendimento, conservação, limpeza e organização do posto... aí com a copa foi uma melhoria absurda. A gente tinha posto vendendo (mix automotivo) R$ 10.000,00 e depois saltou pra R$ 25.000,00 – R$ 30.000,00 então o resultado veio rápido disso aí. A equipe toda se engajou para melhorar o atendimento.",
+      name: "Thiago Perin",
+      company: "Rede Marcela",
+      image: "/lovable-uploads/clientes/marcela.png"
+    }, {
+      id: 4,
+      text: "Nós tínhamos um conjunto de processos próprios, mas não medíamos com a frequência e a precisão que o método GAP nos trouxe.",
+      name: "Wellington Granja",
+      company: "Postos Petrocal",
+      image: "/lovable-uploads/clientes/petrocal.png"
+    }, {
+      id: 5,
+      text: "Antes da Scalco, a gestão de pessoas era muito fraca, não tinha uma medida exata de cada colaborador. Nós fomos campeão Brasil no ano que a Scalco entrou, já tinha 13 anos trabalhando com loja e com a introdução da Scalco a gente ganhou concorrendo com 365 lojas na época.",
+      name: "Antero Vieira",
+      company: "Postos Tasca",
+      image: "/lovable-uploads/clientes/1753383806026_1_tasca.png"
+    }, {
+      id: 6,
+      text: "O elogio começou a vir e a turma não estava muito acostumada com isso... a receber elogio né... e nisso a satisfação começa a trazer resultado e isso nos deixou mais confiante no nosso trabalho.",
+      name: "Marcelo Oliveira",
+      company: "Rede Hurray",
+      image: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg"
+    }
+  ];
+
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
       {/* Hero Section - Centered Content Only */}
       <section className="relative py-6 sm:py-8 md:py-10 lg:py-12 flex items-center overflow-hidden" style={{
@@ -134,17 +139,27 @@ const Index = () => {
       </section>
 
       {/* Logo Section - After Hero */}
-      
+      <section className="py-6 sm:py-8 bg-brand-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center">
+            <ScalcoLogo 
+              topSpacing="" 
+              bottomSpacing="" 
+              mobileHeight="max-h-20" 
+              tabletHeight="sm:max-h-24" 
+              desktopHeight="md:max-h-32" 
+              largeDesktopHeight="lg:max-h-40"
+              extraLargeHeight="xl:max-h-48"
+              ultraWideHeight="2xl:max-h-56"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Problem Section - Você cumpre sua parte */}
       <section className="py-6 sm:py-12 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            {/* Logo para mobile e tablet - posicionada acima do H2 */}
-            <div className="flex justify-center lg:hidden">
-              <ScalcoLogo mobileHeight="max-h-32" tabletHeight="sm:max-h-24" topSpacing="" bottomSpacing="" className="" />
-            </div>
-            
             <div className="text-center mb-8 sm:mb-12">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-brand-dark-blue mb-4 sm:mb-6">
                 Você cumpre sua parte. E a sua equipe?
