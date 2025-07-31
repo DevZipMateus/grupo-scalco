@@ -84,8 +84,8 @@ const Index = () => {
   }];
 
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
-      {/* Hero Section - Logo sobre a balança */}
-      <section className="relative py-6 sm:py-8 md:py-10 lg:py-12 flex items-center overflow-hidden min-h-[60vh] sm:min-h-[70vh] lg:min-h-[80vh]" style={{
+      {/* Hero Section - Duas Colunas */}
+      <section className="relative py-6 sm:py-8 md:py-10 lg:py-12 flex items-center overflow-hidden" style={{
       backgroundImage: 'url(/lovable-uploads/c0f4cd28-d342-4b18-a9bc-f10ecae89286.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
@@ -95,15 +95,6 @@ const Index = () => {
           <div className="max-w-7xl mx-auto">
             <div className={`grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 items-center transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               
-              {/* Logo centralizada no mobile - aparece primeiro */}
-              <div className="order-1 lg:hidden flex justify-center mb-6">
-                <ScalcoLogo 
-                  mobileHeight="max-h-32"
-                  tabletHeight="sm:max-h-36"
-                  className="transition-all duration-500"
-                />
-              </div>
-
               {/* Coluna Esquerda - Conteúdo Textual */}
               <div className="order-2 lg:order-1 text-center lg:text-left">
                 <h1 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-brand-white mb-3 sm:mb-4 leading-tight">
@@ -144,28 +135,13 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Coluna Direita - Espaço reservado para não quebrar o layout */}
-              <div className="order-3 lg:order-2 flex justify-center lg:justify-end">
-                {/* Espaço vazio para manter o layout, a logo agora está posicionada absolutamente */}
-                <div className="w-full h-32 sm:h-48 lg:h-64"></div>
+              {/* Coluna Direita - Logo Grande */}
+              <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+                <ScalcoLogo />
               </div>
             </div>
           </div>
         </div>
-
-        {/* Logo posicionada sobre a balança - apenas desktop */}
-        <ScalcoLogo 
-          isAbsolute={true}
-          absoluteTop="top-8 sm:top-12 md:top-16 lg:top-20"
-          absoluteRight="right-4 sm:right-8 md:right-12 lg:right-16 xl:right-20 2xl:right-24"
-          mobileHeight="max-h-16 sm:max-h-20"
-          tabletHeight="md:max-h-24"
-          desktopHeight="lg:max-h-32"
-          largeDesktopHeight="xl:max-h-40"
-          extraLargeHeight="2xl:max-h-48"
-          zIndex="z-20"
-          className="hidden lg:block transition-all duration-500 hover:scale-105"
-        />
         
         <div className="absolute bottom-0 left-0 right-0 h-10 sm:h-20 bg-gradient-to-t from-brand-white to-transparent"></div>
       </section>
