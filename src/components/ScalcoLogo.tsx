@@ -22,9 +22,9 @@ const ScalcoLogo: React.FC<ScalcoLogoProps> = ({
   mobileHeight = "max-h-24",
   tabletHeight = "sm:max-h-20",
   desktopHeight = "md:max-h-32",
-  largeDesktopHeight = "lg:max-h-40",
-  extraLargeHeight = "xl:max-h-48",
-  ultraWideHeight = "2xl:max-h-56"
+  largeDesktopHeight = "lg:max-h-64",
+  extraLargeHeight = "xl:max-h-80",
+  ultraWideHeight = "2xl:max-h-96"
 }) => {
   const logoClasses = `
     ${topSpacing} 
@@ -45,7 +45,7 @@ const ScalcoLogo: React.FC<ScalcoLogoProps> = ({
       src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" 
       alt="Grupo Scalco Logo" 
       className={logoClasses}
-      style={{ marginTop: '40px', marginLeft: '-200px', marginRight: '50px', marginBottom: '50px'  }}
+      style={{ marginTop: '40px', marginLeft: '-25px', marginRight: '50px', marginBottom: '50px'  }}
     />
   );
 };
