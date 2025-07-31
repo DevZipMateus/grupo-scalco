@@ -9,13 +9,11 @@ import Autoplay from "embla-carousel-autoplay";
 import ScalcoLogo from "@/components/ScalcoLogo";
 import SalaryDeliveryChart from "@/components/SalaryDeliveryChart";
 import "../components/TestimonialCarousel.css";
-
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -24,12 +22,10 @@ const Index = () => {
       });
     }
   };
-
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Olá! Quero conhecer o Método GAP e fazer meu diagnóstico gratuito.");
     window.open(`https://wa.me/5551999712999?text=${message}`, '_blank');
   };
-
   const problemSection = useStaggeredAnimation(3, 150);
   const gapSection = useScrollAnimation();
   const pilaresSection = useStaggeredAnimation(3, 200);
@@ -45,7 +41,6 @@ const Index = () => {
     delay: 4000,
     stopOnInteraction: true
   }));
-
   const testimonials = [{
     id: 1,
     text: "Antes da Scalco \"achávamos\" muito... (eu acho que é isso, eu acho que é bom, eu acho que esse funcionário é melhor que aquele...). O primeiro impacto foi de união da equipe, uma coisa que nós não esperávamos. A gente não tinha gerentes antes... depois de implantar \"a Scalco\" nós formamos gerentes.",
@@ -83,7 +78,6 @@ const Index = () => {
     company: "Rede Hurray",
     image: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg"
   }];
-
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
       {/* Hero Section - Centered Content Only */}
       <section className="relative py-6 sm:py-8 md:py-10 lg:py-12 flex items-center overflow-hidden" style={{
@@ -140,22 +134,7 @@ const Index = () => {
       </section>
 
       {/* Logo Section - After Hero */}
-      <section className="py-2 sm:py-3 bg-brand-white">
-        <div className="container mx-auto px-3 sm:px-4 lg:px-8">
-          <div className="flex justify-center">
-            <ScalcoLogo 
-              mobileHeight="max-h-20"
-              tabletHeight="sm:max-h-24"
-              desktopHeight="md:max-h-28"
-              largeDesktopHeight="lg:max-h-32"
-              extraLargeHeight="xl:max-h-36"
-              ultraWideHeight="2xl:max-h-40"
-              topSpacing=""
-              bottomSpacing=""
-            />
-          </div>
-        </div>
-      </section>
+      
 
       {/* Problem Section - Você cumpre sua parte */}
       <section className="py-6 sm:py-12 bg-gray-50">
@@ -163,13 +142,7 @@ const Index = () => {
           <div className="max-w-6xl mx-auto">
             {/* Logo para mobile e tablet - posicionada acima do H2 */}
             <div className="flex justify-center lg:hidden">
-              <ScalcoLogo 
-                mobileHeight="max-h-32"
-                tabletHeight="sm:max-h-24"
-                topSpacing=""
-                bottomSpacing=""
-                className=""
-              />
+              <ScalcoLogo mobileHeight="max-h-32" tabletHeight="sm:max-h-24" topSpacing="" bottomSpacing="" className="" />
             </div>
             
             <div className="text-center mb-8 sm:mb-12">
@@ -640,15 +613,7 @@ const Index = () => {
               <div className="sm:col-span-2 lg:col-span-1">
                 {/* Logo in footer */}
                 <div className="mb-3 sm:mb-4">
-                  <ScalcoLogo 
-                    topSpacing=""
-                    mobileHeight="max-h-12"
-                    tabletHeight="sm:max-h-16"
-                    desktopHeight="md:max-h-16"
-                    largeDesktopHeight="lg:max-h-16"
-                    extraLargeHeight="xl:max-h-16"
-                    ultraWideHeight="2xl:max-h-16"
-                  />
+                  <ScalcoLogo topSpacing="" mobileHeight="max-h-12" tabletHeight="sm:max-h-16" desktopHeight="md:max-h-16" largeDesktopHeight="lg:max-h-16" extraLargeHeight="xl:max-h-16" ultraWideHeight="2xl:max-h-16" />
                 </div>
                 
                 <p className="text-sm sm:text-base text-white mb-3 sm:mb-4">
@@ -711,5 +676,4 @@ const Index = () => {
       </footer>
     </div>;
 };
-
 export default Index;
