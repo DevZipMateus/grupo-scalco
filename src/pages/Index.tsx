@@ -7,7 +7,6 @@ import { Users, TrendingUp, Target, Award, CheckCircle, ArrowRight, Phone, Mail,
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import Autoplay from "embla-carousel-autoplay";
 import "../components/TestimonialCarousel.css";
-
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
@@ -133,7 +132,7 @@ const Index = () => {
 
               {/* Coluna Direita - Logo Grande */}
               <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-                <img src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" alt="Grupo Scalco Logo" className="pt-8 sm:pt-0 max-h-[98px] sm:max-h-[82px] md:max-h-[130px] lg:max-h-[162px] xl:max-h-[194px] 2xl:max-h-[226px] w-auto object-contain" />
+                <img src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" alt="Grupo Scalco Logo" className="pt-8 sm:pt-0 max-h-24 sm:max-h-20 md:max-h-32 lg:max-h-40 xl:max-h-48 2xl:max-h-56 w-auto object-contain" />
               </div>
             </div>
           </div>
@@ -679,5 +678,4 @@ const Index = () => {
       </footer>
     </div>;
 };
-
 export default Index;
