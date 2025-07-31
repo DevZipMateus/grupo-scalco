@@ -7,13 +7,11 @@ import { Users, TrendingUp, Target, Award, CheckCircle, ArrowRight, Phone, Mail,
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import Autoplay from "embla-carousel-autoplay";
 import "../components/TestimonialCarousel.css";
-
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -22,12 +20,10 @@ const Index = () => {
       });
     }
   };
-
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Olá! Quero conhecer o Método GAP e fazer meu diagnóstico gratuito.");
     window.open(`https://wa.me/5551999712999?text=${message}`, '_blank');
   };
-
   const problemSection = useStaggeredAnimation(3, 150);
   const gapSection = useScrollAnimation();
   const pilaresSection = useStaggeredAnimation(3, 200);
@@ -43,7 +39,6 @@ const Index = () => {
     delay: 4000,
     stopOnInteraction: true
   }));
-
   const testimonials = [{
     id: 1,
     text: "Antes da Scalco \"achávamos\" muito... (eu acho que é isso, eu acho que é bom, eu acho que esse funcionário é melhor que aquele...). O primeiro impacto foi de união da equipe, uma coisa que nós não esperávamos. A gente não tinha gerentes antes... depois de implantar \"a Scalco\" nós formamos gerentes.",
@@ -81,7 +76,6 @@ const Index = () => {
     company: "Rede Hurray",
     image: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg"
   }];
-
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
       {/* Hero Section - Duas Colunas */}
       <section className="relative py-6 sm:py-8 md:py-10 lg:py-12 flex items-center overflow-hidden" style={{
@@ -138,7 +132,7 @@ const Index = () => {
 
               {/* Coluna Direita - Logo Grande */}
               <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-                <img src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" alt="Grupo Scalco Logo" className="pt-8 sm:pt-0 max-h-16 sm:max-h-20 md:max-h-32 lg:max-h-40 xl:max-h-48 2xl:max-h-56 w-auto object-contain" />
+                <img src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" alt="Grupo Scalco Logo" className="pt-8 sm:pt-0 max-h-24 sm:max-h-20 md:max-h-32 lg:max-h-40 xl:max-h-48 2xl:max-h-56 w-auto object-contain" />
               </div>
             </div>
           </div>
@@ -684,5 +678,4 @@ const Index = () => {
       </footer>
     </div>;
 };
-
 export default Index;
