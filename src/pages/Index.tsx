@@ -7,11 +7,13 @@ import { Users, TrendingUp, Target, Award, CheckCircle, ArrowRight, Phone, Mail,
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import Autoplay from "embla-carousel-autoplay";
 import "../components/TestimonialCarousel.css";
+
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     setIsVisible(true);
   }, []);
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -76,6 +78,7 @@ const Index = () => {
     company: "Rede Hurray",
     image: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg"
   }];
+
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
       {/* Hero Section - Duas Colunas */}
       <section className="relative py-6 sm:py-8 md:py-10 lg:py-12 flex items-center overflow-hidden" style={{
@@ -125,7 +128,7 @@ const Index = () => {
                   <ArrowRight className="ml-1 sm:ml-2 w-3 h-3 sm:w-4 sm:h-4" />
                 </Button>
                 
-                <div className="bg-brand-yellow text-brand-dark-blue mb-3 sm:mb-4 px-2 sm:px-3 py-1 text-xs sm:text-sm font-semibold mt-4 inline-block rounded">
+                <div className="bg-brand-yellow text-brand-dark-blue mb-3 sm:mb-4 px-2 sm:px-3 py-1 text-xs sm:text-sm font-semibold mt-4 block w-fit rounded">
                   +80 empresas transformadas com o GAP
                 </div>
               </div>
@@ -683,4 +686,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
