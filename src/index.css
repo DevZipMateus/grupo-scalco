@@ -185,6 +185,35 @@ All colors MUST be HSL.
   .hover\:bg-brand-yellow:hover {
     background-color: hsl(var(--brand-yellow));
   }
+
+  /* Mobile-first responsive utilities */
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+  }
+  
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
+  }
+  
+  .text-responsive-base {
+    @apply text-base sm:text-lg md:text-xl;
+  }
+
+  .px-responsive {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .py-responsive {
+    @apply py-8 sm:py-10 md:py-12 lg:py-16;
+  }
+
+  .mb-responsive {
+    @apply mb-4 sm:mb-6 md:mb-8;
+  }
+
+  .gap-responsive {
+    @apply gap-4 sm:gap-6 lg:gap-8;
+  }
 }
 
 /* Animation keyframes */
@@ -275,93 +304,161 @@ All colors MUST be HSL.
   will-change: transform;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .hero .container {
-    flex-direction: column;
-    text-align: center;
+/* Mobile-optimized responsive design */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
+  .hero-section {
+    min-height: 90vh;
+  }
+
+  .section-padding {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .testimonial-card {
+    min-height: 280px;
+  }
+
+  .cta-button {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .text-overflow-mobile {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
   .hero-title {
     font-size: 2.5rem;
   }
 
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
 
   .section-title {
     font-size: 2rem;
   }
 
-  .pillars,
-  .results-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .pillar,
-  .result-item,
-  .consultant-card {
-    max-width: 90%;
-  }
-
-  .platform-features h3 {
-    font-size: 1.5rem;
-  }
-
-  .final-cta .cta-title {
-    font-size: 2rem;
-  }
-
-  .final-cta .cta-subtitle {
-    font-size: 1.1rem;
-  }
-
-  .stats-card {
-    flex-direction: column;
-  }
-
-  .stat-divider {
-    display: none;
-  }
-
-  .features-list li {
-    justify-content: flex-start;
+  .grid-responsive-md {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.25rem;
   }
 
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 
   .cta-button.large {
-    font-size: 1rem;
-    padding: 12px 25px;
+    font-size: 0.875rem;
+    padding: 0.75rem 1.25rem;
   }
 
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.25rem;
   }
 
-  .method-text {
-    font-size: 1.5rem;
+  .text-xs-responsive {
+    font-size: 0.75rem;
   }
 
-  .gap-text {
-    font-size: 4rem;
+  .gap-mobile {
+    gap: 0.75rem;
   }
 
-  .subtitle-text {
-    font-size: 1rem;
+  .p-mobile {
+    padding: 0.75rem;
   }
+}
 
-  .metric-card {
-    flex: 1 1 100%;
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+  button, .clickable {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .carousel-nav {
+    display: none;
+  }
+  
+  .grid-mobile-stack > * {
+    width: 100%;
+  }
+}
+
+/* Improved carousel for mobile */
+.testimonial-carousel .embla__slide {
+  flex: 0 0 100%;
+}
+
+@media (min-width: 768px) {
+  .testimonial-carousel .embla__slide {
+    flex: 0 0 80%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonial-carousel .embla__slide {
+    flex: 0 0 60%;
+  }
+}
+
+/* Safe area for mobile devices */
+@supports (padding: max(0px)) {
+  .safe-area-inset {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-top: max(1rem, env(safe-area-inset-top));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
   }
 }

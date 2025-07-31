@@ -85,17 +85,17 @@ const Index = () => {
 
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
       {/* Hero Section - Centered Content Only */}
-      <section className="relative py-6 sm:py-8 md:py-10 lg:py-12 flex items-center overflow-hidden" style={{
+      <section className="relative py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 flex items-center overflow-hidden min-h-[85vh] sm:min-h-[75vh]" style={{
       backgroundImage: 'url(/lovable-uploads/c0f4cd28-d342-4b18-a9bc-f10ecae89286.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
     }}>
-        <div className="container mx-auto px-3 sm:px-4 lg:px-8 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className={`text-center transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               
-              <h1 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-brand-white mb-3 sm:mb-4 leading-tight">
+              <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-brand-white mb-4 sm:mb-6 leading-tight px-2">
                 Você paga <span className="text-brand-yellow">100%</span>.
                 <br />
                 Sua equipe entrega só <span className="text-red-400">75%</span>.
@@ -103,32 +103,33 @@ const Index = () => {
                 <span className="text-brand-yellow">Isso é justo?</span>
               </h1>
               
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-brand-white/90 mb-4 sm:mb-6 leading-relaxed text-zinc-200">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-brand-white/90 mb-6 sm:mb-8 leading-relaxed text-zinc-200 px-4">
                 Chegou o <strong>Método GAP</strong>: consultoria em gestão de pessoas + tecnologia para transformar o desempenho da sua empresa.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 lg:gap-4 justify-center items-center mb-4 sm:mb-6">
-                <div className="flex items-center gap-1 sm:gap-2 text-brand-white">
-                  <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-brand-yellow" />
-                  <span className="text-xs sm:text-sm font-semibold">Mais controle</span>
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 lg:gap-6 justify-center items-center mb-6 sm:mb-8 px-4">
+                <div className="flex items-center gap-2 text-brand-white">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-brand-yellow" />
+                  <span className="text-sm sm:text-base font-semibold">Mais controle</span>
                 </div>
-                <div className="flex items-center gap-1 sm:gap-2 text-brand-white">
-                  <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-brand-yellow" />
-                  <span className="text-xs sm:text-sm font-semibold">Mais entrega</span>
+                <div className="flex items-center gap-2 text-brand-white">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-brand-yellow" />
+                  <span className="text-sm sm:text-base font-semibold">Mais entrega</span>
                 </div>
-                <div className="flex items-center gap-1 sm:gap-2 text-brand-white">
-                  <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-brand-yellow" />
-                  <span className="text-xs sm:text-sm font-semibold">Menos desculpas</span>
+                <div className="flex items-center gap-2 text-brand-white">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-brand-yellow" />
+                  <span className="text-sm sm:text-base font-semibold">Menos desculpas</span>
                 </div>
               </div>
               
-              <Button size="lg" className="bg-brand-yellow text-brand-dark-blue px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-brand-dark-blue" onClick={handleWhatsAppClick}>
-                <span className="block sm:hidden">Quero aplicar o Método GAP na minha empresa</span>
-                <span className="hidden sm:block">Quero aplicar o Método GAP na minha empresa</span>
-                <ArrowRight className="ml-1 sm:ml-2 w-3 h-3 sm:w-4 sm:h-4" />
-              </Button>
+              <div className="px-4">
+                <Button size="lg" className="bg-brand-yellow text-brand-dark-blue px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-brand-dark-blue w-full sm:w-auto" onClick={handleWhatsAppClick}>
+                  Quero aplicar o Método GAP na minha empresa
+                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
+                </Button>
+              </div>
               
-              <div className="bg-brand-yellow text-brand-dark-blue mb-3 sm:mb-4 px-2 sm:px-3 py-1 text-xs sm:text-sm font-semibold mt-4 block w-fit mx-auto rounded">
+              <div className="bg-brand-yellow text-brand-dark-blue mb-4 sm:mb-6 px-4 py-2 text-sm sm:text-base font-semibold mt-6 inline-block rounded mx-4">
                 +80 empresas transformadas com o GAP
               </div>
             </div>
@@ -139,38 +140,38 @@ const Index = () => {
       </section>
 
       {/* Logo Section - After Hero */}
-      <section className="py-6 sm:py-8 bg-brand-white">
+      <section className="py-4 sm:py-6 bg-brand-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center">
             <ScalcoLogo 
               topSpacing="" 
               bottomSpacing="" 
-              mobileHeight="max-h-20" 
-              tabletHeight="sm:max-h-24" 
-              desktopHeight="md:max-h-32" 
-              largeDesktopHeight="lg:max-h-40"
-              extraLargeHeight="xl:max-h-48"
-              ultraWideHeight="2xl:max-h-56"
+              mobileHeight="max-h-16" 
+              tabletHeight="sm:max-h-20" 
+              desktopHeight="md:max-h-24" 
+              largeDesktopHeight="lg:max-h-32"
+              extraLargeHeight="xl:max-h-40"
+              ultraWideHeight="2xl:max-h-48"
             />
           </div>
         </div>
       </section>
 
       {/* Problem Section - Você cumpre sua parte */}
-      <section className="py-6 sm:py-12 bg-gray-50">
+      <section className="py-8 sm:py-10 md:py-12 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-8 sm:mb-12">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-brand-dark-blue mb-4 sm:mb-6">
+            <div className="text-center mb-8 sm:mb-10 md:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark-blue mb-4 sm:mb-6 px-4">
                 Você cumpre sua parte. E a sua equipe?
               </h2>
-              <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6 sm:mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-6 sm:mb-8 px-4">
                 Você garante estrutura, pagamento e condições. E ainda precisa cobrar o óbvio?
               </p>
             </div>
             
-            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center mb-8 sm:mb-12">
-              <div ref={problemSection.ref} className="space-y-4 sm:space-y-6">
+            <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center mb-8 sm:mb-12">
+              <div ref={problemSection.ref} className="space-y-4 sm:space-y-6 order-2 lg:order-1">
                 <Card className={`p-4 sm:p-6 hover:shadow-xl transition-all duration-300 ${problemSection.visibleItems[0] ? 'animate-fade-in-up' : 'opacity-0'}`}>
                   <CardContent className="flex items-center gap-3 sm:gap-4">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
@@ -208,20 +209,21 @@ const Index = () => {
                 </Card>
               </div>
               
-              <div className="flex justify-center">
-                <SalaryDeliveryChart />
+              <div className="flex justify-center order-1 lg:order-2">
+                <div className="w-full max-w-sm sm:max-w-md">
+                  <SalaryDeliveryChart />
+                </div>
               </div>
             </div>
 
-            <div className="text-center">
-              <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 font-semibold">
+            <div className="text-center px-4">
+              <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 sm:mb-8 font-semibold">
                 Essa é a realidade de muitas empresas com várias unidades e equipes descentralizadas.
               </p>
               
-              <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-semibold" onClick={handleWhatsAppClick}>
-                <span className="block sm:hidden">Corrigir desequilíbrio</span>
-                <span className="hidden sm:block">Corrigir desequilíbrio</span>
-                <ArrowRight className="ml-1 sm:ml-2 w-4 h-4 sm:w-5 sm:h-5" />
+              <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto" onClick={handleWhatsAppClick}>
+                Corrigir desequilíbrio
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
             </div>
           </div>
@@ -229,14 +231,14 @@ const Index = () => {
       </section>
 
       {/* O que é o GAP */}
-      <section className="py-12 sm:py-16 bg-brand-white">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-16 bg-brand-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div ref={gapSection.ref} className={`text-center mb-8 sm:mb-12 ${gapSection.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-brand-dark-blue mb-4 sm:mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark-blue mb-4 sm:mb-6 px-4">
                 O que é o Método GAP?
               </h2>
-              <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 sm:mb-8 leading-relaxed px-4">
                 Uma solução prática para você, gestor, voltar a ter o controle e a confiança da sua equipe.
               </p>
             </div>
@@ -265,15 +267,14 @@ const Index = () => {
               </Card>
             </div>
 
-            <div className="text-center">
-              <p className="text-base sm:text-lg text-brand-dark-blue font-semibold mb-6 sm:mb-8">
+            <div className="text-center px-4">
+              <p className="text-base sm:text-lg md:text-xl text-brand-dark-blue font-semibold mb-6 sm:mb-8">
                 Com o GAP, você acompanha a entrega de cada colaborador, setor ou unidade – tudo em tempo real.
               </p>
               
-              <Button size="lg" className="bg-brand-light-blue text-brand-white hover:bg-brand-light-blue/90 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-semibold" onClick={handleWhatsAppClick}>
-                <span className="block sm:hidden">Conhecer o GAP</span>
-                <span className="hidden sm:block">Conhecer o GAP</span>
-                <ArrowRight className="ml-1 sm:ml-2 w-4 h-4 sm:w-5 sm:h-5" />
+              <Button size="lg" className="bg-brand-light-blue text-brand-white hover:bg-brand-light-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto" onClick={handleWhatsAppClick}>
+                Conhecer o GAP
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
             </div>
           </div>
@@ -281,18 +282,18 @@ const Index = () => {
       </section>
 
       {/* Os 3 Pilares do GAP */}
-      <section id="pilares" className="py-12 sm:py-16 bg-gray-50">
+      <section id="pilares" className="py-8 sm:py-10 md:py-12 lg:py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-brand-dark-blue mb-4 sm:mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark-blue mb-4 sm:mb-6 px-4">
               Os 3 Pilares do GAP
             </h2>
-            <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed px-4">
               Veja como o método funciona e onde está o diferencial prático
             </p>
           </div>
           
-          <div ref={pilaresSection.ref} className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
+          <div ref={pilaresSection.ref} className="grid sm:grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
             <Card className={`p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 ${pilaresSection.visibleItems[0] ? 'animate-fade-in-left' : 'opacity-0'}`}>
               <CardContent className="text-center">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
@@ -330,29 +331,28 @@ const Index = () => {
             </Card>
           </div>
 
-          <div className="text-center">
-            <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-semibold" onClick={handleWhatsAppClick}>
-              <span className="block sm:hidden">Aplicar no meu time</span>
-              <span className="hidden sm:block">Aplicar no meu time</span>
-              <ArrowRight className="ml-1 sm:ml-2 w-4 h-4 sm:w-5 sm:h-5" />
+          <div className="text-center px-4">
+            <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto" onClick={handleWhatsAppClick}>
+              Aplicar no meu time
+              <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
           </div>
         </div>
       </section>
 
       {/* Tecnologia que te dá controle */}
-      <section className="py-12 sm:py-16 bg-brand-white">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-16 bg-brand-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-brand-dark-blue mb-4 sm:mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark-blue mb-4 sm:mb-6 px-4">
               Tecnologia que te dá o controle
             </h2>
-            <p className="text-base sm:text-lg text-brand-dark-blue font-semibold mb-6 sm:mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-brand-dark-blue font-semibold mb-6 sm:mb-8 px-4">
               Você vai enxergar, de forma clara, quem entrega, quem enrola e onde agir.
             </p>
           </div>
           
-          <div ref={tecnologiaSection.ref} className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
+          <div ref={tecnologiaSection.ref} className="grid sm:grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
             <Card className={`p-4 sm:p-6 bg-gradient-to-br from-brand-light-blue to-brand-dark-blue text-brand-white ${tecnologiaSection.visibleItems[0] ? 'animate-fade-in-scale' : 'opacity-0'}`}>
               <CardContent className="text-center">
                 <Eye className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-brand-yellow mb-3 sm:mb-4 mx-auto" />
@@ -378,28 +378,27 @@ const Index = () => {
             </Card>
           </div>
 
-          <div className="text-center">
-            <Button size="lg" className="bg-brand-light-blue text-brand-white hover:bg-brand-light-blue/90 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-semibold" onClick={handleWhatsAppClick}>
-              <span className="block sm:hidden">Quero essa visão</span>
-              <span className="hidden sm:block">Quero essa visão</span>
-              <ArrowRight className="ml-1 sm:ml-2 w-4 h-4 sm:w-5 sm:h-5" />
+          <div className="text-center px-4">
+            <Button size="lg" className="bg-brand-light-blue text-brand-white hover:bg-brand-light-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto" onClick={handleWhatsAppClick}>
+              Quero essa visão
+              <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
           </div>
         </div>
       </section>
 
       {/* Consultoria com gente de verdade */}
-      <section className="py-12 sm:py-16 bg-gradient-to-r from-brand-dark-blue to-brand-light-blue">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-16 bg-gradient-to-r from-brand-dark-blue to-brand-light-blue">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-brand-white mb-4 sm:mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-brand-white mb-4 sm:mb-6 px-4">
               Consultoria com gente de verdade
             </h2>
-            <p className="text-base sm:text-lg text-brand-white/90 mb-6 sm:mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-brand-white/90 mb-6 sm:mb-8 leading-relaxed px-4">
               A plataforma aponta. Nossos consultores fazem acontecer.
             </p>
             
-            <div ref={consultoriaSection.ref} className="grid sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
+            <div ref={consultoriaSection.ref} className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
               <Card className={`p-4 sm:p-6 bg-brand-white/10 backdrop-blur-sm border-brand-white/20 ${consultoriaSection.visibleItems[0] ? 'animate-fade-in-up' : 'opacity-0'}`}>
                 <CardContent className="text-center">
                   <Users className="w-6 h-6 sm:w-8 sm:h-8 text-brand-yellow mx-auto mb-3 sm:mb-4" />
@@ -422,28 +421,29 @@ const Index = () => {
               </Card>
             </div>
             
-            <Button size="lg" className="bg-brand-yellow text-brand-dark-blue hover:bg-brand-yellow/90 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-semibold" onClick={handleWhatsAppClick}>
-              <span className="block sm:hidden">Conversar com especialista</span>
-              <span className="hidden sm:block">Conversar com especialista</span>
-              <ArrowRight className="ml-1 sm:ml-2 w-4 h-4 sm:w-5 sm:h-5" />
-            </Button>
+            <div className="px-4">
+              <Button size="lg" className="bg-brand-yellow text-brand-dark-blue hover:bg-brand-yellow/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto" onClick={handleWhatsAppClick}>
+                Conversar com especialista
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Números que comprovam */}
-      <section className="py-12 sm:py-16 bg-gray-50">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-brand-dark-blue mb-4 sm:mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark-blue mb-4 sm:mb-6 px-4">
               Você não precisa acreditar na gente. Acredite nos números.
             </h2>
-            <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed px-4">
               Resultados reais de empresas que aplicaram o Método GAP
             </p>
           </div>
           
-          <div ref={numerosSection.ref} className="grid sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
+          <div ref={numerosSection.ref} className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
             <Card className={`p-6 sm:p-8 bg-gradient-to-br from-green-500 to-green-600 text-white ${numerosSection.visibleItems[0] ? 'animate-fade-in-scale' : 'opacity-0'}`}>
               <CardContent className="text-center">
                 <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">+87%</div>
@@ -462,29 +462,29 @@ const Index = () => {
           </div>
 
           <div className="max-w-4xl mx-auto mb-8 sm:mb-12">
-            <h3 className="text-lg sm:text-xl font-bold text-brand-dark-blue mb-6 sm:mb-8 text-center">O que nossos clientes dizem:</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-brand-dark-blue mb-6 sm:mb-8 text-center px-4">O que nossos clientes dizem:</h3>
             
-            <Carousel plugins={[plugin.current]} className="w-full max-w-5xl mx-auto testimonial-carousel" onMouseEnter={plugin.current.stop} onMouseLeave={plugin.current.reset} opts={{
+            <Carousel plugins={[plugin.current]} className="w-full max-w-5xl mx-auto testimonial-carousel px-4" onMouseEnter={plugin.current.stop} onMouseLeave={plugin.current.reset} opts={{
             align: "center",
             loop: true
           }}>
               <CarouselContent>
-                {testimonials.map((testimonial, index) => <CarouselItem key={testimonial.id} className="basis-full md:basis-1/3">
+                {testimonials.map((testimonial, index) => <CarouselItem key={testimonial.id} className="basis-full md:basis-4/5 lg:basis-3/5">
                     <div className="p-2">
-                      <Card className="h-full min-h-[320px] md:min-h-[400px] transition-all duration-300 hover:shadow-xl">
-                        <CardContent className="p-6 sm:p-8 flex flex-col justify-between h-full">
+                      <Card className="h-full min-h-[300px] sm:min-h-[350px] md:min-h-[400px] transition-all duration-300 hover:shadow-xl">
+                        <CardContent className="p-4 sm:p-6 md:p-8 flex flex-col justify-between h-full">
                           <div className="flex-grow flex flex-col">
-                            <p className="text-sm sm:text-base text-gray-700 italic mb-6 sm:mb-8 leading-relaxed line-clamp-6 md:line-clamp-8 overflow-hidden">
+                            <p className="text-sm sm:text-base md:text-lg text-gray-700 italic mb-4 sm:mb-6 md:mb-8 leading-relaxed overflow-hidden">
                               "{testimonial.text}"
                             </p>
                           </div>
-                          <div className="flex items-center gap-4 mt-auto pt-4">
-                            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0 bg-gray-100">
+                          <div className="flex items-center gap-3 sm:gap-4 mt-auto pt-4">
+                            <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full overflow-hidden flex-shrink-0 bg-gray-100">
                               <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-contain" />
                             </div>
                             <div>
-                              <div className="text-sm sm:text-base font-bold text-brand-dark-blue">{testimonial.name}</div>
-                              <div className="text-xs sm:text-sm text-gray-600">{testimonial.company}</div>
+                              <div className="text-sm sm:text-base md:text-lg font-bold text-brand-dark-blue">{testimonial.name}</div>
+                              <div className="text-xs sm:text-sm md:text-base text-gray-600">{testimonial.company}</div>
                             </div>
                           </div>
                         </CardContent>
@@ -492,40 +492,40 @@ const Index = () => {
                     </div>
                   </CarouselItem>)}
               </CarouselContent>
-              <CarouselPrevious className="-left-12" />
-              <CarouselNext className="-right-12" />
+              <div className="hidden md:block">
+                <CarouselPrevious className="-left-12" />
+                <CarouselNext className="-right-12" />
+              </div>
             </Carousel>
           </div>
 
-          <div className="text-center">
-            <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-semibold" onClick={handleWhatsAppClick}>
-              <span className="block sm:hidden">Quero esses resultados</span>
-              <span className="hidden sm:block">Quero esses resultados</span>
-              <ArrowRight className="ml-1 sm:ml-2 w-4 h-4 sm:w-5 sm:h-5" />
+          <div className="text-center px-4">
+            <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto" onClick={handleWhatsAppClick}>
+              Quero esses resultados
+              <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
           </div>
         </div>
       </section>
 
       {/* Quem usa o GAP */}
-      <section className="py-12 sm:py-16 bg-brand-white">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-16 bg-brand-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-brand-dark-blue mb-4 sm:mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark-blue mb-4 sm:mb-6 px-4">
               Quem usa o GAP
             </h2>
             
-            
             {/* Frases destacadas */}
-            <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
+            <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12 px-4">
               <div className="bg-green-100 border-l-4 border-green-500 p-4 sm:p-6 rounded-r-lg">
-                <p className="text-base sm:text-lg font-semibold text-green-800">
+                <p className="text-sm sm:text-base md:text-lg font-semibold text-green-800">
                   Mercados e supermercados, postos de combustíveis, lojas de conveniência.
                 </p>
               </div>
               
               <div className="bg-brand-light-blue/10 border-l-4 border-brand-light-blue p-4 sm:p-6 rounded-r-lg">
-                <p className="text-base sm:text-lg font-semibold text-brand-dark-blue">
+                <p className="text-sm sm:text-base md:text-lg font-semibold text-brand-dark-blue">
                   Empresas com várias unidades já usam o GAP para escalar desempenho
                 </p>
               </div>
@@ -556,10 +556,10 @@ const Index = () => {
       </section>
 
       {/* FAQ - Mas será que funciona aqui? */}
-      <section className="py-12 sm:py-16 bg-gray-50">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-brand-dark-blue mb-8 sm:mb-12 text-center">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark-blue mb-8 sm:mb-12 text-center px-4">
               "Mas será que funciona aqui?"
             </h2>
             
@@ -596,24 +596,25 @@ const Index = () => {
       </section>
 
       {/* CTA Final */}
-      <section className="py-12 sm:py-16 bg-gradient-to-r from-brand-dark-blue to-brand-light-blue">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-16 bg-gradient-to-r from-brand-dark-blue to-brand-light-blue">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={ctaSection.ref} className={`max-w-4xl mx-auto text-center ${ctaSection.isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-brand-white mb-4 sm:mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-brand-white mb-4 sm:mb-6 px-4">
               Pronto para parar de pagar 100% e receber só 75%?
             </h2>
-            <p className="text-base sm:text-lg text-brand-white/90 mb-6 sm:mb-8 leading-relaxed">
-              Agende agora um diagnóstico gratuito com um de nossos especialistas.<br />
+            <p className="text-base sm:text-lg md:text-xl text-brand-white/90 mb-6 sm:mb-8 leading-relaxed px-4">
+              Agende agora um diagnóstico gratuito com um de nossos especialistas.<br className="hidden sm:block" />
               Descubra como aplicar o GAP no seu negócio.
             </p>
             
-            <Button size="lg" className="bg-brand-yellow text-brand-dark-blue hover:bg-brand-yellow/90 px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg font-bold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300" onClick={handleWhatsAppClick}>
-              <span className="block sm:hidden">Diagnóstico gratuito</span>
-              <span className="hidden sm:block">Diagnóstico gratuito</span>
-              <ArrowRight className="ml-2 sm:ml-3 w-5 h-5 sm:w-6 sm:h-6" />
-            </Button>
+            <div className="px-4">
+              <Button size="lg" className="bg-brand-yellow text-brand-dark-blue hover:bg-brand-yellow/90 px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-bold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 w-full sm:w-auto" onClick={handleWhatsAppClick}>
+                Diagnóstico gratuito
+                <ArrowRight className="ml-2 sm:ml-3 w-5 h-5 sm:w-6 sm:h-6" />
+              </Button>
+            </div>
 
-            <p className="text-xs sm:text-sm text-brand-white/80 mt-4 sm:mt-6">
+            <p className="text-xs sm:text-sm text-brand-white/80 mt-4 sm:mt-6 px-4">
               👆 Clique e fale direto com nosso especialista no WhatsApp
             </p>
           </div>
@@ -621,14 +622,14 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-brand-dark-blue py-8 sm:py-12 lg:py-16">
+      <footer className="bg-brand-dark-blue py-8 sm:py-10 md:py-12 lg:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
               <div className="sm:col-span-2 lg:col-span-1">
                 {/* Logo in footer */}
                 <div className="mb-3 sm:mb-4">
-                  <ScalcoLogo topSpacing="" mobileHeight="max-h-12" tabletHeight="sm:max-h-16" desktopHeight="md:max-h-16" largeDesktopHeight="lg:max-h-16" extraLargeHeight="xl:max-h-16" ultraWideHeight="2xl:max-h-16" />
+                  <ScalcoLogo topSpacing="" mobileHeight="max-h-10" tabletHeight="sm:max-h-12" desktopHeight="md:max-h-14" largeDesktopHeight="lg:max-h-16" extraLargeHeight="xl:max-h-16" ultraWideHeight="2xl:max-h-16" />
                 </div>
                 
                 <p className="text-sm sm:text-base text-white mb-3 sm:mb-4">
@@ -646,23 +647,23 @@ const Index = () => {
                 <h4 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4">Contato</h4>
                 <div className="space-y-2 sm:space-y-3">
                   <div className="flex items-center gap-2">
-                    <Phone className="w-3 h-3 sm:w-4 sm:h-4 text-brand-yellow" />
-                    <span className="text-xs sm:text-sm text-white">(51) 99971-2999</span>
+                    <Phone className="w-4 h-4 text-brand-yellow flex-shrink-0" />
+                    <span className="text-sm text-white">(51) 99971-2999</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Mail className="w-3 h-3 sm:w-4 sm:h-4 text-brand-yellow" />
-                    <span className="text-xs sm:text-sm text-white break-all">luiz@gruposcalco.com.br</span>
+                    <Mail className="w-4 h-4 text-brand-yellow flex-shrink-0" />
+                    <span className="text-sm text-white break-all">luiz@gruposcalco.com.br</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-brand-yellow mt-0.5" />
-                    <span className="text-xs sm:text-sm text-white">Rua Bento Martins, 1294 - São Borja - RS</span>
+                    <MapPin className="w-4 h-4 text-brand-yellow mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-white">Rua Bento Martins, 1294 - São Borja - RS</span>
                   </div>
                 </div>
               </div>
               
               <div>
                 <h4 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4">Método GAP</h4>
-                <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-white">
+                <ul className="space-y-1 sm:space-y-2 text-sm text-white">
                   <li>Consultoria Especializada</li>
                   <li>Plataforma Tecnológica</li>
                   <li>Gestão de Performance</li>
@@ -672,7 +673,7 @@ const Index = () => {
               
               <div>
                 <h4 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4">Soluções</h4>
-                <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-white">
+                <ul className="space-y-1 sm:space-y-2 text-sm text-white">
                   <li>Postos de Combustíveis</li>
                   <li>Gestão de Equipes</li>
                   <li>Treinamentos</li>
@@ -691,4 +692,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
