@@ -7,6 +7,7 @@ import { Users, TrendingUp, Target, Award, CheckCircle, ArrowRight, Phone, Mail,
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import Autoplay from "embla-carousel-autoplay";
 import ScalcoLogo from "@/components/ScalcoLogo";
+import SalaryDeliveryChart from "@/components/SalaryDeliveryChart";
 import "../components/TestimonialCarousel.css";
 
 const Index = () => {
@@ -264,7 +265,7 @@ const Index = () => {
               </div>
               
               <div className={`flex justify-center ${gapSection.isVisible ? 'animate-fade-in-right' : 'opacity-0'}`}>
-                <img src="/lovable-uploads/243d976f-94d0-44fe-bc5a-4a09ca52405f.png" alt="Gráfico: Salário 100% vs. Entrega real 75%" className="max-w-full h-auto rounded-lg shadow-2xl" />
+                <SalaryDeliveryChart />
               </div>
             </div>
 
