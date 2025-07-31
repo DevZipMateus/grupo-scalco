@@ -124,8 +124,7 @@ const Index = () => {
               
               <div className="px-2 sm:px-4">
                 <Button size="lg" className="bg-brand-yellow text-brand-dark-blue px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-brand-dark-blue w-full sm:w-auto" onClick={handleWhatsAppClick}>
-                  <span className="block sm:hidden">Aplicar Método GAP</span>
-                  <span className="hidden sm:block">Quero aplicar o Método GAP na minha empresa</span>
+                  Quero aplicar o Método GAP na minha empresa
                   <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                 </Button>
               </div>
@@ -212,8 +211,8 @@ const Index = () => {
                 </Card>
               </div>
               
-              <div className="flex justify-center order-1 lg:order-2">
-                <div className="w-full max-w-sm sm:max-w-md">
+              <div className="flex justify-center order-1 lg:order-2 px-2 sm:px-4">
+                <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
                   <SalaryDeliveryChart />
                 </div>
               </div>
