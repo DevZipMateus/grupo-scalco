@@ -17,7 +17,7 @@ interface ScalcoLogoProps {
 
 const ScalcoLogo: React.FC<ScalcoLogoProps> = ({
   className = "",
-  topSpacing = "pt-8 sm:pt-0",
+  topSpacing = "pt-10 sm:pt-0",
   bottomSpacing = "",
   mobileHeight = "max-h-24",
   tabletHeight = "sm:max-h-20",
