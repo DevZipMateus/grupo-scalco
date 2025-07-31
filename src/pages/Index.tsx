@@ -124,8 +124,8 @@ const Index = () => {
               </div>
               
               <Button size="lg" className="bg-brand-yellow text-brand-dark-blue px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-brand-dark-blue" onClick={handleWhatsAppClick}>
-                <span className="block sm:hidden">Aplicar Método GAP</span>
-                <span className="hidden sm:block">Aplicar Método GAP</span>
+                <span className="block sm:hidden">Quero aplicar o Método GAP na minha empresa</span>
+                <span className="hidden sm:block">Quero aplicar o Método GAP na minha empresa</span>
                 <ArrowRight className="ml-1 sm:ml-2 w-3 h-3 sm:w-4 sm:h-4" />
               </Button>
               
