@@ -84,8 +84,8 @@ const Index = () => {
   }];
 
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
-      {/* Hero Section - Duas Colunas */}
-      <section className="relative py-6 sm:py-8 md:py-10 lg:py-12 flex items-center overflow-hidden" style={{
+      {/* Hero Section - Logo sobre a balança */}
+      <section className="relative py-6 sm:py-8 md:py-10 lg:py-12 flex items-center overflow-hidden min-h-[60vh] sm:min-h-[70vh] lg:min-h-[80vh]" style={{
       backgroundImage: 'url(/lovable-uploads/c0f4cd28-d342-4b18-a9bc-f10ecae89286.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
@@ -135,13 +135,28 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Coluna Direita - Logo Grande */}
+              {/* Coluna Direita - Espaço reservado para não quebrar o layout */}
               <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-                <ScalcoLogo />
+                {/* Espaço vazio para manter o layout, a logo agora está posicionada absolutamente */}
+                <div className="w-full h-32 sm:h-48 lg:h-64"></div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Logo posicionada sobre a balança */}
+        <ScalcoLogo 
+          isAbsolute={true}
+          absoluteTop="top-8 sm:top-12 md:top-16 lg:top-20"
+          absoluteRight="right-4 sm:right-8 md:right-12 lg:right-16 xl:right-20 2xl:right-24"
+          mobileHeight="max-h-16 sm:max-h-20"
+          tabletHeight="md:max-h-24"
+          desktopHeight="lg:max-h-32"
+          largeDesktopHeight="xl:max-h-40"
+          extraLargeHeight="2xl:max-h-48"
+          zIndex="z-20"
+          className="transition-all duration-500 hover:scale-105"
+        />
         
         <div className="absolute bottom-0 left-0 right-0 h-10 sm:h-20 bg-gradient-to-t from-brand-white to-transparent"></div>
       </section>

@@ -13,6 +13,13 @@ interface ScalcoLogoProps {
   largeDesktopHeight?: string;
   extraLargeHeight?: string;
   ultraWideHeight?: string;
+  // Absolute positioning props
+  isAbsolute?: boolean;
+  absoluteTop?: string;
+  absoluteRight?: string;
+  absoluteLeft?: string;
+  absoluteBottom?: string;
+  zIndex?: string;
 }
 
 const ScalcoLogo: React.FC<ScalcoLogoProps> = ({
@@ -24,11 +31,20 @@ const ScalcoLogo: React.FC<ScalcoLogoProps> = ({
   desktopHeight = "md:max-h-32",
   largeDesktopHeight = "lg:max-h-40",
   extraLargeHeight = "xl:max-h-48",
-  ultraWideHeight = "2xl:max-h-56"
+  ultraWideHeight = "2xl:max-h-56",
+  isAbsolute = false,
+  absoluteTop = "",
+  absoluteRight = "",
+  absoluteLeft = "",
+  absoluteBottom = "",
+  zIndex = "z-10"
 }) => {
+  const positionClasses = isAbsolute 
+    ? `absolute ${absoluteTop} ${absoluteRight} ${absoluteLeft} ${absoluteBottom} ${zIndex}`
+    : `${topSpacing} ${bottomSpacing}`;
+
   const logoClasses = `
-    ${topSpacing} 
-    ${bottomSpacing} 
+    ${positionClasses}
     ${mobileHeight} 
     ${tabletHeight} 
     ${desktopHeight} 
