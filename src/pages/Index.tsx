@@ -7,13 +7,11 @@ import { Users, TrendingUp, Target, Award, CheckCircle, ArrowRight, Phone, Mail,
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import Autoplay from "embla-carousel-autoplay";
 import "../components/TestimonialCarousel.css";
-
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     setIsVisible(true);
   }, []);
-  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -78,7 +76,6 @@ const Index = () => {
     company: "Rede Hurray",
     image: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg"
   }];
-
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
       {/* Hero Section - Duas Colunas */}
       <section className="relative py-6 sm:py-8 md:py-10 lg:py-12 flex items-center overflow-hidden" style={{
@@ -222,12 +219,7 @@ const Index = () => {
                 Uma solução prática para você, gestor, voltar a ter o controle e a confiança da sua equipe.
               </p>
               
-              <div className="text-center mb-8 sm:mb-12">
-                <div className="text-4xl sm:text-6xl md:text-7xl font-bold text-brand-light-blue/20 mb-2 sm:mb-4">GAP</div>
-                <p className="text-base sm:text-lg text-brand-dark-blue font-semibold">
-                  Gestão de Atendimento e Performance
-                </p>
-              </div>
+              
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center mb-8 sm:mb-12">
@@ -686,5 +678,4 @@ const Index = () => {
       </footer>
     </div>;
 };
-
 export default Index;
