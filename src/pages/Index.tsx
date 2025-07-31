@@ -151,13 +151,13 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             {/* Logo para mobile e tablet - posicionada acima do H2 */}
-            <div className="justify-center lg:hidden">
+            <div className="flex justify-center lg:hidden">
               <ScalcoLogo 
                 mobileHeight="max-h-32"
                 tabletHeight="sm:max-h-24"
                 topSpacing=""
                 bottomSpacing=""
-                className="mx-auto"
+                className=""
               />
             </div>
             
