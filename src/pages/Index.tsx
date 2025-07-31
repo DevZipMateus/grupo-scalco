@@ -85,24 +85,6 @@ const Index = () => {
   }];
 
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
-      {/* Logo Section - Outside Hero */}
-      <section className="py-4 sm:py-6 bg-brand-white">
-        <div className="container mx-auto px-3 sm:px-4 lg:px-8">
-          <div className="flex justify-center">
-            <ScalcoLogo 
-              mobileHeight="max-h-24"
-              tabletHeight="sm:max-h-28"
-              desktopHeight="md:max-h-32"
-              largeDesktopHeight="lg:max-h-40"
-              extraLargeHeight="xl:max-h-48"
-              ultraWideHeight="2xl:max-h-56"
-              topSpacing=""
-              bottomSpacing=""
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Hero Section - Centered Content Only */}
       <section className="relative py-6 sm:py-8 md:py-10 lg:py-12 flex items-center overflow-hidden" style={{
       backgroundImage: 'url(/lovable-uploads/c0f4cd28-d342-4b18-a9bc-f10ecae89286.png)',
@@ -155,6 +137,24 @@ const Index = () => {
         </div>
         
         <div className="absolute bottom-0 left-0 right-0 h-10 sm:h-20 bg-gradient-to-t from-brand-white to-transparent"></div>
+      </section>
+
+      {/* Logo Section - After Hero */}
+      <section className="py-4 sm:py-6 bg-brand-white">
+        <div className="container mx-auto px-3 sm:px-4 lg:px-8">
+          <div className="flex justify-center">
+            <ScalcoLogo 
+              mobileHeight="max-h-24"
+              tabletHeight="sm:max-h-28"
+              desktopHeight="md:max-h-32"
+              largeDesktopHeight="lg:max-h-40"
+              extraLargeHeight="xl:max-h-48"
+              ultraWideHeight="2xl:max-h-56"
+              topSpacing=""
+              bottomSpacing=""
+            />
+          </div>
+        </div>
       </section>
 
       {/* Problem Section - Você cumpre sua parte */}
