@@ -245,8 +245,6 @@ const Index = () => {
               <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 leading-relaxed">
                 Uma solução prática para você, gestor, voltar a ter o controle e a confiança da sua equipe.
               </p>
-              
-              
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center mb-8 sm:mb-12">
