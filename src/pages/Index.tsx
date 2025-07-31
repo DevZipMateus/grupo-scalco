@@ -147,14 +147,14 @@ const Index = () => {
       </section>
 
       {/* Problem Section - Você cumpre sua parte */}
-      <section className="py-12 sm:py-16 bg-gray-50">
+      <section className="py-8 sm:py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             {/* Logo para mobile e tablet - posicionada acima do H2 */}
-            <div className="flex justify-center lg:hidden">
+            <div className="flex justify-center lg:hidden mb-4">
               <ScalcoLogo 
-                mobileHeight="max-h-16"
-                tabletHeight="sm:max-h-20"
+                mobileHeight="max-h-24"
+                tabletHeight="sm:max-h-24"
                 topSpacing=""
                 bottomSpacing=""
               />
