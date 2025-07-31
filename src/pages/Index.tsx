@@ -88,7 +88,9 @@ const Index = () => {
       <section className="relative py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 flex items-center overflow-hidden min-h-[85vh] sm:min-h-[75vh]" style={{
       backgroundImage: 'url(/lovable-uploads/c0f4cd28-d342-4b18-a9bc-f10ecae89286.png)',
       backgroundSize: 'cover',
-      backgroundPosition: 'center',
+      backgroundPosition: 'center top',
+      backgroundPositionX: 'center',
+      backgroundPositionY: '20%',
       backgroundRepeat: 'no-repeat'
     }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
