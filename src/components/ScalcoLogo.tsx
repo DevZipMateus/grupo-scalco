@@ -37,7 +37,7 @@ const ScalcoLogo: React.FC<ScalcoLogoProps> = ({
     ${ultraWideHeight} 
     w-auto 
     object-contain 
-    mx-auto
+    ml-0 md:mx-auto
     ${className}
   `.trim().replace(/\s+/g, ' ');
 
