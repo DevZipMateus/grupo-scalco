@@ -84,7 +84,7 @@ const Index = () => {
   }];
 
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
-      {/* Hero Section - Duas Colunas */}
+      {/* Hero Section - Uma Coluna Centralizada */}
       <section className="relative py-6 sm:py-8 md:py-10 lg:py-12 flex items-center overflow-hidden" style={{
       backgroundImage: 'url(/lovable-uploads/c0f4cd28-d342-4b18-a9bc-f10ecae89286.png)',
       backgroundSize: 'cover',
@@ -96,7 +96,7 @@ const Index = () => {
             <div className={`grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 items-center transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               
               {/* Coluna Esquerda - Conteúdo Textual */}
-              <div className="order-2 lg:order-1 text-center lg:text-left">
+              <div className="order-2 lg:order-1 text-center">
                 <h1 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-brand-white mb-3 sm:mb-4 leading-tight">
                   Você paga <span className="text-brand-yellow">100%</span>.
                   <br />
@@ -109,7 +109,7 @@ const Index = () => {
                   Chegou o <strong>Método GAP</strong>: consultoria em gestão de pessoas + tecnologia para transformar o desempenho da sua empresa.
                 </p>
                 
-                <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 lg:gap-4 justify-center lg:justify-start items-center mb-4 sm:mb-6">
+                <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 lg:gap-4 justify-center items-center mb-4 sm:mb-6">
                   <div className="flex items-center gap-1 sm:gap-2 text-brand-white">
                     <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-brand-yellow" />
                     <span className="text-xs sm:text-sm font-semibold">Mais controle</span>
@@ -130,13 +130,13 @@ const Index = () => {
                   <ArrowRight className="ml-1 sm:ml-2 w-3 h-3 sm:w-4 sm:h-4" />
                 </Button>
                 
-                <div className="bg-brand-yellow text-brand-dark-blue mb-3 sm:mb-4 px-2 sm:px-3 py-1 text-xs sm:text-sm font-semibold mt-4 block w-fit mx-auto lg:mx-0 rounded">
+                <div className="bg-brand-yellow text-brand-dark-blue mb-3 sm:mb-4 px-2 sm:px-3 py-1 text-xs sm:text-sm font-semibold mt-4 block w-fit mx-auto rounded">
                   +80 empresas transformadas com o GAP
                 </div>
               </div>
 
-              {/* Coluna Direita - Logo Grande */}
-              <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+              {/* Coluna Direita - Logo Grande (apenas desktop) */}
+              <div className="order-1 lg:order-2 hidden lg:flex justify-center lg:justify-end">
                 <ScalcoLogo />
               </div>
             </div>
@@ -150,6 +150,16 @@ const Index = () => {
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
+            {/* Logo para mobile e tablet - posicionada acima do H2 */}
+            <div className="flex justify-center mb-6 sm:mb-8 lg:hidden">
+              <ScalcoLogo 
+                mobileHeight="max-h-16"
+                tabletHeight="sm:max-h-20"
+                topSpacing=""
+                bottomSpacing=""
+              />
+            </div>
+            
             <div className="text-center mb-8 sm:mb-12">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-brand-dark-blue mb-4 sm:mb-6">
                 Você cumpre sua parte. E a sua equipe?
