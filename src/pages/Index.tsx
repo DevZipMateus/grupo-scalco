@@ -253,34 +253,28 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center mb-8 sm:mb-12">
-              <div className="space-y-6 sm:space-y-8">
-                <Card className={`p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-brand-dark-blue to-brand-light-blue text-brand-white ${gapSection.isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-                  <CardContent>
-                    <Brain className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-brand-yellow mb-4 sm:mb-6" />
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4">🧠 Consultoria em gestão de pessoas</h3>
-                    <p className="text-sm sm:text-base text-brand-white/90 leading-relaxed">
-                      Especialistas que entendem o seu desafio e implementam soluções práticas na sua realidade.
-                    </p>
-                  </CardContent>
-                </Card>
-                
-                <Card className={`p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-brand-yellow to-yellow-400 text-brand-dark-blue ${gapSection.isVisible ? 'animate-fade-in-left' : 'opacity-0'}`} style={{
-                animationDelay: '0.2s'
-              }}>
-                  <CardContent>
-                    <BarChart3 className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-brand-dark-blue mb-4 sm:mb-6" />
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4">📊 Plataforma com indicadores de desempenho</h3>
-                    <p className="text-sm sm:text-base text-brand-dark-blue/90 leading-relaxed">
-                      Tecnologia que mostra, em tempo real, a entrega de cada colaborador, setor ou unidade.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
+            <div className="space-y-6 sm:space-y-8 mb-8 sm:mb-12">
+              <Card className={`p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-brand-dark-blue to-brand-light-blue text-brand-white ${gapSection.isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
+                <CardContent>
+                  <Brain className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-brand-yellow mb-4 sm:mb-6" />
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4">🧠 Consultoria em gestão de pessoas</h3>
+                  <p className="text-sm sm:text-base text-brand-white/90 leading-relaxed">
+                    Especialistas que entendem o seu desafio e implementam soluções práticas na sua realidade.
+                  </p>
+                </CardContent>
+              </Card>
               
-              <div className={`flex justify-center ${gapSection.isVisible ? 'animate-fade-in-right' : 'opacity-0'}`}>
-                <SalaryDeliveryChart />
-              </div>
+              <Card className={`p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-brand-yellow to-yellow-400 text-brand-dark-blue ${gapSection.isVisible ? 'animate-fade-in-left' : 'opacity-0'}`} style={{
+              animationDelay: '0.2s'
+            }}>
+                <CardContent>
+                  <BarChart3 className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-brand-dark-blue mb-4 sm:mb-6" />
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4">📊 Plataforma com indicadores de desempenho</h3>
+                  <p className="text-sm sm:text-base text-brand-dark-blue/90 leading-relaxed">
+                    Tecnologia que mostra, em tempo real, a entrega de cada colaborador, setor ou unidade.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
 
             <div className="text-center">
