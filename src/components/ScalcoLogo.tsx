@@ -45,7 +45,7 @@ const ScalcoLogo: React.FC<ScalcoLogoProps> = ({
       src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" 
       alt="Grupo Scalco Logo" 
       className={logoClasses}
-      style={{ marginTop: '30px' }}
+      style={{ marginTop: '50px' }}
     />
   );
 };
