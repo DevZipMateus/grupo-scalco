@@ -6,12 +6,15 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Users, TrendingUp, Target, Award, CheckCircle, ArrowRight, Phone, Mail, MapPin, Star, BarChart3, Zap, Shield, Brain, Eye, MessageCircle, AlertTriangle, Clock, UserX, Wrench } from "lucide-react";
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import Autoplay from "embla-carousel-autoplay";
+import ScalcoLogo from "@/components/ScalcoLogo";
 import "../components/TestimonialCarousel.css";
+
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -20,10 +23,12 @@ const Index = () => {
       });
     }
   };
+
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Olá! Quero conhecer o Método GAP e fazer meu diagnóstico gratuito.");
     window.open(`https://wa.me/5551999712999?text=${message}`, '_blank');
   };
+
   const problemSection = useStaggeredAnimation(3, 150);
   const gapSection = useScrollAnimation();
   const pilaresSection = useStaggeredAnimation(3, 200);
@@ -39,6 +44,7 @@ const Index = () => {
     delay: 4000,
     stopOnInteraction: true
   }));
+
   const testimonials = [{
     id: 1,
     text: "Antes da Scalco \"achávamos\" muito... (eu acho que é isso, eu acho que é bom, eu acho que esse funcionário é melhor que aquele...). O primeiro impacto foi de união da equipe, uma coisa que nós não esperávamos. A gente não tinha gerentes antes... depois de implantar \"a Scalco\" nós formamos gerentes.",
@@ -76,6 +82,7 @@ const Index = () => {
     company: "Rede Hurray",
     image: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg"
   }];
+
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
       {/* Hero Section - Duas Colunas */}
       <section className="relative py-6 sm:py-8 md:py-10 lg:py-12 flex items-center overflow-hidden" style={{
@@ -90,8 +97,6 @@ const Index = () => {
               
               {/* Coluna Esquerda - Conteúdo Textual */}
               <div className="order-2 lg:order-1 text-center lg:text-left">
-                
-                
                 <h1 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-brand-white mb-3 sm:mb-4 leading-tight">
                   Você paga <span className="text-brand-yellow">100%</span>.
                   <br />
@@ -132,7 +137,7 @@ const Index = () => {
 
               {/* Coluna Direita - Logo Grande */}
               <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-                <img src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" alt="Grupo Scalco Logo" className="pt-8 sm:pt-0 max-h-24 sm:max-h-20 md:max-h-32 lg:max-h-40 xl:max-h-48 2xl:max-h-56 w-auto object-contain" />
+                <ScalcoLogo />
               </div>
             </div>
           </div>
@@ -615,7 +620,15 @@ const Index = () => {
               <div className="sm:col-span-2 lg:col-span-1">
                 {/* Logo in footer */}
                 <div className="mb-3 sm:mb-4">
-                  <img src="/lovable-uploads/1fb3e78a-ba18-46de-9a0b-ae1ca0b9a55b.png" alt="Grupo Scalco Logo" className="max-h-12 sm:max-h-16 w-auto" />
+                  <ScalcoLogo 
+                    topSpacing=""
+                    mobileHeight="max-h-12"
+                    tabletHeight="sm:max-h-16"
+                    desktopHeight="md:max-h-16"
+                    largeDesktopHeight="lg:max-h-16"
+                    extraLargeHeight="xl:max-h-16"
+                    ultraWideHeight="2xl:max-h-16"
+                  />
                 </div>
                 
                 <p className="text-sm sm:text-base text-white mb-3 sm:mb-4">
@@ -678,4 +691,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
