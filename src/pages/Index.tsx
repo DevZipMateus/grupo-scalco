@@ -105,7 +105,7 @@ const Index = () => {
               </h1>
               
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-brand-white/90 mb-6 sm:mb-8 leading-relaxed text-zinc-200 px-4">
-                Chegou o <strong>Método GAP</strong>: consultoria em gestão de pessoas + tecnologia para transformar o desempenho da sua empresa.
+                Consultoria em gestão de pessoas + tecnologia para transformar o desempenho da sua empresa.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 lg:gap-6 justify-center items-center mb-6 sm:mb-8 px-4">
