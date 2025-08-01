@@ -15,7 +15,7 @@ const data = [
   { x: 'Entrega Real', y: 75, color: 1 }
 ];
 
-const colorRange = ['#DC2626', '#F59E0B']; // red-600, amber-500
+const colorRange = ['#16A34A', '#DC2626']; // green-600, red-600
 
 const SalaryDeliveryChart = () => {
   const [hoveredValue, setHoveredValue] = React.useState(null);

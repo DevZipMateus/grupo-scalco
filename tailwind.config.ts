@@ -66,7 +66,7 @@ export default {
 				brand: {
 					'dark-blue': '#1E3A8A',
 					'light-blue': '#3B82F6',
-					'yellow': '#FCD34D',
+					'yellow': '#D97706',
 					'white': '#FFFFFF'
 				}
 			},
