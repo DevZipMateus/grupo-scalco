@@ -9,7 +9,6 @@ import Autoplay from "embla-carousel-autoplay";
 import ScalcoLogo from "@/components/ScalcoLogo";
 import SalaryDeliveryChart from "@/components/SalaryDeliveryChart";
 import "../components/TestimonialCarousel.css";
-
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
@@ -42,56 +41,49 @@ const Index = () => {
     delay: 4000,
     stopOnInteraction: true
   }));
-
-  const testimonials = [
-    {
-      id: 1,
-      text: "Antes da Scalco \"achávamos\" muito... (eu acho que é isso, eu acho que é bom, eu acho que esse funcionário é melhor que aquele...). O primeiro impacto foi de união da equipe, uma coisa que nós não esperávamos. A gente não tinha gerentes antes... depois de implantar \"a Scalco\" nós formamos gerentes.",
-      name: "Maurício Januzzi",
-      company: "Postos Malerba",
-      image: "/lovable-uploads/clientes/1753383807178_4_malerba.png"
-    }, {
-      id: 2,
-      text: "Depois que a Scalco chegou a gente conseguiu sair do \"achômetro\" e ter certezas, e crescer nesse trabalho.",
-      name: "Camila Maluf",
-      company: "Postos Tasca",
-      image: "/lovable-uploads/clientes/1753383806026_1_tasca.png"
-    }, {
-      id: 3,
-      text: "Depois da chegada da consultoria veio um boom todo: meta, as vendas alavancaram, atendimento, conservação, limpeza e organização do posto... aí com a copa foi uma melhoria absurda. A gente tinha posto vendendo (mix automotivo) R$ 10.000,00 e depois saltou pra R$ 25.000,00 – R$ 30.000,00 então o resultado veio rápido disso aí. A equipe toda se engajou para melhorar o atendimento.",
-      name: "Thiago Perin",
-      company: "Rede Marcela",
-      image: "/lovable-uploads/clientes/marcela.png"
-    }, {
-      id: 4,
-      text: "Nós tínhamos um conjunto de processos próprios, mas não medíamos com a frequência e a precisão que o método GAP nos trouxe.",
-      name: "Wellington Granja",
-      company: "Postos Petrocal",
-      image: "/lovable-uploads/clientes/petrocal.png"
-    }, {
-      id: 5,
-      text: "Antes da Scalco, a gestão de pessoas era muito fraca, não tinha uma medida exata de cada colaborador. Nós fomos campeão Brasil no ano que a Scalco entrou, já tinha 13 anos trabalhando com loja e com a introdução da Scalco a gente ganhou concorrendo com 365 lojas na época.",
-      name: "Antero Vieira",
-      company: "Postos Tasca",
-      image: "/lovable-uploads/clientes/1753383806026_1_tasca.png"
-    }, {
-      id: 6,
-      text: "O elogio começou a vir e a turma não estava muito acostumada com isso... a receber elogio né... e nisso a satisfação começa a trazer resultado e isso nos deixou mais confiante no nosso trabalho.",
-      name: "Marcelo Oliveira",
-      company: "Rede Hurray",
-      image: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg"
-    }
-  ];
-
+  const testimonials = [{
+    id: 1,
+    text: "Antes da Scalco \"achávamos\" muito... (eu acho que é isso, eu acho que é bom, eu acho que esse funcionário é melhor que aquele...). O primeiro impacto foi de união da equipe, uma coisa que nós não esperávamos. A gente não tinha gerentes antes... depois de implantar \"a Scalco\" nós formamos gerentes.",
+    name: "Maurício Januzzi",
+    company: "Postos Malerba",
+    image: "/lovable-uploads/clientes/1753383807178_4_malerba.png"
+  }, {
+    id: 2,
+    text: "Depois que a Scalco chegou a gente conseguiu sair do \"achômetro\" e ter certezas, e crescer nesse trabalho.",
+    name: "Camila Maluf",
+    company: "Postos Tasca",
+    image: "/lovable-uploads/clientes/1753383806026_1_tasca.png"
+  }, {
+    id: 3,
+    text: "Depois da chegada da consultoria veio um boom todo: meta, as vendas alavancaram, atendimento, conservação, limpeza e organização do posto... aí com a copa foi uma melhoria absurda. A gente tinha posto vendendo (mix automotivo) R$ 10.000,00 e depois saltou pra R$ 25.000,00 – R$ 30.000,00 então o resultado veio rápido disso aí. A equipe toda se engajou para melhorar o atendimento.",
+    name: "Thiago Perin",
+    company: "Rede Marcela",
+    image: "/lovable-uploads/clientes/marcela.png"
+  }, {
+    id: 4,
+    text: "Nós tínhamos um conjunto de processos próprios, mas não medíamos com a frequência e a precisão que o método GAP nos trouxe.",
+    name: "Wellington Granja",
+    company: "Postos Petrocal",
+    image: "/lovable-uploads/clientes/petrocal.png"
+  }, {
+    id: 5,
+    text: "Antes da Scalco, a gestão de pessoas era muito fraca, não tinha uma medida exata de cada colaborador. Nós fomos campeão Brasil no ano que a Scalco entrou, já tinha 13 anos trabalhando com loja e com a introdução da Scalco a gente ganhou concorrendo com 365 lojas na época.",
+    name: "Antero Vieira",
+    company: "Postos Tasca",
+    image: "/lovable-uploads/clientes/1753383806026_1_tasca.png"
+  }, {
+    id: 6,
+    text: "O elogio começou a vir e a turma não estava muito acostumada com isso... a receber elogio né... e nisso a satisfação começa a trazer resultado e isso nos deixou mais confiante no nosso trabalho.",
+    name: "Marcelo Oliveira",
+    company: "Rede Hurray",
+    image: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg"
+  }];
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
       {/* Hero Section - Centered Content Only */}
-      <section 
-        className="relative py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 flex items-center overflow-hidden min-h-[85vh] sm:min-h-[75vh] bg-cover bg-center bg-no-repeat md:bg-[url('/lovable-uploads/c0f4cd28-d342-4b18-a9bc-f10ecae89286.png')] bg-[url('/lovable-uploads/f14b1e9d-c257-47c9-be13-602f2f1652bc.png')]"
-        style={{
-          backgroundPositionX: 'center',
-          backgroundPositionY: '20%'
-        }}
-      >
+      <section className="relative py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 flex items-center overflow-hidden min-h-[85vh] sm:min-h-[75vh] bg-cover bg-center bg-no-repeat md:bg-[url('/lovable-uploads/c0f4cd28-d342-4b18-a9bc-f10ecae89286.png')] bg-[url('/lovable-uploads/f14b1e9d-c257-47c9-be13-602f2f1652bc.png')]" style={{
+      backgroundPositionX: 'center',
+      backgroundPositionY: '20%'
+    }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className={`text-center transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
@@ -105,23 +97,10 @@ const Index = () => {
               </h1>
               
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-brand-white/90 mb-6 sm:mb-8 leading-relaxed text-zinc-200 px-4">
-                Consultoria em gestão de pessoas + tecnologia para transformar o desempenho da sua empresa.
+                Chegou o <strong>Método GAP</strong>: consultoria em gestão de pessoas + tecnologia para transformar o desempenho da sua empresa.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 lg:gap-6 justify-center items-center mb-6 sm:mb-8 px-4">
-                <div className="flex items-center gap-2 text-brand-white">
-                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-brand-yellow" />
-                  <span className="text-sm sm:text-base font-semibold">Mais controle</span>
-                </div>
-                <div className="flex items-center gap-2 text-brand-white">
-                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-brand-yellow" />
-                  <span className="text-sm sm:text-base font-semibold">Mais entrega</span>
-                </div>
-                <div className="flex items-center gap-2 text-brand-white">
-                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-brand-yellow" />
-                  <span className="text-sm sm:text-base font-semibold">Menos desculpas</span>
-                </div>
-              </div>
+              
               
               <div className="px-2 sm:px-4">
                 <Button size="lg" className="bg-brand-yellow text-brand-dark-blue px-3 sm:px-6 md:px-8 py-3 sm:py-4 text-xs sm:text-base md:text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-brand-dark-blue w-full sm:w-auto leading-tight" onClick={handleWhatsAppClick}>
@@ -151,16 +130,7 @@ const Index = () => {
       <section className="py-4 sm:py-6 bg-brand-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center">
-            <ScalcoLogo 
-              topSpacing="" 
-              bottomSpacing="" 
-              mobileHeight="max-h-16" 
-              tabletHeight="sm:max-h-20" 
-              desktopHeight="md:max-h-24" 
-              largeDesktopHeight="lg:max-h-32"
-              extraLargeHeight="xl:max-h-40"
-              ultraWideHeight="2xl:max-h-48"
-            />
+            <ScalcoLogo topSpacing="" bottomSpacing="" mobileHeight="max-h-16" tabletHeight="sm:max-h-20" desktopHeight="md:max-h-24" largeDesktopHeight="lg:max-h-32" extraLargeHeight="xl:max-h-40" ultraWideHeight="2xl:max-h-48" />
           </div>
         </div>
       </section>
@@ -700,5 +670,4 @@ const Index = () => {
       </footer>
     </div>;
 };
-
 export default Index;
