@@ -9,11 +9,13 @@ import Autoplay from "embla-carousel-autoplay";
 import ScalcoLogo from "@/components/ScalcoLogo";
 import SalaryDeliveryChart from "@/components/SalaryDeliveryChart";
 import "../components/TestimonialCarousel.css";
+
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -22,10 +24,12 @@ const Index = () => {
       });
     }
   };
+
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Olá! Quero conhecer o Método GAP e fazer meu diagnóstico gratuito.");
     window.open(`https://wa.me/5551999712999?text=${message}`, '_blank');
   };
+
   const problemSection = useStaggeredAnimation(3, 150);
   const gapSection = useScrollAnimation();
   const pilaresSection = useStaggeredAnimation(3, 200);
@@ -41,6 +45,7 @@ const Index = () => {
     delay: 4000,
     stopOnInteraction: true
   }));
+
   const testimonials = [{
     id: 1,
     text: "Antes da Scalco \"achávamos\" muito... (eu acho que é isso, eu acho que é bom, eu acho que esse funcionário é melhor que aquele...). O primeiro impacto foi de união da equipe, uma coisa que nós não esperávamos. A gente não tinha gerentes antes... depois de implantar \"a Scalco\" nós formamos gerentes.",
@@ -78,6 +83,7 @@ const Index = () => {
     company: "Rede Hurray",
     image: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg"
   }];
+
   return <div className="min-h-screen bg-brand-white overflow-x-hidden">
       {/* Hero Section - Centered Content Only */}
       <section className="relative py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 flex items-center overflow-hidden min-h-[85vh] sm:min-h-[75vh] bg-cover bg-center bg-no-repeat md:bg-[url('/lovable-uploads/c0f4cd28-d342-4b18-a9bc-f10ecae89286.png')] bg-[url('/lovable-uploads/f14b1e9d-c257-47c9-be13-602f2f1652bc.png')]" style={{
@@ -103,7 +109,7 @@ const Index = () => {
               
               
               <div className="px-2 sm:px-4">
-                <Button size="lg" className="bg-brand-yellow text-brand-dark-blue px-3 sm:px-6 md:px-8 py-3 sm:py-4 text-xs sm:text-base md:text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-brand-dark-blue w-full sm:w-auto leading-tight" onClick={handleWhatsAppClick}>
+                <Button size="lg" className="bg-brand-yellow text-brand-dark-blue px-3 sm:px-6 md:px-8 py-3 sm:py-4 text-xs sm:text-base md:text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-brand-yellow/90 hover:text-brand-dark-blue w-full sm:w-auto leading-tight" onClick={handleWhatsAppClick}>
                   Quero aplicar o Método GAP na minha empresa
                   <ArrowRight className="ml-1 sm:ml-2 w-3 h-3 sm:w-5 sm:h-5 flex-shrink-0" />
                 </Button>
@@ -670,4 +676,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
