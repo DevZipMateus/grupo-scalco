@@ -36,7 +36,7 @@ const Index = () => {
   const tecnologiaSection = useStaggeredAnimation(3, 150);
   const consultoriaSection = useStaggeredAnimation(3, 100);
   const numerosSection = useStaggeredAnimation(2, 300);
-  const clientesSection = useStaggeredAnimation(5, 100);
+  const clientesSection = useStaggeredAnimation(19, 50);
   const faqSection = useStaggeredAnimation(3, 200);
   const ctaSection = useScrollAnimation();
 
@@ -586,7 +586,7 @@ const Index = () => {
                     key={cliente.id} 
                     className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6"
                   >
-                    <div className={`flex justify-center items-center p-3 sm:p-4 h-28 sm:h-32 md:h-36 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 group ${clientesSection.visibleItems[index] ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                    <div className="flex justify-center items-center p-3 sm:p-4 h-28 sm:h-32 md:h-36 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 group">
                       {!imageErrors.has(cliente.id) ? (
                         <img 
                           src={cliente.src} 
