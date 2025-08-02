@@ -46,9 +46,9 @@ const Index = () => {
     stopOnInteraction: true
   }));
 
-  // Plugin para autoplay do carousel de logos
+  // Plugin para autoplay do carousel de logos - configuração mais lenta
   const logoPlugin = useRef(Autoplay({
-    delay: 2500,
+    delay: 3000,
     stopOnInteraction: true
   }));
 
@@ -90,28 +90,40 @@ const Index = () => {
     image: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg"
   }];
 
-  // Lista das logos dos clientes
+  // Lista das logos dos clientes com tratamento de erro
   const clientLogos = [
-    { src: "/lovable-uploads/logos clientes ativos/3 irmãos.png", alt: "3 Irmãos" },
-    { src: "/lovable-uploads/logos clientes ativos/bola pesada.png", alt: "Bola Pesada" },
-    { src: "/lovable-uploads/logos clientes ativos/dom pedro.png", alt: "Dom Pedro" },
-    { src: "/lovable-uploads/logos clientes ativos/express.jpg", alt: "Express" },
-    { src: "/lovable-uploads/logos clientes ativos/l2.png", alt: "L2" },
-    { src: "/lovable-uploads/logos clientes ativos/laurindão.png", alt: "Laurindão" },
-    { src: "/lovable-uploads/logos clientes ativos/linke.png", alt: "Linke" },
-    { src: "/lovable-uploads/logos clientes ativos/maxsul.png", alt: "Maxsul" },
-    { src: "/lovable-uploads/logos clientes ativos/minuano.png", alt: "Minuano" },
-    { src: "/lovable-uploads/logos clientes ativos/nico.png", alt: "Nico" },
-    { src: "/lovable-uploads/logos clientes ativos/opera energy.png", alt: "Opera Energy" },
-    { src: "/lovable-uploads/logos clientes ativos/posto c.png", alt: "Posto C" },
-    { src: "/lovable-uploads/logos clientes ativos/rabi.png", alt: "Rabi" },
-    { src: "/lovable-uploads/logos clientes ativos/radar.png", alt: "Radar" },
-    { src: "/lovable-uploads/logos clientes ativos/rede vivo.png", alt: "Rede Vivo" },
-    { src: "/lovable-uploads/logos clientes ativos/rota.png", alt: "Rota" },
-    { src: "/lovable-uploads/logos clientes ativos/santa terezinha.png", alt: "Santa Terezinha" },
-    { src: "/lovable-uploads/logos clientes ativos/sobral e palácio.png", alt: "Sobral e Palácio" },
-    { src: "/lovable-uploads/logos clientes ativos/tradição.png", alt: "Tradição" }
+    { src: "/lovable-uploads/logos clientes ativos/3 irmãos.png", alt: "3 Irmãos", id: "3-irmaos" },
+    { src: "/lovable-uploads/logos clientes ativos/bola pesada.png", alt: "Bola Pesada", id: "bola-pesada" },
+    { src: "/lovable-uploads/logos clientes ativos/dom pedro.png", alt: "Dom Pedro", id: "dom-pedro" },
+    { src: "/lovable-uploads/logos clientes ativos/express.jpg", alt: "Express", id: "express" },
+    { src: "/lovable-uploads/logos clientes ativos/l2.png", alt: "L2", id: "l2" },
+    { src: "/lovable-uploads/logos clientes ativos/laurindão.png", alt: "Laurindão", id: "laurindao" },
+    { src: "/lovable-uploads/logos clientes ativos/linke.png", alt: "Linke", id: "linke" },
+    { src: "/lovable-uploads/logos clientes ativos/maxsul.png", alt: "Maxsul", id: "maxsul" },
+    { src: "/lovable-uploads/logos clientes ativos/minuano.png", alt: "Minuano", id: "minuano" },
+    { src: "/lovable-uploads/logos clientes ativos/nico.png", alt: "Nico", id: "nico" },
+    { src: "/lovable-uploads/logos clientes ativos/opera energy.png", alt: "Opera Energy", id: "opera-energy" },
+    { src: "/lovable-uploads/logos clientes ativos/posto c.png", alt: "Posto C", id: "posto-c" },
+    { src: "/lovable-uploads/logos clientes ativos/rabi.png", alt: "Rabi", id: "rabi" },
+    { src: "/lovable-uploads/logos clientes ativos/radar.png", alt: "Radar", id: "radar" },
+    { src: "/lovable-uploads/logos clientes ativos/rede vivo.png", alt: "Rede Vivo", id: "rede-vivo" },
+    { src: "/lovable-uploads/logos clientes ativos/rota.png", alt: "Rota", id: "rota" },
+    { src: "/lovable-uploads/logos clientes ativos/santa terezinha.png", alt: "Santa Terezinha", id: "santa-terezinha" },
+    { src: "/lovable-uploads/logos clientes ativos/sobral e palácio.png", alt: "Sobral e Palácio", id: "sobral-palacio" },
+    { src: "/lovable-uploads/logos clientes ativos/tradição.png", alt: "Tradição", id: "tradicao" }
   ];
+
+  // Estado para controlar imagens com erro
+  const [imageErrors, setImageErrors] = useState<Set<string>>(new Set());
+
+  const handleImageError = (imageId: string, src: string) => {
+    console.log(`Erro ao carregar imagem: ${imageId} - ${src}`);
+    setImageErrors(prev => new Set(prev).add(imageId));
+  };
+
+  const handleImageLoad = (imageId: string, src: string) => {
+    console.log(`Imagem carregada com sucesso: ${imageId} - ${src}`);
+  };
 
   return (
     <div className="min-h-screen bg-brand-white overflow-x-hidden">
@@ -553,13 +565,21 @@ const Index = () => {
             >
               <CarouselContent className="-ml-2 md:-ml-4">
                 {clientLogos.map((cliente, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5">
+                  <CarouselItem key={cliente.id} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5">
                     <div className={`flex justify-center items-center p-3 sm:p-4 h-20 sm:h-24 md:h-28 grayscale hover:grayscale-0 transition-all duration-300 ${clientesSection.visibleItems[index] ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                      <img 
-                        src={cliente.src} 
-                        alt={cliente.alt} 
-                        className="max-h-full max-w-full w-auto object-contain"
-                      />
+                      {!imageErrors.has(cliente.id) ? (
+                        <img 
+                          src={cliente.src} 
+                          alt={cliente.alt} 
+                          className="max-h-full max-w-full w-auto object-contain"
+                          onError={() => handleImageError(cliente.id, cliente.src)}
+                          onLoad={() => handleImageLoad(cliente.id, cliente.src)}
+                        />
+                      ) : (
+                        <div className="flex items-center justify-center h-full w-full bg-gray-100 rounded text-gray-400 text-xs text-center px-2">
+                          {cliente.alt}
+                        </div>
+                      )}
                     </div>
                   </CarouselItem>
                 ))}
