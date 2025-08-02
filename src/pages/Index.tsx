@@ -91,7 +91,6 @@ const Index = () => {
     image: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg"
   }];
 
-  // Lista das logos dos clientes com tratamento de erro - corrigida e otimizada
   const clientLogos = [
     { src: "/lovable-uploads/logos clientes ativos/3irmaos.png", alt: "3 Irmãos", id: "3-irmaos" },
     { src: "/lovable-uploads/logos clientes ativos/bolapesada.png", alt: "Bola Pesada", id: "bola-pesada" },
@@ -113,27 +112,6 @@ const Index = () => {
     { src: "/lovable-uploads/logos clientes ativos/sobralepalacio.png", alt: "Sobral e Palácio", id: "sobral-palacio" },
     { src: "/lovable-uploads/logos clientes ativos/tradicao.png", alt: "Tradição", id: "tradicao" }
   ];
-
-  // Estado para controlar imagens com erro
-  const [imageErrors, setImageErrors] = useState<Set<string>>(new Set());
-  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
-
-  const handleImageError = (imageId: string, src: string) => {
-    console.log(`❌ Erro ao carregar imagem: ${imageId} - ${src}`);
-    setImageErrors(prev => new Set(prev).add(imageId));
-  };
-
-  const handleImageLoad = (imageId: string, src: string) => {
-    console.log(`✅ Imagem carregada com sucesso: ${imageId} - ${src}`);
-    setLoadedImages(prev => new Set(prev).add(imageId));
-  };
-
-  // Debug: Log do total de imagens
-  useEffect(() => {
-    console.log(`📊 Total de logos configuradas: ${clientLogos.length}`);
-    console.log(`✅ Imagens carregadas: ${loadedImages.size}`);
-    console.log(`❌ Imagens com erro: ${imageErrors.size}`);
-  }, [loadedImages.size, imageErrors.size, clientLogos.length]);
 
   return (
     <div className="min-h-screen bg-brand-white overflow-x-hidden">
@@ -169,9 +147,6 @@ const Index = () => {
             </div>
           </div>
         </div>
-        
-        {/* Full-width banner at bottom of hero */}
-        
         
         <div className="absolute bottom-0 left-0 right-0 h-10 sm:h-20 bg-gradient-to-t from-brand-white to-transparent"></div>
       </section>
@@ -536,7 +511,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Quem usa o GAP - SEÇÃO CORRIGIDA E OTIMIZADA */}
+      {/* Quem usa o GAP - SEÇÃO SIMPLIFICADA */}
       <section className="py-8 sm:py-10 md:py-12 lg:py-16 bg-brand-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-12">
@@ -544,7 +519,6 @@ const Index = () => {
               Quem usa o GAP
             </h2>
             
-            {/* Frases destacadas */}
             <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12 px-4">
               <div className="bg-green-100 border-l-4 border-green-500 p-4 sm:p-6 rounded-r-lg">
                 <p className="text-sm sm:text-base md:text-lg font-semibold text-green-800">
@@ -558,16 +532,9 @@ const Index = () => {
                 </p>
               </div>
             </div>
-
-            {/* Indicador visual */}
-            <div className="mb-6 sm:mb-8">
-              <Badge variant="outline" className="text-sm font-semibold px-4 py-2">
-                {loadedImages.size} de {clientLogos.length} logos carregadas
-              </Badge>
-            </div>
           </div>
           
-          {/* Carrossel de logos otimizado */}
+          {/* Carrossel de logos simplificado */}
           <div ref={clientesSection.ref} className="w-full">
             <Carousel
               plugins={[logoPlugin.current]}
@@ -587,42 +554,20 @@ const Index = () => {
                     className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6"
                   >
                     <div className="flex justify-center items-center p-3 sm:p-4 h-28 sm:h-32 md:h-36 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 group">
-                      {!imageErrors.has(cliente.id) ? (
-                        <img 
-                          src={cliente.src} 
-                          alt={cliente.alt} 
-                          className="max-h-full max-w-full w-auto object-contain hover:scale-110 transition-transform duration-300"
-                          onError={() => handleImageError(cliente.id, cliente.src)}
-                          onLoad={() => handleImageLoad(cliente.id, cliente.src)}
-                          loading="lazy"
-                        />
-                      ) : (
-                        <div className="flex items-center justify-center h-full w-full bg-gray-50 rounded border-2 border-dashed border-gray-200 text-gray-400 text-xs text-center px-2">
-                          <div>
-                            <div className="font-semibold mb-1">{cliente.alt}</div>
-                            <div className="text-[10px] opacity-75">Erro ao carregar</div>
-                          </div>
-                        </div>
-                      )}
+                      <img 
+                        src={cliente.src} 
+                        alt={cliente.alt} 
+                        className="max-h-full max-w-full w-auto object-contain hover:scale-110 transition-transform duration-300"
+                        loading="lazy"
+                      />
                     </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
               
-              {/* Controles de navegação - visíveis em todas as telas para debug */}
               <CarouselPrevious className="-left-8 lg:-left-12 bg-white/90 hover:bg-white border-2 border-gray-200" />
               <CarouselNext className="-right-8 lg:-right-12 bg-white/90 hover:bg-white border-2 border-gray-200" />
             </Carousel>
-          </div>
-
-          {/* Debug info melhorado */}
-          <div className="mt-6 sm:mt-8 text-center">
-            <div className="inline-flex gap-4 text-xs text-gray-500 bg-gray-50 px-4 py-2 rounded-full">
-              <span>✅ {loadedImages.size} carregadas</span>
-              <span>❌ {imageErrors.size} com erro</span>
-              <span>📊 {clientLogos.length} total</span>
-              <span>🔄 Loop infinito ativo</span>
-            </div>
           </div>
         </div>
       </section>
