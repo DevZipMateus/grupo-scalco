@@ -9,13 +9,11 @@ import Autoplay from "embla-carousel-autoplay";
 import ScalcoLogo from "@/components/ScalcoLogo";
 import SalaryDeliveryChart from "@/components/SalaryDeliveryChart";
 import "../components/TestimonialCarousel.css";
-
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     setIsVisible(true);
   }, []);
-  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -24,12 +22,10 @@ const Index = () => {
       });
     }
   };
-  
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Olá! Quero conhecer o Método GAP e fazer meu diagnóstico gratuito.");
     window.open(`https://wa.me/5551999712999?text=${message}`, '_blank');
   };
-  
   const problemSection = useStaggeredAnimation(3, 150);
   const gapSection = useScrollAnimation();
   const pilaresSection = useStaggeredAnimation(3, 200);
@@ -52,7 +48,6 @@ const Index = () => {
     stopOnInteraction: false,
     stopOnMouseEnter: true
   }));
-
   const testimonials = [{
     id: 1,
     text: "Antes da Scalco \"achávamos\" muito... (eu acho que é isso, eu acho que é bom, eu acho que esse funcionário é melhor que aquele...). O primeiro impacto foi de união da equipe, uma coisa que nós não esperávamos. A gente não tinha gerentes antes... depois de implantar \"a Scalco\" nós formamos gerentes.",
@@ -91,30 +86,104 @@ const Index = () => {
     image: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg"
   }];
 
-  const clientLogos = [
-    { src: "/lovable-uploads/logos clientes ativos/3irmaos.png", alt: "3 Irmãos", id: "3-irmaos" },
-    { src: "/lovable-uploads/logos clientes ativos/bolapesada.png", alt: "Bola Pesada", id: "bola-pesada" },
-    { src: "/lovable-uploads/logos clientes ativos/dompedro.png", alt: "Dom Pedro", id: "dom-pedro" },
-    { src: "/lovable-uploads/logos clientes ativos/express.jpg", alt: "Express", id: "express" },
-    { src: "/lovable-uploads/logos clientes ativos/l2.png", alt: "L2", id: "l2" },
-    { src: "/lovable-uploads/logos clientes ativos/laurindao.png", alt: "Laurindão", id: "laurindao" },
-    { src: "/lovable-uploads/logos clientes ativos/linke.png", alt: "Linke", id: "linke" },
-    { src: "/lovable-uploads/logos clientes ativos/maxsul.png", alt: "Maxsul", id: "maxsul" },
-    { src: "/lovable-uploads/logos clientes ativos/minuano.png", alt: "Minuano", id: "minuano" },
-    { src: "/lovable-uploads/logos clientes ativos/nico.png", alt: "Nico", id: "nico" },
-    { src: "/lovable-uploads/logos clientes ativos/operaenergy.png", alt: "Opera Energy", id: "opera-energy" },
-    { src: "/lovable-uploads/logos clientes ativos/postoc.png", alt: "Posto C", id: "posto-c" },
-    { src: "/lovable-uploads/logos clientes ativos/rabi.png", alt: "Rabi", id: "rabi" },
-    { src: "/lovable-uploads/logos clientes ativos/radar.png", alt: "Radar", id: "radar" },
-    { src: "/lovable-uploads/logos clientes ativos/redevivo.png", alt: "Rede Vivo", id: "rede-vivo" },
-    { src: "/lovable-uploads/logos clientes ativos/rota.png", alt: "Rota", id: "rota" },
-    { src: "/lovable-uploads/logos clientes ativos/santaterezinha.png", alt: "Santa Terezinha", id: "santa-terezinha" },
-    { src: "/lovable-uploads/logos clientes ativos/sobralepalacio.png", alt: "Sobral e Palácio", id: "sobral-palacio" },
-    { src: "/lovable-uploads/logos clientes ativos/tradicao.png", alt: "Tradição", id: "tradicao" }
-  ];
+  // Lista das logos dos clientes com tratamento de erro - corrigida e otimizada
+  const clientLogos = [{
+    src: "/lovable-uploads/logos clientes ativos/3irmaos.png",
+    alt: "3 Irmãos",
+    id: "3-irmaos"
+  }, {
+    src: "/lovable-uploads/logos clientes ativos/bolapesada.png",
+    alt: "Bola Pesada",
+    id: "bola-pesada"
+  }, {
+    src: "/lovable-uploads/logos clientes ativos/dompedro.png",
+    alt: "Dom Pedro",
+    id: "dom-pedro"
+  }, {
+    src: "/lovable-uploads/logos clientes ativos/express.jpg",
+    alt: "Express",
+    id: "express"
+  }, {
+    src: "/lovable-uploads/logos clientes ativos/l2.png",
+    alt: "L2",
+    id: "l2"
+  }, {
+    src: "/lovable-uploads/logos clientes ativos/laurindao.png",
+    alt: "Laurindão",
+    id: "laurindao"
+  }, {
+    src: "/lovable-uploads/logos clientes ativos/linke.png",
+    alt: "Linke",
+    id: "linke"
+  }, {
+    src: "/lovable-uploads/logos clientes ativos/maxsul.png",
+    alt: "Maxsul",
+    id: "maxsul"
+  }, {
+    src: "/lovable-uploads/logos clientes ativos/minuano.png",
+    alt: "Minuano",
+    id: "minuano"
+  }, {
+    src: "/lovable-uploads/logos clientes ativos/nico.png",
+    alt: "Nico",
+    id: "nico"
+  }, {
+    src: "/lovable-uploads/logos clientes ativos/operaenergy.png",
+    alt: "Opera Energy",
+    id: "opera-energy"
+  }, {
+    src: "/lovable-uploads/logos clientes ativos/postoc.png",
+    alt: "Posto C",
+    id: "posto-c"
+  }, {
+    src: "/lovable-uploads/logos clientes ativos/rabi.png",
+    alt: "Rabi",
+    id: "rabi"
+  }, {
+    src: "/lovable-uploads/logos clientes ativos/radar.png",
+    alt: "Radar",
+    id: "radar"
+  }, {
+    src: "/lovable-uploads/logos clientes ativos/redevivo.png",
+    alt: "Rede Vivo",
+    id: "rede-vivo"
+  }, {
+    src: "/lovable-uploads/logos clientes ativos/rota.png",
+    alt: "Rota",
+    id: "rota"
+  }, {
+    src: "/lovable-uploads/logos clientes ativos/santaterezinha.png",
+    alt: "Santa Terezinha",
+    id: "santa-terezinha"
+  }, {
+    src: "/lovable-uploads/logos clientes ativos/sobralepalacio.png",
+    alt: "Sobral e Palácio",
+    id: "sobral-palacio"
+  }, {
+    src: "/lovable-uploads/logos clientes ativos/tradicao.png",
+    alt: "Tradição",
+    id: "tradicao"
+  }];
 
-  return (
-    <div className="min-h-screen bg-brand-white overflow-x-hidden">
+  // Estado para controlar imagens com erro
+  const [imageErrors, setImageErrors] = useState<Set<string>>(new Set());
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
+  const handleImageError = (imageId: string, src: string) => {
+    console.log(`❌ Erro ao carregar imagem: ${imageId} - ${src}`);
+    setImageErrors(prev => new Set(prev).add(imageId));
+  };
+  const handleImageLoad = (imageId: string, src: string) => {
+    console.log(`✅ Imagem carregada com sucesso: ${imageId} - ${src}`);
+    setLoadedImages(prev => new Set(prev).add(imageId));
+  };
+
+  // Debug: Log do total de imagens
+  useEffect(() => {
+    console.log(`📊 Total de logos configuradas: ${clientLogos.length}`);
+    console.log(`✅ Imagens carregadas: ${loadedImages.size}`);
+    console.log(`❌ Imagens com erro: ${imageErrors.size}`);
+  }, [loadedImages.size, imageErrors.size, clientLogos.length]);
+  return <div className="min-h-screen bg-brand-white overflow-x-hidden">
       {/* Hero Section - Centered Content Only */}
       <section className="relative py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 flex items-center overflow-hidden min-h-[85vh] sm:min-h-[75vh] bg-cover bg-center bg-no-repeat md:bg-[url('/lovable-uploads/c0f4cd28-d342-4b18-a9bc-f10ecae89286.png')] bg-[url('/lovable-uploads/f14b1e9d-c257-47c9-be13-602f2f1652bc.png')]" style={{
       backgroundPositionX: 'center',
@@ -147,6 +216,9 @@ const Index = () => {
             </div>
           </div>
         </div>
+        
+        {/* Full-width banner at bottom of hero */}
+        
         
         <div className="absolute bottom-0 left-0 right-0 h-10 sm:h-20 bg-gradient-to-t from-brand-white to-transparent"></div>
       </section>
@@ -511,7 +583,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Quem usa o GAP - SEÇÃO SIMPLIFICADA */}
+      {/* Quem usa o GAP - SEÇÃO CORRIGIDA E OTIMIZADA */}
       <section className="py-8 sm:py-10 md:py-12 lg:py-16 bg-brand-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-12">
@@ -519,6 +591,7 @@ const Index = () => {
               Quem usa o GAP
             </h2>
             
+            {/* Frases destacadas */}
             <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12 px-4">
               <div className="bg-green-100 border-l-4 border-green-500 p-4 sm:p-6 rounded-r-lg">
                 <p className="text-sm sm:text-base md:text-lg font-semibold text-green-800">
@@ -532,43 +605,39 @@ const Index = () => {
                 </p>
               </div>
             </div>
+
+            {/* Indicador visual */}
+            
           </div>
           
-          {/* Carrossel de logos simplificado */}
+          {/* Carrossel de logos otimizado */}
           <div ref={clientesSection.ref} className="w-full">
-            <Carousel
-              plugins={[logoPlugin.current]}
-              className="w-full"
-              onMouseEnter={logoPlugin.current.stop}
-              onMouseLeave={logoPlugin.current.reset}
-              opts={{
-                align: "center",
-                loop: true,
-                skipSnaps: false,
-              }}
-            >
+            <Carousel plugins={[logoPlugin.current]} className="w-full" onMouseEnter={logoPlugin.current.stop} onMouseLeave={logoPlugin.current.reset} opts={{
+            align: "center",
+            loop: true,
+            skipSnaps: false
+          }}>
               <CarouselContent className="-ml-2 md:-ml-4">
-                {clientLogos.map((cliente, index) => (
-                  <CarouselItem 
-                    key={cliente.id} 
-                    className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6"
-                  >
+                {clientLogos.map((cliente, index) => <CarouselItem key={cliente.id} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6">
                     <div className="flex justify-center items-center p-3 sm:p-4 h-28 sm:h-32 md:h-36 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 group">
-                      <img 
-                        src={cliente.src} 
-                        alt={cliente.alt} 
-                        className="max-h-full max-w-full w-auto object-contain hover:scale-110 transition-transform duration-300"
-                        loading="lazy"
-                      />
+                      {!imageErrors.has(cliente.id) ? <img src={cliente.src} alt={cliente.alt} className="max-h-full max-w-full w-auto object-contain hover:scale-110 transition-transform duration-300" onError={() => handleImageError(cliente.id, cliente.src)} onLoad={() => handleImageLoad(cliente.id, cliente.src)} loading="lazy" /> : <div className="flex items-center justify-center h-full w-full bg-gray-50 rounded border-2 border-dashed border-gray-200 text-gray-400 text-xs text-center px-2">
+                          <div>
+                            <div className="font-semibold mb-1">{cliente.alt}</div>
+                            <div className="text-[10px] opacity-75">Erro ao carregar</div>
+                          </div>
+                        </div>}
                     </div>
-                  </CarouselItem>
-                ))}
+                  </CarouselItem>)}
               </CarouselContent>
               
+              {/* Controles de navegação - visíveis em todas as telas para debug */}
               <CarouselPrevious className="-left-8 lg:-left-12 bg-white/90 hover:bg-white border-2 border-gray-200" />
               <CarouselNext className="-right-8 lg:-right-12 bg-white/90 hover:bg-white border-2 border-gray-200" />
             </Carousel>
           </div>
+
+          {/* Debug info melhorado */}
+          
         </div>
       </section>
 
@@ -707,8 +776,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
