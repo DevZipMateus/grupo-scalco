@@ -92,25 +92,25 @@ const Index = () => {
 
   // Lista das logos dos clientes com tratamento de erro
   const clientLogos = [
-    { src: "/lovable-uploads/logos clientes ativos/3 irmãos.png", alt: "3 Irmãos", id: "3-irmaos" },
-    { src: "/lovable-uploads/logos clientes ativos/bola pesada.png", alt: "Bola Pesada", id: "bola-pesada" },
-    { src: "/lovable-uploads/logos clientes ativos/dom pedro.png", alt: "Dom Pedro", id: "dom-pedro" },
+    { src: "/lovable-uploads/logos clientes ativos/3irmaos.png", alt: "3 Irmãos", id: "3-irmaos" },
+    { src: "/lovable-uploads/logos clientes ativos/bolapesada.png", alt: "Bola Pesada", id: "bola-pesada" },
+    { src: "/lovable-uploads/logos clientes ativos/dompedro.png", alt: "Dom Pedro", id: "dom-pedro" },
     { src: "/lovable-uploads/logos clientes ativos/express.jpg", alt: "Express", id: "express" },
     { src: "/lovable-uploads/logos clientes ativos/l2.png", alt: "L2", id: "l2" },
-    { src: "/lovable-uploads/logos clientes ativos/laurindão.png", alt: "Laurindão", id: "laurindao" },
+    { src: "/lovable-uploads/logos clientes ativos/laurindao.png", alt: "Laurindão", id: "laurindao" },
     { src: "/lovable-uploads/logos clientes ativos/linke.png", alt: "Linke", id: "linke" },
     { src: "/lovable-uploads/logos clientes ativos/maxsul.png", alt: "Maxsul", id: "maxsul" },
     { src: "/lovable-uploads/logos clientes ativos/minuano.png", alt: "Minuano", id: "minuano" },
     { src: "/lovable-uploads/logos clientes ativos/nico.png", alt: "Nico", id: "nico" },
-    { src: "/lovable-uploads/logos clientes ativos/opera energy.png", alt: "Opera Energy", id: "opera-energy" },
-    { src: "/lovable-uploads/logos clientes ativos/posto c.png", alt: "Posto C", id: "posto-c" },
+    { src: "/lovable-uploads/logos clientes ativos/operaenergy.png", alt: "Opera Energy", id: "opera-energy" },
+    { src: "/lovable-uploads/logos clientes ativos/postoc.png", alt: "Posto C", id: "posto-c" },
     { src: "/lovable-uploads/logos clientes ativos/rabi.png", alt: "Rabi", id: "rabi" },
     { src: "/lovable-uploads/logos clientes ativos/radar.png", alt: "Radar", id: "radar" },
-    { src: "/lovable-uploads/logos clientes ativos/rede vivo.png", alt: "Rede Vivo", id: "rede-vivo" },
+    { src: "/lovable-uploads/logos clientes ativos/redevivo.png", alt: "Rede Vivo", id: "rede-vivo" },
     { src: "/lovable-uploads/logos clientes ativos/rota.png", alt: "Rota", id: "rota" },
-    { src: "/lovable-uploads/logos clientes ativos/santa terezinha.png", alt: "Santa Terezinha", id: "santa-terezinha" },
-    { src: "/lovable-uploads/logos clientes ativos/sobral e palácio.png", alt: "Sobral e Palácio", id: "sobral-palacio" },
-    { src: "/lovable-uploads/logos clientes ativos/tradição.png", alt: "Tradição", id: "tradicao" }
+    { src: "/lovable-uploads/logos clientes ativos/santaterezinha.png", alt: "Santa Terezinha", id: "santa-terezinha" },
+    { src: "/lovable-uploads/logos clientes ativos/sobralepalacio.png", alt: "Sobral e Palácio", id: "sobral-palacio" },
+    { src: "/lovable-uploads/logos clientes ativos/tradicao.png", alt: "Tradição", id: "tradicao" }
   ];
 
   // Estado para controlar imagens com erro
