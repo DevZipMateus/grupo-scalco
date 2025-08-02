@@ -48,7 +48,7 @@ const Index = () => {
 
   // Plugin para autoplay do carousel de logos - velocidade otimizada
   const logoPlugin = useRef(Autoplay({
-    delay: 4500,
+    delay: 3500,
     stopOnInteraction: false,
     stopOnMouseEnter: true
   }));
@@ -575,10 +575,9 @@ const Index = () => {
               onMouseEnter={logoPlugin.current.stop}
               onMouseLeave={logoPlugin.current.reset}
               opts={{
-                align: "start",
+                align: "center",
                 loop: true,
                 skipSnaps: false,
-                dragFree: true,
               }}
             >
               <CarouselContent className="-ml-2 md:-ml-4">
@@ -587,12 +586,12 @@ const Index = () => {
                     key={cliente.id} 
                     className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6"
                   >
-                    <div className={`flex justify-center items-center p-3 sm:p-4 h-24 sm:h-28 md:h-32 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 group ${clientesSection.visibleItems[index] ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                    <div className={`flex justify-center items-center p-3 sm:p-4 h-28 sm:h-32 md:h-36 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 group ${clientesSection.visibleItems[index] ? 'animate-fade-in-up' : 'opacity-0'}`}>
                       {!imageErrors.has(cliente.id) ? (
                         <img 
                           src={cliente.src} 
                           alt={cliente.alt} 
-                          className="max-h-full max-w-full w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300 filter brightness-90 hover:brightness-100"
+                          className="max-h-full max-w-full w-auto object-contain hover:scale-110 transition-transform duration-300"
                           onError={() => handleImageError(cliente.id, cliente.src)}
                           onLoad={() => handleImageLoad(cliente.id, cliente.src)}
                           loading="lazy"
@@ -610,20 +609,19 @@ const Index = () => {
                 ))}
               </CarouselContent>
               
-              {/* Controles de navegação - visíveis apenas em telas maiores */}
-              <div className="hidden lg:block">
-                <CarouselPrevious className="-left-12 bg-white/90 hover:bg-white border-2 border-gray-200" />
-                <CarouselNext className="-right-12 bg-white/90 hover:bg-white border-2 border-gray-200" />
-              </div>
+              {/* Controles de navegação - visíveis em todas as telas para debug */}
+              <CarouselPrevious className="-left-8 lg:-left-12 bg-white/90 hover:bg-white border-2 border-gray-200" />
+              <CarouselNext className="-right-8 lg:-right-12 bg-white/90 hover:bg-white border-2 border-gray-200" />
             </Carousel>
           </div>
 
-          {/* Debug info (temporário) */}
+          {/* Debug info melhorado */}
           <div className="mt-6 sm:mt-8 text-center">
             <div className="inline-flex gap-4 text-xs text-gray-500 bg-gray-50 px-4 py-2 rounded-full">
               <span>✅ {loadedImages.size} carregadas</span>
               <span>❌ {imageErrors.size} com erro</span>
               <span>📊 {clientLogos.length} total</span>
+              <span>🔄 Loop infinito ativo</span>
             </div>
           </div>
         </div>
