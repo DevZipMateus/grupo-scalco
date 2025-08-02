@@ -205,7 +205,7 @@ const Index = () => {
               <h1 className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-brand-white mb-4 sm:mb-6 leading-tight px-2">
                 Você paga <span className="bg-gradient-to-r from-brand-yellow to-yellow-400 bg-clip-text text-transparent">100%</span>.
                 <br />
-                Sua equipe entrega só <span className="text-red-400">75%</span>.
+                Sua equipe entrega só <span className="text-red-600">75%</span>.
                 <br />
                 <span className="bg-gradient-to-r from-brand-yellow to-yellow-400 bg-clip-text text-transparent">Isso é justo?</span>
               </h1>
