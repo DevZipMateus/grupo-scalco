@@ -9,11 +9,13 @@ import Autoplay from "embla-carousel-autoplay";
 import ScalcoLogo from "@/components/ScalcoLogo";
 import SalaryDeliveryChart from "@/components/SalaryDeliveryChart";
 import "../components/TestimonialCarousel.css";
+
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     setIsVisible(true);
   }, []);
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -22,10 +24,12 @@ const Index = () => {
       });
     }
   };
+  
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Olá! Quero conhecer o Método GAP e fazer meu diagnóstico gratuito.");
     window.open(`https://wa.me/5551999712999?text=${message}`, '_blank');
   };
+  
   const problemSection = useStaggeredAnimation(3, 150);
   const gapSection = useScrollAnimation();
   const pilaresSection = useStaggeredAnimation(3, 200);
@@ -36,11 +40,18 @@ const Index = () => {
   const faqSection = useStaggeredAnimation(3, 200);
   const ctaSection = useScrollAnimation();
 
-  // Plugin para autoplay do carousel
+  // Plugin para autoplay do carousel de testimonials
   const plugin = useRef(Autoplay({
     delay: 4000,
     stopOnInteraction: true
   }));
+
+  // Plugin para autoplay do carousel de logos
+  const logoPlugin = useRef(Autoplay({
+    delay: 2500,
+    stopOnInteraction: true
+  }));
+
   const testimonials = [{
     id: 1,
     text: "Antes da Scalco \"achávamos\" muito... (eu acho que é isso, eu acho que é bom, eu acho que esse funcionário é melhor que aquele...). O primeiro impacto foi de união da equipe, uma coisa que nós não esperávamos. A gente não tinha gerentes antes... depois de implantar \"a Scalco\" nós formamos gerentes.",
@@ -78,7 +89,32 @@ const Index = () => {
     company: "Rede Hurray",
     image: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg"
   }];
-  return <div className="min-h-screen bg-brand-white overflow-x-hidden">
+
+  // Lista das logos dos clientes
+  const clientLogos = [
+    { src: "/lovable-uploads/logos clientes ativos/3 irmãos.png", alt: "3 Irmãos" },
+    { src: "/lovable-uploads/logos clientes ativos/bola pesada.png", alt: "Bola Pesada" },
+    { src: "/lovable-uploads/logos clientes ativos/dom pedro.png", alt: "Dom Pedro" },
+    { src: "/lovable-uploads/logos clientes ativos/express.jpg", alt: "Express" },
+    { src: "/lovable-uploads/logos clientes ativos/l2.png", alt: "L2" },
+    { src: "/lovable-uploads/logos clientes ativos/laurindão.png", alt: "Laurindão" },
+    { src: "/lovable-uploads/logos clientes ativos/linke.png", alt: "Linke" },
+    { src: "/lovable-uploads/logos clientes ativos/maxsul.png", alt: "Maxsul" },
+    { src: "/lovable-uploads/logos clientes ativos/minuano.png", alt: "Minuano" },
+    { src: "/lovable-uploads/logos clientes ativos/nico.png", alt: "Nico" },
+    { src: "/lovable-uploads/logos clientes ativos/opera energy.png", alt: "Opera Energy" },
+    { src: "/lovable-uploads/logos clientes ativos/posto c.png", alt: "Posto C" },
+    { src: "/lovable-uploads/logos clientes ativos/rabi.png", alt: "Rabi" },
+    { src: "/lovable-uploads/logos clientes ativos/radar.png", alt: "Radar" },
+    { src: "/lovable-uploads/logos clientes ativos/rede vivo.png", alt: "Rede Vivo" },
+    { src: "/lovable-uploads/logos clientes ativos/rota.png", alt: "Rota" },
+    { src: "/lovable-uploads/logos clientes ativos/santa terezinha.png", alt: "Santa Terezinha" },
+    { src: "/lovable-uploads/logos clientes ativos/sobral e palácio.png", alt: "Sobral e Palácio" },
+    { src: "/lovable-uploads/logos clientes ativos/tradição.png", alt: "Tradição" }
+  ];
+
+  return (
+    <div className="min-h-screen bg-brand-white overflow-x-hidden">
       {/* Hero Section - Centered Content Only */}
       <section className="relative py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 flex items-center overflow-hidden min-h-[85vh] sm:min-h-[75vh] bg-cover bg-center bg-no-repeat md:bg-[url('/lovable-uploads/c0f4cd28-d342-4b18-a9bc-f10ecae89286.png')] bg-[url('/lovable-uploads/f14b1e9d-c257-47c9-be13-602f2f1652bc.png')]" style={{
       backgroundPositionX: 'center',
@@ -502,25 +538,33 @@ const Index = () => {
             </div>
           </div>
           
-          <div ref={clientesSection.ref} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 items-center">
-            {[{
-            src: "/lovable-uploads/clientes/1753383806026_1_tasca.png",
-            alt: "Postos Tasca"
-          }, {
-            src: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg",
-            alt: "Rede Hurray"
-          }, {
-            src: "/lovable-uploads/clientes/1753383807178_4_malerba.png",
-            alt: "Postos Malerba"
-          }, {
-            src: "/lovable-uploads/clientes/marcela.png",
-            alt: "Rede Marcela"
-          }, {
-            src: "/lovable-uploads/clientes/petrocal.png",
-            alt: "Postos Petrocal"
-          }].map((cliente, index) => <div key={index} className={`flex justify-center items-center p-3 sm:p-4 grayscale hover:grayscale-0 transition-all duration-300 ${index === 4 ? 'col-span-2 sm:col-span-3 md:col-span-1' : ''} ${clientesSection.visibleItems[index] ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                <img src={cliente.src} alt={cliente.alt} className="max-h-12 sm:max-h-16 lg:max-h-20 w-auto object-contain" />
-              </div>)}
+          {/* Carrossel de logos */}
+          <div ref={clientesSection.ref} className="w-full">
+            <Carousel
+              plugins={[logoPlugin.current]}
+              className="w-full"
+              onMouseEnter={logoPlugin.current.stop}
+              onMouseLeave={logoPlugin.current.reset}
+              opts={{
+                align: "start",
+                loop: true,
+                skipSnaps: false,
+              }}
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {clientLogos.map((cliente, index) => (
+                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5">
+                    <div className={`flex justify-center items-center p-3 sm:p-4 h-20 sm:h-24 md:h-28 grayscale hover:grayscale-0 transition-all duration-300 ${clientesSection.visibleItems[index] ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                      <img 
+                        src={cliente.src} 
+                        alt={cliente.alt} 
+                        className="max-h-full max-w-full w-auto object-contain"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
           </div>
         </div>
       </section>
@@ -660,6 +704,8 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
