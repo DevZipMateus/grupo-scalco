@@ -503,7 +503,7 @@ const Index = () => {
             </div>
             
             <div className="px-4">
-              <Button size="lg" className="bg-brand-yellow text-brand-dark-blue hover:bg-brand-yellow/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto" onClick={handleWhatsAppClick}>
+              <Button size="lg" className="bg-gradient-to-r from-brand-yellow to-yellow-400 text-brand-dark-blue px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-yellow hover:to-yellow-300 hover:text-brand-dark-blue w-full sm:w-auto" onClick={handleWhatsAppClick}>
                 Conversar com especialista
                 <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
