@@ -195,7 +195,7 @@ const Index = () => {
       {/* Hero Section - Centered Content Only */}
       <section className="relative py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 flex items-center overflow-hidden min-h-[85vh] sm:min-h-[60vh] bg-cover bg-center bg-no-repeat bg-[url('/lovable-uploads/e22fa9ac-3996-468f-a64d-b277709c5e85.png')] md:bg-[url('/lovable-uploads/7fa7d253-07df-4933-bc10-687cae92d2d4.png')]" style={{
       backgroundPositionX: 'center',
-      backgroundPositionY: '30%'
+      backgroundPositionY: 'center'
     }}>
         {/* Subtle blur overlay */}
         <div className="absolute inset-0 backdrop-blur-[1px] md:backdrop-blur-[2px] bg-brand-dark-blue/5 md:bg-brand-dark-blue/2"></div>
