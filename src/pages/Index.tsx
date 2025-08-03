@@ -48,9 +48,10 @@ const Index = () => {
 
   // Plugin para autoplay do carousel de logos - velocidade otimizada
   const logoPlugin = useRef(Autoplay({
-    delay: 2500,
+    delay: 2000,
     stopOnInteraction: false,
-    stopOnMouseEnter: true
+    stopOnMouseEnter: true,
+    stopOnFocusIn: false
   }));
 
   const testimonials = [{
@@ -229,10 +230,10 @@ const Index = () => {
       </section>
 
       {/* Logo Section - After Hero */}
-      <section className="py-4 sm:py-6 bg-brand-white">
+      <section className="py-2 sm:py-3 md:py-2 bg-brand-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center">
-            <ScalcoLogo topSpacing="" bottomSpacing="" mobileHeight="max-h-16" tabletHeight="sm:max-h-20" desktopHeight="md:max-h-24" largeDesktopHeight="lg:max-h-32" extraLargeHeight="xl:max-h-40" ultraWideHeight="2xl:max-h-48" />
+            <ScalcoLogo topSpacing="" bottomSpacing="" mobileHeight="max-h-12" tabletHeight="sm:max-h-16" desktopHeight="md:max-h-16" largeDesktopHeight="lg:max-h-20" extraLargeHeight="xl:max-h-24" ultraWideHeight="2xl:max-h-32" />
           </div>
         </div>
       </section>
@@ -632,13 +633,17 @@ const Index = () => {
                     key={cliente.id} 
                     className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6 client-logo-item"
                   >
-                    <div className="flex justify-center items-center p-3 sm:p-4 h-24 sm:h-28 md:h-32 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 group">
-                      <img 
-                        src={cliente.src} 
-                        alt={cliente.alt} 
-                        className="max-h-full max-w-full w-auto object-contain hover:scale-105 transition-transform duration-300" 
-                        loading="lazy"
-                      />
+                     <div className="flex justify-center items-center p-3 sm:p-4 h-24 sm:h-28 md:h-32 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 group">
+                       <img 
+                         src={cliente.src} 
+                         alt={cliente.alt} 
+                         className="max-h-full max-w-full w-auto object-contain hover:scale-105 transition-transform duration-300" 
+                         loading="lazy"
+                         onError={(e) => {
+                           console.log(`Erro ao carregar imagem: ${cliente.src}`);
+                           e.currentTarget.style.display = 'none';
+                         }}
+                       />
                     </div>
                   </CarouselItem>
                 ))}
