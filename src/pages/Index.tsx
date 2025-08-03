@@ -94,97 +94,97 @@ const Index = () => {
 
   const clientLogos = [
     {
-      src: "/lovable-uploads/logos%20clientes%20ativos/3irmaos.png",
+      src: "/lovable-uploads/logos clientes ativos/3irmaos.png",
       alt: "3 Irmãos",
       id: "3-irmaos"
     },
     {
-      src: "/lovable-uploads/logos%20clientes%20ativos/bolapesada.png",
+      src: "/lovable-uploads/logos clientes ativos/bolapesada.png",
       alt: "Bola Pesada",
       id: "bola-pesada"
     },
     {
-      src: "/lovable-uploads/logos%20clientes%20ativos/dompedro.png",
+      src: "/lovable-uploads/logos clientes ativos/dompedro.png",
       alt: "Dom Pedro",
       id: "dom-pedro"
     },
     {
-      src: "/lovable-uploads/logos%20clientes%20ativos/express.jpg",
+      src: "/lovable-uploads/logos clientes ativos/express.jpg",
       alt: "Express",
       id: "express"
     },
     {
-      src: "/lovable-uploads/logos%20clientes%20ativos/l2.png",
+      src: "/lovable-uploads/logos clientes ativos/l2.png",
       alt: "L2",
       id: "l2"
     },
     {
-      src: "/lovable-uploads/logos%20clientes%20ativos/laurindao.png",
+      src: "/lovable-uploads/logos clientes ativos/laurindao.png",
       alt: "Laurindão",
       id: "laurindao"
     },
     {
-      src: "/lovable-uploads/logos%20clientes%20ativos/linke.png",
+      src: "/lovable-uploads/logos clientes ativos/linke.png",
       alt: "Linke",
       id: "linke"
     },
     {
-      src: "/lovable-uploads/logos%20clientes%20ativos/maxsul.png",
+      src: "/lovable-uploads/logos clientes ativos/maxsul.png",
       alt: "Maxsul",
       id: "maxsul"
     },
     {
-      src: "/lovable-uploads/logos%20clientes%20ativos/minuano.png",
+      src: "/lovable-uploads/logos clientes ativos/minuano.png",
       alt: "Minuano",
       id: "minuano"
     },
     {
-      src: "/lovable-uploads/logos%20clientes%20ativos/nico.png",
+      src: "/lovable-uploads/logos clientes ativos/nico.png",
       alt: "Nico",
       id: "nico"
     },
     {
-      src: "/lovable-uploads/logos%20clientes%20ativos/operaenergy.png",
+      src: "/lovable-uploads/logos clientes ativos/operaenergy.png",
       alt: "Opera Energy",
       id: "opera-energy"
     },
     {
-      src: "/lovable-uploads/logos%20clientes%20ativos/postoc.png",
+      src: "/lovable-uploads/logos clientes ativos/postoc.png",
       alt: "Posto C",
       id: "posto-c"
     },
     {
-      src: "/lovable-uploads/logos%20clientes%20ativos/rabi.png",
+      src: "/lovable-uploads/logos clientes ativos/rabi.png",
       alt: "Rabi",
       id: "rabi"
     },
     {
-      src: "/lovable-uploads/logos%20clientes%20ativos/radar.png",
+      src: "/lovable-uploads/logos clientes ativos/radar.png",
       alt: "Radar",
       id: "radar"
     },
     {
-      src: "/lovable-uploads/logos%20clientes%20ativos/redevivo.png",
+      src: "/lovable-uploads/logos clientes ativos/redevivo.png",
       alt: "Rede Vivo",
       id: "rede-vivo"
     },
     {
-      src: "/lovable-uploads/logos%20clientes%20ativos/rota.png",
+      src: "/lovable-uploads/logos clientes ativos/rota.png",
       alt: "Rota",
       id: "rota"
     },
     {
-      src: "/lovable-uploads/logos%20clientes%20ativos/santaterezinha.png",
+      src: "/lovable-uploads/logos clientes ativos/santaterezinha.png",
       alt: "Santa Terezinha",
       id: "santa-terezinha"
     },
     {
-      src: "/lovable-uploads/logos%20clientes%20ativos/sobralepalacio.png",
+      src: "/lovable-uploads/logos clientes ativos/sobralepalacio.png",
       alt: "Sobral e Palácio",
       id: "sobral-palacio"
     },
     {
-      src: "/lovable-uploads/logos%20clientes%20ativos/tradicao.png",
+      src: "/lovable-uploads/logos clientes ativos/tradicao.png",
       alt: "Tradição",
       id: "tradicao"
     }
@@ -635,14 +635,21 @@ const Index = () => {
                   >
                      <div className="flex justify-center items-center p-3 sm:p-4 h-24 sm:h-28 md:h-32 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 group">
                        <img 
-                          src={cliente.src} 
+                          src={encodeURI(cliente.src)} 
                           alt={cliente.alt} 
                           className="max-h-full max-w-full w-auto object-contain hover:scale-105 transition-transform duration-300" 
                           loading="eager"
                           onLoad={() => console.log(`✅ Imagem carregada: ${cliente.alt}`)}
                           onError={(e) => {
                             console.error(`❌ Erro ao carregar imagem: ${cliente.src}`, e);
-                            e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkxvZ28</text></svg>';
+                            // Try alternative path without spaces first
+                            const fallbackSrc = cliente.src.replace(/\s+/g, '%20');
+                            if (e.currentTarget.src !== fallbackSrc) {
+                              e.currentTarget.src = fallbackSrc;
+                              return;
+                            }
+                            // If still fails, use placeholder
+                            e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkxvZ28gRW1wcmVzYTwvdGV4dD48L3N2Zz4=';
                             e.currentTarget.alt = `Logo ${cliente.alt} (placeholder)`;
                           }}
                         />
