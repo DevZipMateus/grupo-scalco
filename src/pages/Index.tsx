@@ -225,7 +225,7 @@ const Index = () => {
         </div>
         
         {/* Full-width banner at bottom of hero */}
-        <div className="absolute bottom-0 left-0 right-0 h-10 sm:h-20 bg-gradient-to-t from-brand-white to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-10 sm:h-12 bg-gradient-to-t from-brand-white to-transparent"></div>
       </section>
 
       {/* Logo Section - After Hero */}
