@@ -192,7 +192,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-brand-white overflow-x-hidden">
       {/* Hero Section - Centered Content Only */}
-      <section className="relative py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 flex items-center overflow-hidden min-h-[85vh] sm:min-h-[75vh] bg-cover bg-center bg-no-repeat bg-[url('/lovable-uploads/e22fa9ac-3996-468f-a64d-b277709c5e85.png')]" style={{
+      <section className="relative py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 flex items-center overflow-hidden min-h-[85vh] sm:min-h-[75vh] bg-cover md:bg-contain bg-center bg-no-repeat bg-[url('/lovable-uploads/e22fa9ac-3996-468f-a64d-b277709c5e85.png')]" style={{
       backgroundPositionX: 'center',
       backgroundPositionY: '20%'
     }}>
