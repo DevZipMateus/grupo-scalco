@@ -197,7 +197,7 @@ const Index = () => {
       backgroundPositionY: '20%'
     }}>
         {/* Subtle blur overlay */}
-        <div className="absolute inset-0 backdrop-blur-[1px] md:backdrop-blur-[3px] bg-brand-dark-blue/5"></div>
+        <div className="absolute inset-0 backdrop-blur-[1px] md:backdrop-blur-[2px] bg-brand-dark-blue/5 md:bg-brand-dark-blue/2"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className={`text-center transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
