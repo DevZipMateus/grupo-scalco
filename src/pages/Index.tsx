@@ -530,7 +530,7 @@ const Index = () => {
             <div className="flex flex-col gap-4 sm:gap-6 lg:w-1/2">
               <Card className={`p-6 sm:p-8 bg-gradient-to-br from-green-500 to-green-600 text-white ${numerosSection.visibleItems[0] ? 'animate-fade-in-scale' : 'opacity-0'}`}>
                 <CardContent className="text-center">
-                  <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">+87%</div>
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">+96%</div>
                   <p className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">de tarefas entregues corretamente</p>
                   <p className="text-xs sm:text-sm opacity-90">Aumento comprovado em qualidade</p>
                 </CardContent>
