@@ -540,7 +540,7 @@ const Index = () => {
                 <CardContent className="text-center">
                   <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">+29,47%</div>
                   <p className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">de aumento na performance geral</p>
-                  <p className="text-xs sm:text-sm opacity-90">Em apenas 60 dias</p>
+                  <p className="text-xs sm:text-sm opacity-90">Em 6 meses</p>
                 </CardContent>
               </Card>
             </div>
