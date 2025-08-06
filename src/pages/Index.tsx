@@ -8,6 +8,7 @@ import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnim
 import Autoplay from "embla-carousel-autoplay";
 import ScalcoLogo from "@/components/ScalcoLogo";
 import SalaryDeliveryChart from "@/components/SalaryDeliveryChart";
+import EvolutionChart from "@/components/EvolutionChart";
 import "../components/TestimonialCarousel.css";
 
 const Index = () => {
@@ -524,22 +525,30 @@ const Index = () => {
             </p>
           </div>
           
-          <div ref={numerosSection.ref} className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
-            <Card className={`p-6 sm:p-8 bg-gradient-to-br from-green-500 to-green-600 text-white ${numerosSection.visibleItems[0] ? 'animate-fade-in-scale' : 'opacity-0'}`}>
-              <CardContent className="text-center">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">+87%</div>
-                <p className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">de tarefas entregues corretamente</p>
-                <p className="text-xs sm:text-sm opacity-90">Aumento comprovado em qualidade</p>
-              </CardContent>
-            </Card>
+          <div ref={numerosSection.ref} className="flex flex-col lg:flex-row gap-6 lg:gap-8 mb-8 sm:mb-12">
+            {/* Metrics Cards - Stacked vertically */}
+            <div className="flex flex-col gap-4 sm:gap-6 lg:w-1/2">
+              <Card className={`p-6 sm:p-8 bg-gradient-to-br from-green-500 to-green-600 text-white ${numerosSection.visibleItems[0] ? 'animate-fade-in-scale' : 'opacity-0'}`}>
+                <CardContent className="text-center">
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">+87%</div>
+                  <p className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">de tarefas entregues corretamente</p>
+                  <p className="text-xs sm:text-sm opacity-90">Aumento comprovado em qualidade</p>
+                </CardContent>
+              </Card>
+              
+              <Card className={`p-6 sm:p-8 bg-gradient-to-br from-blue-500 to-blue-600 text-white ${numerosSection.visibleItems[1] ? 'animate-fade-in-scale' : 'opacity-0'}`}>
+                <CardContent className="text-center">
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">+92%</div>
+                  <p className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">de aumento na performance geral</p>
+                  <p className="text-xs sm:text-sm opacity-90">Em apenas 60 dias</p>
+                </CardContent>
+              </Card>
+            </div>
             
-            <Card className={`p-6 sm:p-8 bg-gradient-to-br from-blue-500 to-blue-600 text-white ${numerosSection.visibleItems[1] ? 'animate-fade-in-scale' : 'opacity-0'}`}>
-              <CardContent className="text-center">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">+92%</div>
-                <p className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">de aumento na performance geral</p>
-                <p className="text-xs sm:text-sm opacity-90">Em apenas 60 dias</p>
-              </CardContent>
-            </Card>
+            {/* Evolution Chart */}
+            <div className="lg:w-1/2">
+              <EvolutionChart />
+            </div>
           </div>
 
           <div className="max-w-4xl mx-auto mb-8 sm:mb-12">
