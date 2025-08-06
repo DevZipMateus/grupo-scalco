@@ -538,7 +538,7 @@ const Index = () => {
               
               <Card className={`p-6 sm:p-8 bg-gradient-to-br from-blue-500 to-blue-600 text-white ${numerosSection.visibleItems[1] ? 'animate-fade-in-scale' : 'opacity-0'}`}>
                 <CardContent className="text-center">
-                  <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">+92%</div>
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">+29,47%</div>
                   <p className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">de aumento na performance geral</p>
                   <p className="text-xs sm:text-sm opacity-90">Em apenas 60 dias</p>
                 </CardContent>
