@@ -32,7 +32,7 @@ const EvolutionChart = () => {
               axisLine={{ stroke: '#ddd' }}
             />
             <YAxis 
-              domain={['dataMin - 5', 'dataMax + 5']}
+              domain={['dataMin - 5', 100]}
               tick={{ fontSize: 12, fill: '#666' }}
               axisLine={{ stroke: '#ddd' }}
               tickFormatter={(value) => `${value}%`}
