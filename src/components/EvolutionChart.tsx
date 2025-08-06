@@ -15,7 +15,7 @@ const EvolutionChart = () => {
     <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg border">
       <div className="mb-4 text-center">
         <h3 className="text-lg sm:text-xl font-bold text-brand-dark-blue mb-2">
-          Evolução dos Resultados
+          Progresso mensal na entrega de tarefas
         </h3>
         <p className="text-gray-600 text-sm">
           Progresso mensal ao longo de 6 meses
