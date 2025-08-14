@@ -27,7 +27,17 @@ const Index = () => {
     }
   };
 
-  const handleWhatsAppClick = () => {
+  const handleWhatsAppClick = (buttonText?: string, section?: string) => {
+    // Send GTM event
+    if (typeof window !== 'undefined' && (window as any).dataLayer) {
+      (window as any).dataLayer.push({
+        event: 'whatsapp_click',
+        button_text: buttonText || 'WhatsApp Click',
+        page_section: section || 'unknown',
+        click_url: 'https://wa.me/5551999712999'
+      });
+    }
+    
     const message = encodeURIComponent("Olá! Quero conhecer o Método GAP e fazer meu diagnóstico gratuito.");
     window.open(`https://wa.me/5551999712999?text=${message}`, '_blank');
   };
@@ -217,7 +227,7 @@ const Index = () => {
               </p>
               
               <div className="px-2 sm:px-4">
-                <Button size="lg" className="bg-gradient-to-r from-brand-yellow to-yellow-400 text-brand-dark-blue px-3 sm:px-6 md:px-8 py-3 sm:py-4 text-xs sm:text-base md:text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-yellow hover:to-yellow-300 hover:text-brand-dark-blue w-full sm:w-auto leading-tight" onClick={handleWhatsAppClick}>
+                <Button size="lg" className="bg-gradient-to-r from-brand-yellow to-yellow-400 text-brand-dark-blue px-3 sm:px-6 md:px-8 py-3 sm:py-4 text-xs sm:text-base md:text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-yellow hover:to-yellow-300 hover:text-brand-dark-blue w-full sm:w-auto leading-tight" onClick={() => handleWhatsAppClick("Quero aplicar o Método GAP na minha empresa", "hero")}>
                   Quero aplicar o Método GAP na minha empresa
                   <ArrowRight className="ml-1 sm:ml-2 w-3 h-3 sm:w-5 sm:h-5 flex-shrink-0" />
                 </Button>
@@ -303,7 +313,7 @@ const Index = () => {
                 Essa é a realidade de muitas empresas com várias unidades e equipes descentralizadas.
               </p>
               
-              <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto" onClick={handleWhatsAppClick}>
+              <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto" onClick={() => handleWhatsAppClick("Corrigir desequilíbrio", "problema")}>
                 Corrigir desequilíbrio
                 <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
@@ -354,7 +364,7 @@ const Index = () => {
                 Com o GAP, você acompanha a entrega de cada colaborador, setor ou unidade – tudo em tempo real.
               </p>
               
-              <Button size="lg" className="bg-brand-light-blue text-brand-white hover:bg-brand-light-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto" onClick={handleWhatsAppClick}>
+              <Button size="lg" className="bg-brand-light-blue text-brand-white hover:bg-brand-light-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto" onClick={() => handleWhatsAppClick("Conhecer o GAP", "gap")}>
                 Conhecer o GAP
                 <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
@@ -414,7 +424,7 @@ const Index = () => {
           </div>
 
           <div className="text-center px-4">
-            <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto" onClick={handleWhatsAppClick}>
+            <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto" onClick={() => handleWhatsAppClick("Aplicar no meu time", "pilares")}>
               Aplicar no meu time
               <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
@@ -461,7 +471,7 @@ const Index = () => {
           </div>
 
           <div className="text-center px-4">
-            <Button size="lg" className="bg-brand-light-blue text-brand-white hover:bg-brand-light-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto" onClick={handleWhatsAppClick}>
+            <Button size="lg" className="bg-brand-light-blue text-brand-white hover:bg-brand-light-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto" onClick={() => handleWhatsAppClick("Quero essa visão", "tecnologia")}>
               Quero essa visão
               <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
@@ -504,7 +514,7 @@ const Index = () => {
             </div>
             
             <div className="px-4">
-              <Button size="lg" className="bg-gradient-to-r from-brand-yellow to-yellow-400 text-brand-dark-blue px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-yellow hover:to-yellow-300 hover:text-brand-dark-blue w-full sm:w-auto" onClick={handleWhatsAppClick}>
+              <Button size="lg" className="bg-gradient-to-r from-brand-yellow to-yellow-400 text-brand-dark-blue px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-yellow hover:to-yellow-300 hover:text-brand-dark-blue w-full sm:w-auto" onClick={() => handleWhatsAppClick("Conversar com especialista", "consultoria")}>
                 Conversar com especialista
                 <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
@@ -590,7 +600,7 @@ const Index = () => {
           </div>
 
           <div className="text-center px-4">
-            <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto" onClick={handleWhatsAppClick}>
+            <Button size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto" onClick={() => handleWhatsAppClick("Quero esses resultados", "numeros")}>
               Quero esses resultados
               <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
@@ -722,7 +732,7 @@ const Index = () => {
             </p>
             
             <div className="px-4">
-              <Button size="lg" className="bg-gradient-to-r from-brand-yellow to-yellow-400 text-brand-dark-blue px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-yellow hover:to-yellow-300 hover:text-brand-dark-blue w-full sm:w-auto" onClick={handleWhatsAppClick}>
+              <Button size="lg" className="bg-gradient-to-r from-brand-yellow to-yellow-400 text-brand-dark-blue px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-yellow hover:to-yellow-300 hover:text-brand-dark-blue w-full sm:w-auto" onClick={() => handleWhatsAppClick("Diagnóstico gratuito", "cta-final")}>
                 Diagnóstico gratuito
                 <ArrowRight className="ml-2 sm:ml-3 w-5 h-5 sm:w-6 sm:h-6" />
               </Button>
