@@ -34,12 +34,12 @@ const Index = () => {
         event: 'whatsapp_click',
         button_text: buttonText || 'WhatsApp Click',
         page_section: section || 'unknown',
-        click_url: 'https://wa.me/5551999712999'
+        click_url: 'https://wa.me/5519981824256'
       });
     }
     
     const message = encodeURIComponent("Olá! Quero conhecer o Método GAP e fazer meu diagnóstico gratuito.");
-    window.open(`https://wa.me/5551999712999?text=${message}`, '_blank');
+    window.open(`https://wa.me/5519981824256?text=${message}`, '_blank');
   };
 
   const problemSection = useStaggeredAnimation(3, 150);
