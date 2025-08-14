@@ -785,7 +785,7 @@ const Index = () => {
                 <div className="space-y-2 sm:space-y-3">
                   <div className="flex items-center gap-2">
                     <Phone className="w-4 h-4 text-brand-yellow flex-shrink-0" />
-                    <span className="text-sm text-white">(51) 99971-2999</span>
+                    <span className="text-sm text-white">(19) 98182-4256</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail className="w-4 h-4 text-brand-yellow flex-shrink-0" />
