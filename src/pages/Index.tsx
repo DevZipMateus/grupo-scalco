@@ -219,9 +219,9 @@ const Index = () => {
                 <span className="bg-gradient-to-r from-brand-yellow to-yellow-400 bg-clip-text text-transparent">Isso é justo?</span>
               </h1>
               
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-brand-white/90 mb-6 sm:mb-8 leading-relaxed text-zinc-200 px-4">
-               Consultoria em gestão de pessoas + tecnologia para transformar o desempenho da sua empresa.
-              </p>
+               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-brand-white/90 mb-6 sm:mb-8 leading-relaxed text-zinc-200 px-4">
+                Nós do Grupo Scalco te ajudamos com este cenário, através de uma consultoria em gestão de pessoas que une estratégia + acompanhamento para times que realmente entregam.
+               </p>
               
               <div className="px-2 sm:px-4">
                 <Button asChild size="lg" className="bg-gradient-to-r from-brand-yellow to-yellow-400 text-brand-dark-blue px-3 sm:px-6 md:px-8 py-3 sm:py-4 text-xs sm:text-base md:text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-yellow hover:to-yellow-300 hover:text-brand-dark-blue w-full sm:w-auto leading-tight">
