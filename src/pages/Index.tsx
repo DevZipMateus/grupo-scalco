@@ -225,7 +225,7 @@ const Index = () => {
               
               <div className="px-2 sm:px-4">
                 <Button asChild size="lg" className="bg-gradient-to-r from-brand-yellow to-yellow-400 text-brand-dark-blue px-3 sm:px-6 md:px-8 py-3 sm:py-4 text-xs sm:text-base md:text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-yellow hover:to-yellow-300 hover:text-brand-dark-blue w-full sm:w-auto leading-tight">
-                  <a href="https://wa.me/5519981824256?text=Olá!%20Quero%20conhecer%20o%20Método%20GAP%20e%20fazer%20meu%20diagnóstico%20gratuito." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Falar agora com um especialista", "hero")}>
+                  <a href="https://wa.me/5519981824256?text=Olá,%20quero%20conhecer%20o%20Método%20GAP." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Falar agora com um especialista", "hero")}>
                     Falar agora com um especialista
                     <ArrowRight className="ml-1 sm:ml-2 w-3 h-3 sm:w-5 sm:h-5 flex-shrink-0" />
                   </a>
@@ -310,7 +310,7 @@ const Index = () => {
               </p>
               
               <Button asChild size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto">
-                 <a href="https://wa.me/5519981824256?text=Olá!%20Quero%20conhecer%20o%20Método%20GAP%20e%20fazer%20meu%20diagnóstico%20gratuito." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Agende um diagnóstico gratuito", "problema")}>
+                 <a href="https://wa.me/5519981824256?text=Olá,%20quero%20conhecer%20o%20Método%20GAP." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Agende um diagnóstico gratuito", "problema")}>
                   Agende um diagnóstico gratuito
                   <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                 </a>
@@ -388,7 +388,7 @@ const Index = () => {
 
             <div className="text-center px-4">
               <Button asChild size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto">
-                <a href="https://wa.me/5519981824256?text=Olá!%20Quero%20conhecer%20o%20Método%20GAP%20e%20fazer%20meu%20diagnóstico%20gratuito." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Quero aplicar no meu time", "gap-pilares")}>
+                <a href="https://wa.me/5519981824256?text=Olá,%20quero%20conhecer%20o%20Método%20GAP." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Quero aplicar no meu time", "gap-pilares")}>
                   Quero aplicar no meu time
                   <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                 </a>
@@ -476,7 +476,7 @@ const Index = () => {
 
           <div className="text-center px-4">
             <Button asChild size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto">
-              <a href="https://wa.me/5519981824256?text=Olá!%20Quero%20conhecer%20o%20Método%20GAP%20e%20fazer%20meu%20diagnóstico%20gratuito." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Quero esses resultados", "numeros")}>
+              <a href="https://wa.me/5519981824256?text=Olá,%20quero%20conhecer%20o%20Método%20GAP." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Quero esses resultados", "numeros")}>
                 Quero esses resultados
                 <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </a>
@@ -609,7 +609,7 @@ const Index = () => {
             
             <div className="px-4">
               <Button asChild size="lg" className="bg-gradient-to-r from-brand-yellow to-yellow-400 text-brand-dark-blue px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-yellow hover:to-yellow-300 hover:text-brand-dark-blue w-full sm:w-auto">
-                <a href="https://wa.me/5519981824256?text=Olá!%20Quero%20conhecer%20o%20Método%20GAP%20e%20fazer%20meu%20diagnóstico%20gratuito." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Falar agora com um especialista", "cta-final")}>
+                <a href="https://wa.me/5519981824256?text=Olá,%20quero%20conhecer%20o%20Método%20GAP." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Falar agora com um especialista", "cta-final")}>
                   Falar agora com um especialista
                   <ArrowRight className="ml-2 sm:ml-3 w-5 h-5 sm:w-6 sm:h-6" />
                 </a>
