@@ -225,8 +225,8 @@ const Index = () => {
               
               <div className="px-2 sm:px-4">
                 <Button asChild size="lg" className="bg-gradient-to-r from-brand-yellow to-yellow-400 text-brand-dark-blue px-3 sm:px-6 md:px-8 py-3 sm:py-4 text-xs sm:text-base md:text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-yellow hover:to-yellow-300 hover:text-brand-dark-blue w-full sm:w-auto leading-tight">
-                  <a href="https://wa.me/5519981824256?text=Olá!%20Quero%20conhecer%20o%20Método%20GAP%20e%20fazer%20meu%20diagnóstico%20gratuito." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Quero aplicar o Método GAP na minha empresa", "hero")}>
-                    Quero aplicar o Método GAP na minha empresa
+                  <a href="https://wa.me/5519981824256?text=Olá!%20Quero%20conhecer%20o%20Método%20GAP%20e%20fazer%20meu%20diagnóstico%20gratuito." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Falar agora com um especialista", "hero")}>
+                    Falar agora com um especialista
                     <ArrowRight className="ml-1 sm:ml-2 w-3 h-3 sm:w-5 sm:h-5 flex-shrink-0" />
                   </a>
                 </Button>
