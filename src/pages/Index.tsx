@@ -339,40 +339,40 @@ const Index = () => {
                 </p>
               </div>
 
-              <div ref={pilaresSection.ref} className="space-y-4 sm:space-y-6">
-                <Card className={`p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 ${pilaresSection.visibleItems[0] ? 'animate-fade-in-left' : 'opacity-0'}`}>
-                  <CardContent className="flex items-center gap-4 sm:gap-6">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-brand-dark-blue rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-white font-bold text-lg sm:text-xl">1</span>
+              <div ref={pilaresSection.ref} className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+                <Card className={`p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 ${pilaresSection.visibleItems[0] ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                  <CardContent className="text-center">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                      <AlertTriangle className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-red-600" />
                     </div>
-                    <div>
-                      <h3 className="text-lg sm:text-xl font-bold text-brand-dark-blue mb-2">Desconforto positivo</h3>
-                      <p className="text-sm sm:text-base text-gray-700">→ Quem não entrega perde pontos.</p>
-                    </div>
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-brand-dark-blue mb-3 sm:mb-4">Desconforto positivo</h3>
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                      → Quem não entrega perde pontos.
+                    </p>
                   </CardContent>
                 </Card>
                 
-                <Card className={`p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 ${pilaresSection.visibleItems[1] ? 'animate-fade-in-left' : 'opacity-0'}`}>
-                  <CardContent className="flex items-center gap-4 sm:gap-6">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-brand-dark-blue rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-white font-bold text-lg sm:text-xl">2</span>
+                <Card className={`p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 ${pilaresSection.visibleItems[1] ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.1s' }}>
+                  <CardContent className="text-center">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                      <Award className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-green-600" />
                     </div>
-                    <div>
-                      <h3 className="text-lg sm:text-xl font-bold text-brand-dark-blue mb-2">Reconhecimento</h3>
-                      <p className="text-sm sm:text-base text-gray-700">→ Quem entrega ganha visibilidade e valor.</p>
-                    </div>
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-brand-dark-blue mb-3 sm:mb-4">Reconhecimento</h3>
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                      → Quem entrega ganha visibilidade e valor.
+                    </p>
                   </CardContent>
                 </Card>
                 
-                <Card className={`p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 ${pilaresSection.visibleItems[2] ? 'animate-fade-in-left' : 'opacity-0'}`}>
-                  <CardContent className="flex items-center gap-4 sm:gap-6">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-brand-dark-blue rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-white font-bold text-lg sm:text-xl">3</span>
+                <Card className={`p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 ${pilaresSection.visibleItems[2] ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
+                  <CardContent className="text-center">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                      <Target className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-blue-600" />
                     </div>
-                    <div>
-                      <h3 className="text-lg sm:text-xl font-bold text-brand-dark-blue mb-2">Gestão ativa e engajamento</h3>
-                      <p className="text-sm sm:text-base text-gray-700">→ Consultores acompanham de perto, criam clareza nas metas e aumentam o comprometimento da equipe.</p>
-                    </div>
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-brand-dark-blue mb-3 sm:mb-4">Gestão ativa e engajamento</h3>
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                      → Consultores acompanham de perto, criam clareza nas metas e aumentam o comprometimento da equipe.
+                    </p>
                   </CardContent>
                 </Card>
               </div>
