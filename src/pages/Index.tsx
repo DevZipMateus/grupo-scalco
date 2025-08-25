@@ -310,8 +310,8 @@ const Index = () => {
               </p>
               
               <Button asChild size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto">
-                <a href="https://wa.me/5519981824256?text=Olá!%20Quero%20conhecer%20o%20Método%20GAP%20e%20fazer%20meu%20diagnóstico%20gratuito." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Corrigir desequilíbrio", "problema")}>
-                  Corrigir desequilíbrio
+                 <a href="https://wa.me/5519981824256?text=Olá!%20Quero%20conhecer%20o%20Método%20GAP%20e%20fazer%20meu%20diagnóstico%20gratuito." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Agende um diagnóstico gratuito", "problema")}>
+                  Agende um diagnóstico gratuito
                   <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                 </a>
               </Button>
