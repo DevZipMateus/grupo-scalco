@@ -601,17 +601,16 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={ctaSection.ref} className={`max-w-4xl mx-auto text-center ${ctaSection.isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-brand-white mb-4 sm:mb-6 px-4">
-              Pronto para parar de pagar 100% e receber só 75%?
+              Pronto para parar de pagar por 100% e receber só 75%?
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-brand-white/90 mb-6 sm:mb-8 leading-relaxed px-4">
-              Agende agora um diagnóstico gratuito com um de nossos especialistas.<br className="hidden sm:block" />
-              Descubra como aplicar o GAP no seu negócio.
+              Agende uma conversa gratuita e descubra como aplicar o GAP no seu negócio para ter equipes engajadas, produtivas e responsáveis pelos resultados.
             </p>
             
             <div className="px-4">
               <Button asChild size="lg" className="bg-gradient-to-r from-brand-yellow to-yellow-400 text-brand-dark-blue px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-yellow hover:to-yellow-300 hover:text-brand-dark-blue w-full sm:w-auto">
-                <a href="https://wa.me/5519981824256?text=Olá!%20Quero%20conhecer%20o%20Método%20GAP%20e%20fazer%20meu%20diagnóstico%20gratuito." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Diagnóstico gratuito", "cta-final")}>
-                  Diagnóstico gratuito
+                <a href="https://wa.me/5519981824256?text=Olá!%20Quero%20conhecer%20o%20Método%20GAP%20e%20fazer%20meu%20diagnóstico%20gratuito." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Falar agora com um especialista", "cta-final")}>
+                  Falar agora com um especialista
                   <ArrowRight className="ml-2 sm:ml-3 w-5 h-5 sm:w-6 sm:h-6" />
                 </a>
               </Button>
