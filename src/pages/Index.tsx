@@ -254,11 +254,8 @@ const Index = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 sm:mb-10 md:mb-12">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark-blue mb-4 sm:mb-6 px-4">
-                Você cumpre sua parte. E a sua equipe?
+                O problema que trava sua empresa
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-6 sm:mb-8 px-4">
-                Você garante estrutura, pagamento e condições. E ainda precisa cobrar o óbvio?
-              </p>
             </div>
             
             <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center mb-8 sm:mb-12">
