@@ -320,46 +320,63 @@ const Index = () => {
         </div>
       </section>
 
-      {/* O que é o GAP */}
+      {/* O que é o Método GAP e como funciona */}
       <section className="py-8 sm:py-10 md:py-12 lg:py-16 bg-brand-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <div ref={gapSection.ref} className={`text-center mb-8 sm:mb-12 ${gapSection.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark-blue mb-4 sm:mb-6 px-4">
-                O que é o Método GAP?
+                O que é o Método GAP e como funciona
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 sm:mb-8 leading-relaxed px-4">
-                Uma solução prática para você, gestor, voltar a ter o controle e a confiança da sua equipe.
+                O Método GAP é uma consultoria em gestão de pessoas focada em resultados reais.
+                <br />
+                Ele atua em 3 pilares simples e diretos:
               </p>
             </div>
 
-            <div className="space-y-6 sm:space-y-8 mb-8 sm:mb-12">
-              <Card className={`p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-brand-dark-blue to-brand-light-blue text-brand-white ${gapSection.isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-                <CardContent>
-                  <Brain className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-brand-yellow mb-4 sm:mb-6" />
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4">🧠 Consultoria em gestão de pessoas</h3>
-                  <p className="text-sm sm:text-base text-brand-white/90 leading-relaxed">
-                    Especialistas que entendem o seu desafio e implementam soluções práticas na sua realidade.
-                  </p>
-                </CardContent>
-              </Card>
+            <div className="space-y-6 sm:space-y-8 mb-8 sm:mb-12 max-w-3xl mx-auto">
+              <div className={`flex items-start gap-4 sm:gap-6 ${gapSection.isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-red-600 font-bold text-sm sm:text-base">1</span>
+                </div>
+                <div>
+                  <h3 className="text-lg sm:text-xl font-bold text-brand-dark-blue mb-2">
+                    Desconforto positivo → Quem não entrega perde pontos.
+                  </h3>
+                </div>
+              </div>
               
-              <Card className={`p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-brand-yellow to-yellow-400 text-brand-dark-blue ${gapSection.isVisible ? 'animate-fade-in-left' : 'opacity-0'}`} style={{
-              animationDelay: '0.2s'
-            }}>
-                <CardContent>
-                  <BarChart3 className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-brand-dark-blue mb-4 sm:mb-6" />
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4">📊 Plataforma com indicadores de desempenho</h3>
-                  <p className="text-sm sm:text-base text-brand-dark-blue/90 leading-relaxed">
-                    Tecnologia que mostra, em tempo real, a entrega de cada colaborador, setor ou unidade.
-                  </p>
-                </CardContent>
-              </Card>
+              <div className={`flex items-start gap-4 sm:gap-6 ${gapSection.isVisible ? 'animate-fade-in-left' : 'opacity-0'}`} style={{
+                animationDelay: '0.2s'
+              }}>
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-green-600 font-bold text-sm sm:text-base">2</span>
+                </div>
+                <div>
+                  <h3 className="text-lg sm:text-xl font-bold text-brand-dark-blue mb-2">
+                    Reconhecimento → Quem entrega ganha visibilidade e valor.
+                  </h3>
+                </div>
+              </div>
+              
+              <div className={`flex items-start gap-4 sm:gap-6 ${gapSection.isVisible ? 'animate-fade-in-left' : 'opacity-0'}`} style={{
+                animationDelay: '0.4s'
+              }}>
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-blue-600 font-bold text-sm sm:text-base">3</span>
+                </div>
+                <div>
+                  <h3 className="text-lg sm:text-xl font-bold text-brand-dark-blue mb-2">
+                    Gestão ativa e engajamento → Consultores acompanham de perto, criam clareza nas metas e aumentam o comprometimento da equipe.
+                  </h3>
+                </div>
+              </div>
             </div>
 
             <div className="text-center px-4">
-              <p className="text-base sm:text-lg md:text-xl text-brand-dark-blue font-semibold mb-6 sm:mb-8">
-                Com o GAP, você acompanha a entrega de cada colaborador, setor ou unidade – tudo em tempo real.
+              <p className="text-base sm:text-lg md:text-xl text-brand-dark-blue font-semibold mb-6 sm:mb-8 leading-relaxed">
+                <strong>Resultado:</strong> você recupera o controle da operação, melhora o engajamento dos colaboradores e aumenta a performance — rápido e sem enrolação.
               </p>
               
               <Button asChild size="lg" className="bg-brand-light-blue text-brand-white hover:bg-brand-light-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto">
@@ -369,67 +386,6 @@ const Index = () => {
                 </a>
               </Button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Os 3 Pilares do GAP */}
-      <section id="pilares" className="py-8 sm:py-10 md:py-12 lg:py-16 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark-blue mb-4 sm:mb-6 px-4">
-              Os 3 Pilares do GAP
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed px-4">
-              Veja como o método funciona e onde está o diferencial prático
-            </p>
-          </div>
-          
-          <div ref={pilaresSection.ref} className="grid sm:grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
-            <Card className={`p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 ${pilaresSection.visibleItems[0] ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <CardContent className="text-center">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
-                  <AlertTriangle className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-red-600" />
-                </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-brand-dark-blue mb-3 sm:mb-4">1. Desconforto positivo</h3>
-                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                  Quem não entrega, perde pontos. Consequências claras para baixa performance.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className={`p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 ${pilaresSection.visibleItems[1] ? 'animate-fade-in-up' : 'opacity-0'}`}>
-              <CardContent className="text-center">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
-                  <Award className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-green-600" />
-                </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-brand-dark-blue mb-3 sm:mb-4">2. Reconhecimento</h3>
-                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                  Quem entrega bem, ganha visibilidade. Valorização dos que fazem a diferença.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className={`p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 ${pilaresSection.visibleItems[2] ? 'animate-fade-in-right' : 'opacity-0'}`}>
-              <CardContent className="text-center">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
-                  <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-blue-600" />
-                </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-brand-dark-blue mb-3 sm:mb-4">3. Gestão de Conflitos</h3>
-                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                  Consultores com empatia e firmeza para destravar resistências.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="text-center px-4">
-            <Button asChild size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto">
-              <a href="https://wa.me/5519981824256?text=Olá!%20Quero%20conhecer%20o%20Método%20GAP%20e%20fazer%20meu%20diagnóstico%20gratuito." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Aplicar no meu time", "pilares")}>
-                Aplicar no meu time
-                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
-              </a>
-            </Button>
           </div>
         </div>
       </section>
