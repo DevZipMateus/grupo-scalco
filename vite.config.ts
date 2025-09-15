@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     target: 'esnext',
-    minify: 'terser',
+    minify: 'esbuild',
     cssMinify: true,
     rollupOptions: {
       output: {
@@ -34,11 +34,8 @@ export default defineConfig(({ mode }) => ({
         }
       }
     },
-    terserOptions: {
-      compress: {
-        drop_console: mode === 'production',
-        drop_debugger: mode === 'production'
-      }
+    esbuild: {
+      drop: mode === 'production' ? ['console', 'debugger'] : []
     }
   },
   optimizeDeps: {
