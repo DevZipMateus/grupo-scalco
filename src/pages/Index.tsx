@@ -1,22 +1,21 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Users, TrendingUp, Target, Award, CheckCircle, ArrowRight, Phone, Mail, MapPin, Star, BarChart3, Zap, Shield, Brain, Eye, MessageCircle, AlertTriangle, Clock, UserX, Wrench } from "lucide-react";
+import { Users, TrendingUp, Target, Award, CheckCircle, ArrowRight, Phone, Mail, MapPin, BarChart3, Zap, Shield, Brain, Eye, MessageCircle, AlertTriangle, Clock, UserX, Wrench } from "lucide-react";
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
-import Autoplay from "embla-carousel-autoplay";
 import ScalcoLogo from "@/components/ScalcoLogo";
-import SalaryDeliveryChart from "@/components/SalaryDeliveryChart";
-import EvolutionChart from "@/components/EvolutionChart";
 import { ContactForm } from "@/components/ContactForm";
-import "../components/TestimonialCarousel.css";
+import { SalaryChartWithSuspense, EvolutionChartWithSuspense, TestimonialCarouselWithSuspense, ClientLogosWithSuspense } from "@/components/LazyComponents";
+import { OptimizedImage } from "@/components/OptimizedImage";
+import { PerformanceMonitor, addResourceHints } from "@/components/PerformanceMonitor";
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
   
   useEffect(() => {
     setIsVisible(true);
+    addResourceHints();
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -48,156 +47,6 @@ const Index = () => {
   const numerosSection = useStaggeredAnimation(2, 300);
   const faqSection = useStaggeredAnimation(3, 200);
   const ctaSection = useScrollAnimation();
-
-  // Plugin para autoplay do carousel de testimonials
-  const plugin = useRef(Autoplay({
-    delay: 4000,
-    stopOnInteraction: true
-  }));
-
-  // Plugin para autoplay do carousel de logos - velocidade otimizada
-  const logoPlugin = useRef(Autoplay({
-    delay: 2000,
-    stopOnInteraction: false,
-    stopOnMouseEnter: true,
-    stopOnFocusIn: false
-  }));
-
-  const testimonials = [{
-    id: 1,
-    text: "Antes da Scalco \"achávamos\" muito... (eu acho que é isso, eu acho que é bom, eu acho que esse funcionário é melhor que aquele...). O primeiro impacto foi de união da equipe, uma coisa que nós não esperávamos. A gente não tinha gerentes antes... depois de implantar \"a Scalco\" nós formamos gerentes.",
-    name: "Maurício Januzzi",
-    company: "Postos Malerba",
-    image: "/lovable-uploads/clientes/1753383807178_4_malerba.png"
-  }, {
-    id: 2,
-    text: "Depois que a Scalco chegou a gente conseguiu sair do \"achômetro\" e ter certezas, e crescer nesse trabalho.",
-    name: "Camila Maluf",
-    company: "Postos Tasca",
-    image: "/lovable-uploads/clientes/1753383806026_1_tasca.png"
-  }, {
-    id: 3,
-    text: "Depois da chegada da consultoria veio um boom todo: meta, as vendas alavancaram, atendimento, conservação, limpeza e organização do posto... aí com a copa foi uma melhoria absurda. A gente tinha posto vendendo (mix automotivo) R$ 10.000,00 e depois saltou pra R$ 25.000,00 – R$ 30.000,00 então o resultado veio rápido disso aí. A equipe toda se engajou para melhorar o atendimento.",
-    name: "Thiago Perin",
-    company: "Rede Marcela",
-    image: "/lovable-uploads/clientes/marcela.png"
-  }, {
-    id: 4,
-    text: "Nós tínhamos um conjunto de processos próprios, mas não medíamos com a frequência e a precisão que o método GAP nos trouxe.",
-    name: "Wellington Granja",
-    company: "Postos Petrocal",
-    image: "/lovable-uploads/clientes/petrocal.png"
-  }, {
-    id: 5,
-    text: "Antes da Scalco, a gestão de pessoas era muito fraca, não tinha uma medida exata de cada colaborador. Nós fomos campeão Brasil no ano que a Scalco entrou, já tinha 13 anos trabalhando com loja e com a introdução da Scalco a gente ganhou concorrendo com 365 lojas na época.",
-    name: "Antero Vieira",
-    company: "Postos Tasca",
-    image: "/lovable-uploads/clientes/1753383806026_1_tasca.png"
-  }, {
-    id: 6,
-    text: "O elogio começou a vir e a turma não estava muito acostumada com isso... a receber elogio né... e nisso a satisfação começa a trazer resultado e isso nos deixou mais confiante no nosso trabalho.",
-    name: "Marcelo Oliveira",
-    company: "Rede Hurray",
-    image: "/lovable-uploads/clientes/1753383806793_3_hurray.jpg"
-  }];
-
-  const clientLogos = [
-    {
-      src: "/lovable-uploads/logos-clientes-ativos/3irmaos.png",
-      alt: "3 Irmãos",
-      id: "3-irmaos"
-    },
-    {
-      src: "/lovable-uploads/logos-clientes-ativos/bolapesada.png",
-      alt: "Bola Pesada",
-      id: "bola-pesada"
-    },
-    {
-      src: "/lovable-uploads/logos-clientes-ativos/dompedro.png",
-      alt: "Dom Pedro",
-      id: "dom-pedro"
-    },
-    {
-      src: "/lovable-uploads/logos-clientes-ativos/express.jpg",
-      alt: "Express",
-      id: "express"
-    },
-    {
-      src: "/lovable-uploads/logos-clientes-ativos/l2.png",
-      alt: "L2",
-      id: "l2"
-    },
-    {
-      src: "/lovable-uploads/logos-clientes-ativos/laurindao.png",
-      alt: "Laurindão",
-      id: "laurindao"
-    },
-    {
-      src: "/lovable-uploads/logos-clientes-ativos/linke.png",
-      alt: "Linke",
-      id: "linke"
-    },
-    {
-      src: "/lovable-uploads/logos-clientes-ativos/maxsul.png",
-      alt: "Maxsul",
-      id: "maxsul"
-    },
-    {
-      src: "/lovable-uploads/logos-clientes-ativos/minuano.png",
-      alt: "Minuano",
-      id: "minuano"
-    },
-    {
-      src: "/lovable-uploads/logos-clientes-ativos/nico.png",
-      alt: "Nico",
-      id: "nico"
-    },
-    {
-      src: "/lovable-uploads/logos-clientes-ativos/operaenergy.png",
-      alt: "Opera Energy",
-      id: "opera-energy"
-    },
-    {
-      src: "/lovable-uploads/logos-clientes-ativos/postoc.png",
-      alt: "Posto C",
-      id: "posto-c"
-    },
-    {
-      src: "/lovable-uploads/logos-clientes-ativos/rabi.png",
-      alt: "Rabi",
-      id: "rabi"
-    },
-    {
-      src: "/lovable-uploads/logos-clientes-ativos/radar.png",
-      alt: "Radar",
-      id: "radar"
-    },
-    {
-      src: "/lovable-uploads/logos-clientes-ativos/redevivo.png",
-      alt: "Rede Vivo",
-      id: "rede-vivo"
-    },
-    {
-      src: "/lovable-uploads/logos-clientes-ativos/rota.png",
-      alt: "Rota",
-      id: "rota"
-    },
-    {
-      src: "/lovable-uploads/logos-clientes-ativos/santaterezinha.png",
-      alt: "Santa Terezinha",
-      id: "santa-terezinha"
-    },
-    {
-      src: "/lovable-uploads/logos-clientes-ativos/sobralepalacio.png",
-      alt: "Sobral e Palácio",
-      id: "sobral-palacio"
-    },
-    {
-      src: "/lovable-uploads/logos-clientes-ativos/tradicao.png",
-      alt: "Tradição",
-      id: "tradicao"
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-brand-white overflow-x-hidden">
@@ -300,7 +149,7 @@ const Index = () => {
               
               <div className="flex justify-center order-1 lg:order-2 px-2 sm:px-4">
                 <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
-                  <SalaryDeliveryChart />
+                  <SalaryChartWithSuspense />
                 </div>
               </div>
             </div>
@@ -433,46 +282,14 @@ const Index = () => {
             
             {/* Evolution Chart */}
             <div className="lg:w-1/2">
-              <EvolutionChart />
+              <EvolutionChartWithSuspense />
             </div>
           </div>
 
           <div className="max-w-4xl mx-auto mb-8 sm:mb-12">
             <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-brand-dark-blue mb-6 sm:mb-8 text-center px-4">O que nossos clientes dizem:</h3>
             
-            <Carousel plugins={[plugin.current]} className="w-full max-w-5xl mx-auto testimonial-carousel px-4" onMouseEnter={plugin.current.stop} onMouseLeave={plugin.current.reset} opts={{
-            align: "center",
-            loop: true
-          }}>
-              <CarouselContent>
-                {testimonials.map((testimonial, index) => <CarouselItem key={testimonial.id} className="basis-full md:basis-4/5 lg:basis-3/5">
-                    <div className="p-2">
-                      <Card className="h-full min-h-[300px] sm:min-h-[350px] md:min-h-[400px] transition-all duration-300 hover:shadow-xl">
-                        <CardContent className="p-4 sm:p-6 md:p-8 flex flex-col justify-between h-full">
-                          <div className="flex-grow flex flex-col">
-                            <p className="text-sm sm:text-base md:text-lg text-gray-700 italic mb-4 sm:mb-6 md:mb-8 leading-relaxed overflow-hidden">
-                              "{testimonial.text}"
-                            </p>
-                          </div>
-                          <div className="flex items-center gap-3 sm:gap-4 mt-auto pt-4">
-                            <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full overflow-hidden flex-shrink-0 bg-gray-100">
-                              <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-contain" />
-                            </div>
-                            <div>
-                              <div className="text-sm sm:text-base md:text-lg font-bold text-brand-dark-blue">{testimonial.name}</div>
-                              <div className="text-xs sm:text-sm md:text-base text-gray-600">{testimonial.company}</div>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </div>
-                  </CarouselItem>)}
-              </CarouselContent>
-              <div className="hidden md:block">
-                <CarouselPrevious className="-left-12" />
-                <CarouselNext className="-right-12" />
-              </div>
-            </Carousel>
+            <TestimonialCarouselWithSuspense />
           </div>
 
           <div className="text-center px-4">
@@ -512,47 +329,7 @@ const Index = () => {
           
           {/* Carrossel de logos com visibilidade garantida */}
           <div className="w-full client-logos-mobile">
-            <Carousel 
-              plugins={[logoPlugin.current]} 
-              className="w-full logo-carousel" 
-              onMouseEnter={() => logoPlugin.current.stop()} 
-              onMouseLeave={() => logoPlugin.current.reset()}
-              opts={{
-                align: "start",
-                loop: true,
-                skipSnaps: false,
-                dragFree: true
-              }}
-            >
-              <CarouselContent className="-ml-2 md:-ml-4">
-                {clientLogos.map((cliente) => (
-                  <CarouselItem 
-                    key={cliente.id} 
-                    className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6 client-logo-item"
-                  >
-                     <div className="flex justify-center items-center p-3 sm:p-4 h-24 sm:h-28 md:h-32 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 group">
-                        <img 
-                           src={cliente.src} 
-                           alt={cliente.alt} 
-                           className="max-h-full max-w-full w-auto object-contain hover:scale-105 transition-transform duration-300" 
-                           loading="lazy"
-                           onError={(e) => {
-                             console.error(`❌ Erro ao carregar imagem: ${cliente.src}`, e);
-                             e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkxvZ28gRW1wcmVzYTwvdGV4dD48L3N2Zz4=';
-                             e.currentTarget.alt = `Logo ${cliente.alt} (placeholder)`;
-                           }}
-                         />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              
-              {/* Controles de navegação apenas para desktop */}
-              <div className="hidden md:block">
-                <CarouselPrevious className="-left-8 lg:-left-12 bg-white/90 hover:bg-white border-2 border-gray-200 carousel-controls" />
-                <CarouselNext className="-right-8 lg:-right-12 bg-white/90 hover:bg-white border-2 border-gray-200 carousel-controls" />
-              </div>
-            </Carousel>
+            <ClientLogosWithSuspense />
           </div>
         </div>
       </section>
@@ -757,6 +534,7 @@ const Index = () => {
           </div>
         </div>
       </footer>
+      <PerformanceMonitor />
     </div>
   );
 };
