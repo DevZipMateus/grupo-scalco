@@ -9,6 +9,7 @@ import Autoplay from "embla-carousel-autoplay";
 import ScalcoLogo from "@/components/ScalcoLogo";
 import SalaryDeliveryChart from "@/components/SalaryDeliveryChart";
 import EvolutionChart from "@/components/EvolutionChart";
+import { ContactForm } from "@/components/ContactForm";
 import "../components/TestimonialCarousel.css";
 
 const Index = () => {
@@ -619,6 +620,70 @@ const Index = () => {
             <p className="text-xs sm:text-sm text-brand-white/80 mt-4 sm:mt-6 px-4">
               👆 Clique e fale direto com nosso especialista no WhatsApp
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Seção do Formulário de Contato */}
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark-blue mb-4 sm:mb-6">
+              ✨ Transforme sua Equipe Hoje!
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
+              Preencha o formulário abaixo e receba um diagnóstico personalizado para sua empresa
+            </p>
+          </div>
+          
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12">
+            {/* Formulário */}
+            <div className="w-full lg:w-auto">
+              <ContactForm />
+            </div>
+            
+            {/* Benefícios ao lado */}
+            <div className="w-full lg:max-w-md space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="w-6 h-6 rounded-full bg-brand-yellow flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-brand-dark-blue text-sm font-bold">✓</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-brand-dark-blue mb-1">Diagnóstico Gratuito</h3>
+                  <p className="text-gray-600 text-sm">Análise completa da performance atual da sua equipe</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <div className="w-6 h-6 rounded-full bg-brand-yellow flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-brand-dark-blue text-sm font-bold">✓</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-brand-dark-blue mb-1">Consultoria Especializada</h3>
+                  <p className="text-gray-600 text-sm">Mais de 20 anos de experiência em gestão de equipes</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <div className="w-6 h-6 rounded-full bg-brand-yellow flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-brand-dark-blue text-sm font-bold">✓</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-brand-dark-blue mb-1">Resultados Comprovados</h3>
+                  <p className="text-gray-600 text-sm">Aumento médio de 25% na produtividade das equipes</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <div className="w-6 h-6 rounded-full bg-brand-yellow flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-brand-dark-blue text-sm font-bold">✓</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-brand-dark-blue mb-1">Atendimento Personalizado</h3>
+                  <p className="text-gray-600 text-sm">Resposta em até 24h e consulta sem compromisso</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
