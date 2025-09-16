@@ -74,7 +74,7 @@ const Index = () => {
               </h1>
               
                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-brand-white/90 mb-6 sm:mb-8 leading-relaxed text-zinc-200 px-4">
-                Nós do Grupo Scalco te ajudamos com este cenário, através de uma consultoria em gestão de pessoas que une estratégia + acompanhamento para times que realmente entregam.
+                A Scalco Consultoria oferece uma consultoria em gestão de pessoas com o Método GAP, que une estratégia e acompanhamento para transformar equipes em times engajados, responsáveis e produtivos.
                </p>
               
               <div className="px-2 sm:px-4">
