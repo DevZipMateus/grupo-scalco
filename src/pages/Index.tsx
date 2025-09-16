@@ -391,7 +391,7 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={ctaSection.ref} className={`max-w-4xl mx-auto text-center ${ctaSection.isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-brand-white mb-4 sm:mb-6 px-4">
-              Pronto para parar de pagar por 100% e receber só 75%?
+              Você investe em pessoas. Agora é hora de ter retorno.
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-brand-white/90 mb-6 sm:mb-8 leading-relaxed px-4">
               Agende uma conversa gratuita e descubra como aplicar o GAP no seu negócio para ter equipes engajadas, produtivas e responsáveis pelos resultados.
