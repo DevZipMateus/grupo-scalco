@@ -66,11 +66,9 @@ const Index = () => {
             <div className={`text-center transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               
               <h1 className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-brand-white mb-4 sm:mb-6 leading-tight px-2">
-                Você paga <span className="bg-gradient-to-r from-brand-yellow to-yellow-400 bg-clip-text text-transparent">100%</span>.
+                Você paga <span className="bg-gradient-to-r from-brand-yellow to-yellow-400 bg-clip-text text-transparent">salários</span>.
                 <br />
-                Sua equipe entrega só <span className="text-red-600">75%</span>.
-                <br />
-                <span className="bg-gradient-to-r from-brand-yellow to-yellow-400 bg-clip-text text-transparent">Isso é justo?</span>
+                Nós garantimos que sua <span className="bg-gradient-to-r from-brand-yellow to-yellow-400 bg-clip-text text-transparent">gestão de pessoas gera resultado</span>.
               </h1>
               
                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-brand-white/90 mb-6 sm:mb-8 leading-relaxed text-zinc-200 px-4">
