@@ -22,21 +22,25 @@ const Index = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({
-        behavior: 'smooth'
+        behavior: 'smooth',
+        block: 'start'
       });
     }
   };
 
-  const handleWhatsAppClick = (buttonText?: string, section?: string) => {
-    // Send GTM event
+  const handleContactFormClick = (buttonText?: string, section?: string) => {
+    // Send GTM event for form navigation
     if (typeof window !== 'undefined' && (window as any).dataLayer) {
       (window as any).dataLayer.push({
-        event: 'whatsapp_click',
-        button_text: buttonText || 'WhatsApp Click',
+        event: 'scroll_to_contact_form',
+        button_text: buttonText || 'Contact Form Click',
         page_section: section || 'unknown',
-        click_url: 'https://wa.me/5519981824256'
+        action: 'scroll_to_form'
       });
     }
+    
+    // Scroll to contact form
+    scrollToSection('contact-form');
   };
 
   const problemSection = useStaggeredAnimation(3, 150);
@@ -74,11 +78,13 @@ const Index = () => {
                </p>
               
               <div className="px-2 sm:px-4">
-                <Button asChild size="lg" className="bg-gradient-to-r from-brand-yellow to-yellow-400 text-brand-dark-blue px-3 sm:px-6 md:px-8 py-3 sm:py-4 text-xs sm:text-base md:text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-yellow hover:to-yellow-300 hover:text-brand-dark-blue w-full sm:w-auto leading-tight">
-                  <a href="https://wa.me/5519981824256?text=Olá,%20quero%20conhecer%20o%20Método%20GAP." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Falar agora com um especialista", "hero")}>
-                    Falar agora com um especialista
-                    <ArrowRight className="ml-1 sm:ml-2 w-3 h-3 sm:w-5 sm:h-5 flex-shrink-0" />
-                  </a>
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-brand-yellow to-yellow-400 text-brand-dark-blue px-3 sm:px-6 md:px-8 py-3 sm:py-4 text-xs sm:text-base md:text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-yellow hover:to-yellow-300 hover:text-brand-dark-blue w-full sm:w-auto leading-tight cursor-pointer"
+                  onClick={() => handleContactFormClick("Falar agora com um especialista", "hero")}
+                >
+                  Falar agora com um especialista
+                  <ArrowRight className="ml-1 sm:ml-2 w-3 h-3 sm:w-5 sm:h-5 flex-shrink-0" />
                 </Button>
               </div>
             </div>
@@ -159,11 +165,13 @@ const Index = () => {
                 Essa é a realidade de muitas empresas com várias unidades e equipes descentralizadas.
               </p>
               
-              <Button asChild size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto">
-                 <a href="https://wa.me/5519981824256?text=Olá,%20quero%20conhecer%20o%20Método%20GAP." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Agende um diagnóstico gratuito", "problema")}>
-                  Agende um diagnóstico gratuito
-                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
-                </a>
+              <Button 
+                size="lg" 
+                className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto cursor-pointer"
+                onClick={() => handleContactFormClick("Agende um diagnóstico gratuito", "problema")}
+              >
+                Agende um diagnóstico gratuito
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
             </div>
           </div>
@@ -237,11 +245,13 @@ const Index = () => {
             </div>
 
             <div className="text-center px-4">
-              <Button asChild size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto">
-                <a href="https://wa.me/5519981824256?text=Olá,%20quero%20conhecer%20o%20Método%20GAP." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Quero aplicar no meu time", "gap-pilares")}>
-                  Quero aplicar no meu time
-                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
-                </a>
+              <Button 
+                size="lg" 
+                className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto cursor-pointer"
+                onClick={() => handleContactFormClick("Quero aplicar no meu time", "gap-pilares")}
+              >
+                Quero aplicar no meu time
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
             </div>
           </div>
@@ -293,11 +303,13 @@ const Index = () => {
           </div>
 
           <div className="text-center px-4">
-            <Button asChild size="lg" className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto">
-              <a href="https://wa.me/5519981824256?text=Olá,%20quero%20conhecer%20o%20Método%20GAP." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Quero esses resultados", "numeros")}>
-                Quero esses resultados
-                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
-              </a>
+            <Button 
+              size="lg" 
+              className="bg-brand-dark-blue text-brand-white hover:bg-brand-dark-blue/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto cursor-pointer"
+              onClick={() => handleContactFormClick("Quero esses resultados", "numeros")}
+            >
+              Quero esses resultados
+              <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
           </div>
         </div>
@@ -386,23 +398,25 @@ const Index = () => {
             </p>
             
             <div className="px-4">
-              <Button asChild size="lg" className="bg-gradient-to-r from-brand-yellow to-yellow-400 text-brand-dark-blue px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-yellow hover:to-yellow-300 hover:text-brand-dark-blue w-full sm:w-auto">
-                <a href="https://wa.me/5519981824256?text=Olá,%20quero%20conhecer%20o%20Método%20GAP." target="_blank" rel="noopener noreferrer" onClick={() => handleWhatsAppClick("Falar agora com um especialista", "cta-final")}>
-                  Falar agora com um especialista
-                  <ArrowRight className="ml-2 sm:ml-3 w-5 h-5 sm:w-6 sm:h-6" />
-                </a>
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-brand-yellow to-yellow-400 text-brand-dark-blue px-6 sm:px-8 py-4 sm:py-5 text-lg sm:text-xl font-bold shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-yellow hover:to-yellow-300 hover:text-brand-dark-blue w-full sm:w-auto cursor-pointer"
+                onClick={() => handleContactFormClick("Falar agora com um especialista", "cta-final")}
+              >
+                Falar agora com um especialista
+                <ArrowRight className="ml-2 sm:ml-3 w-5 h-5 sm:w-6 sm:h-6" />
               </Button>
             </div>
 
             <p className="text-xs sm:text-sm text-brand-white/80 mt-4 sm:mt-6 px-4">
-              👆 Clique e fale direto com nosso especialista no WhatsApp
+              👆 Clique para preencher o formulário de contato
             </p>
           </div>
         </div>
       </section>
 
       {/* Seção do Formulário de Contato */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section id="contact-form" className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white scroll-mt-4">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark-blue mb-4 sm:mb-6">
