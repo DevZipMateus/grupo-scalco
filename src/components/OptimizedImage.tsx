@@ -33,7 +33,7 @@ export const OptimizedImage = ({
           observer.unobserve(entry.target);
         }
       },
-      { rootMargin: '50px' }
+      { rootMargin: '200px' }
     );
 
     if (imgRef.current) {
@@ -43,37 +43,22 @@ export const OptimizedImage = ({
     return () => observer.disconnect();
   }, [priority]);
 
-  // Generate WebP source with fallback
-  const webpSrc = src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-  const hasWebPSupport = () => {
-    const canvas = document.createElement('canvas');
-    return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
-  };
-
-  const imageSrc = hasWebPSupport() && webpSrc !== src ? webpSrc : src;
-
   return (
-    <picture>
-      {/* WebP source */}
-      <source srcSet={webpSrc} type="image/webp" />
-      
-      {/* Fallback */}
-      <img
-        ref={imgRef}
-        src={isInView ? imageSrc : undefined}
-        alt={alt}
-        className={`transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'} ${className}`}
-        width={width}
-        height={height}
-        sizes={sizes}
-        loading={priority ? 'eager' : 'lazy'}
-        decoding="async"
-        onLoad={() => setIsLoaded(true)}
-        style={{
-          backgroundColor: '#f3f4f6',
-          minHeight: height ? `${height}px` : '100px'
-        }}
-      />
-    </picture>
+    <img
+      ref={imgRef}
+      src={isInView ? src : undefined}
+      alt={alt}
+      className={`transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'} ${className}`}
+      width={width}
+      height={height}
+      sizes={sizes}
+      loading={priority ? 'eager' : 'lazy'}
+      decoding="async"
+      onLoad={() => setIsLoaded(true)}
+      style={{
+        backgroundColor: '#f3f4f6',
+        minHeight: height ? `${height}px` : '100px'
+      }}
+    />
   );
 };
